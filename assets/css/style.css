@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* ---------------
---------------- Theme Colors ------------------------------ */
+/* ------------------------- White and Black Colours ------------------------ */
+/* ------------------------------ Theme Colors ------------------------------ */
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -11120,6 +11120,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/* ------------------------------- breakpoints ------------------------------ */
+/* -------------------------------- Gradients ------------------------------- */
+/* COLOR VARIABLES
+============================================= */
 /* Box sizing rules */
 * {
   box-sizing: border-box;
@@ -11153,25 +11157,29 @@ ol {
 /* Set core root defaults */
 html {
   font-size: 16px;
-  font-family: "Poppins", sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
 /* Set core body defaults */
 body {
+  font-family: "Poppins", sans-serif;
   position: relative;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   color: #fff;
-  background-color: #0b0d21;
+  background: linear-gradient(320deg, #e92605, #270e74, #d96a18, #0bd0df, #f955ad);
+  background-size: 1000% 100%;
+  animation: background-gradient1 6s ease infinite;
 }
 
 /* Removes styling from links */
 a {
   text-decoration: none;
+  color: #fff;
 }
 a:hover, a:active, a:focus {
+  color: inherit;
   outline: none;
 }
 
@@ -11197,10 +11205,33 @@ img {
   }
 }
 .sidenav {
-  width: 20.313rem;
+  width: 13.02vw;
   height: 100vh;
   position: fixed;
   background-color: #2b2a33;
+}
+@media (max-width: 768px) {
+  .sidenav {
+    display: none;
+  }
+}
+
+.logo-outer {
+  padding: 2rem;
+  position: relative;
+  width: 100%;
+}
+.logo-outer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: linear-gradient(left, #000, #270e74);
+  background: -webkit-linear-gradient(left, #000, #270e74);
+  background: -moz-linear-gradient(left, #000, #270e74);
+  background: -o-linear-gradient(left, #000, #270e74);
 }
 
 .bg-full {
@@ -11213,7 +11244,7 @@ img {
 
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
-  margin-left: 20.313rem;
+  margin-left: 13.02vw;
   padding: 1rem;
   background-color: red;
 }

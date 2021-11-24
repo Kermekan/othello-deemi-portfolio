@@ -34,30 +34,32 @@ ol {
 /* Set core root defaults */
 html {
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   
   overflow-x: hidden;
   
   // &:focus-within {
-  //   scroll-behavior: smooth;
-  // }
-}
-
-/* Set core body defaults */
-body {
-  position: relative;
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;  
-  color: $white;
-  background-color: $bg-primary;
+    //   scroll-behavior: smooth;
+    // }
+  }
+  
+  /* Set core body defaults */
+  body {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;  
+    color: $white;
+    @include backgroundGradient1;
 }
 
 /* Removes styling from links */
 a {
   text-decoration: none;
+  color: $white;
   
   &:hover, &:active, &:focus {
+    color: inherit;
     outline: none;
   }
 }
