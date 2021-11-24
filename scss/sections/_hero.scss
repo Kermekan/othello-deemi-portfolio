@@ -1,0 +1,25 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+// Full Page Background
+.bg-full {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/assets/images/background-images/bg-1.jpg);
+    background-repeat: no-repeat;
+}
+
+/* ------------------------------ Hero Section ------------------------------ */
+.hero {
+    margin-left: 20.313rem;
+    padding: 1rem;
+    
+    background-color: red;
+}
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+@use '../custom';
+
+// Center
+@mixin absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Transition
+@mixin transitionProperty {
+    transition-duration: 1000ms;
+    transition-property: all;
+}
+
+// Background gradient 1
+@mixin backgroundGradient1 {
+    background: linear-gradient(320deg, 
+    #e92605,
+    #270e74,
+    #d96a18, 
+    #0bd0df,
+    #f955ad, 
+    );
+    background-size: 1000% 100%; //height width
+
+    animation: background-gradient1 6s ease infinite;
+}
+

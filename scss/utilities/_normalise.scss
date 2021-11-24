@@ -1,0 +1,77 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+/* Box sizing rules */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+body,
+section,
+main,
+img,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Remove list styles*/
+ul,
+ol {
+  list-style-type: none;
+}
+
+/* Set core root defaults */
+html {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  
+  overflow-x: hidden;
+  
+  // &:focus-within {
+  //   scroll-behavior: smooth;
+  // }
+}
+
+/* Set core body defaults */
+body {
+  position: relative;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;  
+  color: $white;
+  background-color: $bg-primary;
+}
+
+/* Removes styling from links */
+a {
+  text-decoration: none;
+  
+  &:hover, &:active, &:focus {
+    outline: none;
+  }
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+
+

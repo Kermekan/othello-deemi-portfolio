@@ -1,0 +1,9 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+// Background gradient-1 animation
+@keyframes background-gradient1 {
+    0%{background-position:0% 28%}
+    50%{background-position:100% 73%}
+    100%{background-position:0% 28%}
+}
