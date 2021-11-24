@@ -12,10 +12,16 @@
 
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
-    margin-left: 13.02vw; // 15.62rem
+    margin-left: 15.62rem; /* 13.02vw; */
     padding: 1rem;
+    display: inline-block;
     
     background-color: red;
+    
+    @include respond-to(md) {
+    margin-left: 0; /* 13.02vw; */
+        
+    }
 }
 
 

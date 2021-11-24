@@ -1,4 +1,4 @@
-@use '../custom' as *;
+// @use '../custom' as *;
 @use '../components/mixins' as *;
 
 .sidenav {
@@ -8,6 +8,7 @@
     
     background-color: $bg-secondary;
     
+    // Breakpoint
     @include respond-to(md) {
         display: none;
     }
@@ -21,12 +22,15 @@
     &::after {
         content: "";
         position: absolute;
+        
+        margin-top: 2rem;
         bottom: 0;
         left: 0;
         
         width: 100%;
-        height: 15px;
+        height: 10px;
         
-        @include gradient(left, $list2);
+        @include gradient(left, $gradient2);
+        animation: gradient2 6s ease infinite;
     }
 }

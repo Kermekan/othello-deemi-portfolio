@@ -11122,8 +11122,6 @@ textarea.form-control-lg {
 }
 /* ------------------------------- breakpoints ------------------------------ */
 /* -------------------------------- Gradients ------------------------------- */
-/* COLOR VARIABLES
-============================================= */
 /* Box sizing rules */
 * {
   box-sizing: border-box;
@@ -11168,9 +11166,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   color: #fff;
-  background: linear-gradient(320deg, #e92605, #270e74, #d96a18, #0bd0df, #f955ad);
-  background-size: 1000% 100%;
-  animation: background-gradient1 6s ease infinite;
+  background-color: #0b0d21;
 }
 
 /* Removes styling from links */
@@ -11204,6 +11200,17 @@ img {
     background-position: 0% 28%;
   }
 }
+@keyframes gradient2 {
+  0% {
+    background-position: 0% 28%;
+  }
+  50% {
+    background-position: 100% 73%;
+  }
+  100% {
+    background-position: 0% 28%;
+  }
+}
 .sidenav {
   width: 13.02vw;
   height: 100vh;
@@ -11224,14 +11231,16 @@ img {
 .logo-outer::after {
   content: "";
   position: absolute;
+  margin-top: 2rem;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 15px;
+  height: 10px;
   background: linear-gradient(left, #000, #270e74);
   background: -webkit-linear-gradient(left, #000, #270e74);
   background: -moz-linear-gradient(left, #000, #270e74);
   background: -o-linear-gradient(left, #000, #270e74);
+  animation: gradient2 6s ease infinite;
 }
 
 .bg-full {
@@ -11244,9 +11253,17 @@ img {
 
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
-  margin-left: 13.02vw;
+  margin-left: 15.62rem;
+  /* 13.02vw; */
   padding: 1rem;
+  display: inline-block;
   background-color: red;
+}
+@media (max-width: 768px) {
+  .hero {
+    margin-left: 0;
+    /* 13.02vw; */
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

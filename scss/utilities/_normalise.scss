@@ -50,7 +50,7 @@ html {
     min-height: 100vh;
     text-rendering: optimizeSpeed;  
     color: $white;
-    @include backgroundGradient1;
+    background-color: $bg-primary;
 }
 
 /* Removes styling from links */

@@ -42,16 +42,30 @@ $breakpoints: (
 }
 
 /* -------------------------------- Gradients ------------------------------- */
-/* COLOR VARIABLES
-============================================= */
-$black:    #000;      
+// Color Variables
+$black:   #000;
+$bg-secondary: #2b2a33;      
 $solid-1: #e92605;
 $solid-2: #270e74;
 $solid-3: #d96a18;
 $solid-4: #0bd0df;
 $solid-5: #f955ad;
 
+
 // Gradient List
+$gradient1: $black, $solid-1;
+$gradient2: $black, $solid-2; 
+$gradient3: $black, $solid-3; 
+$gradient4: $black, $solid-4; 
+$gradient5: $black, $solid-5; 
+
+@mixin gradient($direction, $gradient) { 
+  background: linear-gradient($direction, $gradient);  
+  background: -webkit-linear-gradient($direction, $gradient);
+  background: -moz-linear-gradient($direction, $gradient);
+  background: -o-linear-gradient($direction, $gradient);
+}
+    
 // Background gradient 1
 @mixin backgroundGradient1 {
     background: linear-gradient(320deg, 
@@ -62,22 +76,10 @@ $solid-5: #f955ad;
     $solid-5, 
     );
     background-size: 1000% 100%; //height width
-
+    background-repeat: no-repeat;
+    
     animation: background-gradient1 6s ease infinite;
 }
-$list1: $black, $solid-1;
-$list2: $black, $solid-2; 
-$list3: $black, $solid-3; 
-$list4: $black, $solid-4; 
-$list5: $black, $solid-5; 
-
-@mixin gradient($direction, $list) { 
-  background: linear-gradient($direction, $list);  
-  background: -webkit-linear-gradient($direction, $list);
-  background: -moz-linear-gradient($direction, $list);
-  background: -o-linear-gradient($direction, $list);
-}
-    
 
 
 
