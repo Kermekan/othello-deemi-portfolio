@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poppins:wght@400;500;600;700;800;900&display=swap");
 /* ------------------------- White and Black Colours ------------------------ */
 /* ------------------------------ Theme Colors ------------------------------ */
 /*!
@@ -11122,6 +11123,7 @@ textarea.form-control-lg {
 }
 /* ------------------------------- breakpoints ------------------------------ */
 /* -------------------------------- Gradients ------------------------------- */
+/* ===================== Gradient List ===================== */
 /* Box sizing rules */
 * {
   box-sizing: border-box;
@@ -11156,7 +11158,6 @@ ol {
 html {
   font-size: 16px;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 /* Set core body defaults */
@@ -11164,7 +11165,7 @@ body {
   font-family: "Poppins", sans-serif;
   position: relative;
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
   color: #fff;
   background-color: #0b0d21;
 }
@@ -11241,6 +11242,15 @@ img {
   background: -moz-linear-gradient(left, #000, #270e74);
   background: -o-linear-gradient(left, #000, #270e74);
   animation: gradient2 6s ease infinite;
+}
+
+.navbar-nav {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .bg-full {

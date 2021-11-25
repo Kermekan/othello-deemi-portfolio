@@ -1,12 +1,11 @@
-
 @use 'custom';
 
 // Utilities
 @use 'utilities/normalise';
-@use 'utilities/animations';
+@use 'utilities/mixins';
 
 // Components
-@use 'components/mixins';
+@use 'components/animations';
 @use 'components/typography';
 
 //Sections
