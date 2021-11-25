@@ -13,55 +13,68 @@
     
     <!-- Icons -->    
     <link rel="stylesheet" href="https://i.icomoon.io/public/21140f81e3/NetMatters/style.css">
+    <script src="https://kit.fontawesome.com/d1cb6fec79.js" crossorigin="anonymous"></script>
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="full-page bg-full">
-        <!-- ----------------------------------------------------------------------- -->
-        <!--                             Navigation Bar                              -->
-        <!-- ----------------------------------------------------------------------- -->
-        <div class="navbar-container">
-            <nav class="sidenav">
-                <!-- Logo -->
-                <div class="logo-outer">
-                    <div class="logo-inner">            
-                        <a href="#home">
-                            <img src="/assets/images/logo/logo.png" alt="Portfolio Logo">
-                        </a>
-                    </div>
-                </div>
-                <!-- Nav Items -->
-                <div class="navbar-nav text-center">
-                    <ul class="navbar-items">
-                        <!-- About -->
-                        <li>
-                            <a href="#about">About Me</a>
-                        </li>
-                        <!-- Portfolio -->
-                        <li>
-                            <a href="#portfolio">Portfolio</a>
-                        </li>
-                        <!-- Coding Examples -->
-                        <li>
-                            <a href="#coding">Coding Examples</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <!-- ----------------------------------------------------------------------- -->
-        <!--                              Hero Section                               -->
-        <!-- ----------------------------------------------------------------------- -->
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="title">
-                    <h1>Othello Deemi</h1>
-                </div>
-            </div>
-        </section>
-    </div>
-    
+   <div class="full-page bg-full">
+       <!-- ----------------------------------------------------------------------- -->
+       <!--                             Navigation Bar                              -->
+       <!-- ----------------------------------------------------------------------- -->
+       <div class="menu-wrap">
+           <input type="checkbox" class="toggler">
+           <!-- hamburger -->
+           <div class="hamburger">
+               <div></div>
+           </div>
+           <div class="menu-container">
+               <div class="menu">
+                   <div class="menu-items">
+                       <ul class="items">
+                           <!-- About -->
+                           <li class="menu-item">
+                               <a href="#about">About Me</a>
+                           </li>
+                           <!-- Portfolio -->
+                           <li class="menu-item">
+                               <a href="#portfolio">Portfolio</a>
+                           </li>
+                           <!-- Coding Examples -->
+                           <li class="menu-item">
+                               <a href="#coding">Coding Examples</a>
+                           </li>
+                           <!-- SCS SCheme -->
+                           <li class="menu-item">
+                               <a href="#scs-scheme">SCS Scheme</a>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <!-- ----------------------------------------------------------------------- -->
+       <!--                              Hero Section                               -->
+       <!-- ----------------------------------------------------------------------- -->
+       <header class="hero"><!-- showcase -->
+           <div class="inner hero-inner text-center flex">
+              <h1 class="display-2">
+                  <span class="display-2--title fw-bold">My Name is Othello Deemi</span>
+                  <div class="display-2--subtitle">and I'm a Web Developer</div>
+              </h1>
+              <!-- Scroll down-->
+              <div class="scroll-down" style="background-color: aqua;">
+                  <a href="#portfolio" class="btn btn-scroll">
+                    <div class="text-capitalize">Scroll Down</div>
+                    <i class="fas fa-chevron-down"></i>
+                  </a>
+              </div> 
+           </div>
+       </header>
+   </div>
+   
+   <!-- Bootstrap -->
+   <script src="/assets/js/bootstrap.bundle.js"></script>
 </body>
 </html>

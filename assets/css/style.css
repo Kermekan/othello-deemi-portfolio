@@ -11122,6 +11122,12 @@ textarea.form-control-lg {
   }
 }
 /* ------------------------------- breakpoints ------------------------------ */
+/* -------------------------------- Gradients ------------------------------- */
+/* I tried turning this into a function that will just allow me to pick which colors to mix but I couldn't get it to work
+ * unless I typed the whole thing into the file I want to create the gradient, and I didn't want to do that. */
+/* ===================== Gradient List ===================== */
+/* ===================== Gradient Mixin ===================== */
+/* ===================== Animated gradient ===================== */
 /* Box sizing rules */
 * {
   box-sizing: border-box;
@@ -11143,7 +11149,9 @@ dl,
 dd,
 ul,
 ol,
-li {
+li,
+span,
+i {
   margin: 0;
   padding: 0;
   border: 0;
@@ -11168,7 +11176,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   color: #fff;
-  background-color: #0b0d21;
+  background-color: #121212;
 }
 
 /* Removes styling from links */
@@ -11191,12 +11199,21 @@ img {
   display: block;
 }
 
-/* -------------------------------- Gradients ------------------------------- */
-/* I tried turning this into a function that will just allow me to pick which colors to mix but I couldn't get it to work
- * unless I typed the whole thing into the file I want to create the gradient, and I didn't want to do that. */
-/* ===================== Gradient List ===================== */
-/* ===================== Gradient Mixin ===================== */
-/* ===================== Animated gradient ===================== */
+.inner {
+  width: 100%;
+  max-width: 82.5rem;
+  /* 1500px; */
+  margin: auto;
+  padding: 0 3rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 @keyframes background-gradient1 {
   0% {
     background-position: 0% 28%;
@@ -11219,69 +11236,32 @@ img {
     background-position: 0% 28%;
   }
 }
-.sidenav {
-  width: 13.02vw;
-  height: 100vh;
-  position: fixed;
-  background-color: #2b2a33;
+.display-2 {
+  margin-bottom: 1rem;
+  text-transform: capitalize;
 }
-@media (max-width: 768px) {
-  .sidenav {
-    display: none;
-  }
+.display-2--title {
+  font-size: 19px;
+  line-height: 3;
+  letter-spacing: 1px;
 }
 
-.logo-outer {
-  padding: 2rem;
-  position: relative;
-  width: 100%;
-}
-.logo-outer::after {
-  content: "";
-  position: absolute;
-  margin-top: 2rem;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  background: linear-gradient(left, #0bd0df, #270e74);
-  background: -webkit-linear-gradient(left, #0bd0df, #270e74);
-  background: -moz-linear-gradient(left, #0bd0df, #270e74);
-  background: -o-linear-gradient(left, #0bd0df, #270e74);
-  animation: gradient2 6s ease infinite;
-}
-
-.navbar-nav {
-  padding: 0;
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: red;
-}
-
+/* -------------------------- Full Page Background -------------------------- */
 .bg-full {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url(/assets/images/background-images/bg-1.jpg);
-  background-repeat: no-repeat;
+  background: url(/assets/images/background-images/bg-1.jpg) no-repeat center center/cover;
 }
 
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
-  margin-left: 15.62rem;
-  /* 13.02vw; */
-  padding: 1rem;
-  display: inline-block;
-  background-color: red;
+  height: 100%;
+  position: relative;
 }
-@media (max-width: 768px) {
-  .hero {
-    margin-left: 0;
-    /* 13.02vw; */
-  }
+.hero .hero-inner {
+  height: 100%;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */

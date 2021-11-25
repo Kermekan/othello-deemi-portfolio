@@ -1,5 +1,7 @@
 @use '../custom' as *;
 @use '../utilities/mixins' as *;
+@use '../utilities/gradients' as *;
+
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
@@ -24,7 +26,9 @@ dl,
 dd,
 ul,
 ol,
-li {
+li,
+span,
+i {
   margin: 0;
   padding: 0;
   border: 0;

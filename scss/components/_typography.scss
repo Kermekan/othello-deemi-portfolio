@@ -2,7 +2,16 @@
 @use '../utilities/mixins' as *;
 
 
-
+.display-2 {
+   margin-bottom: 1rem;
+   text-transform: capitalize;
+   
+   &--title {
+      font-size: 19px;
+      line-height: 3;
+      letter-spacing: 1px;
+   }
+}
 
 
 

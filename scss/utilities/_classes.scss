@@ -1,0 +1,21 @@
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/gradients' as *;
+
+
+
+.inner {
+    width: 100%;
+    max-width: 82.5rem; /* 1500px; */
+    margin: auto;
+    padding: 0 3rem;    
+    
+    // background-color: red;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
