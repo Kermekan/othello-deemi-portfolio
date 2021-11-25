@@ -1,5 +1,6 @@
-// @use '../custom' as *;
+@use '../custom' as *;
 @use '../utilities/mixins' as *;
+@use '../utilities/gradients' as *;
 
 .sidenav {
     width: 13.02vw;
@@ -30,22 +31,23 @@
         width: 100%;
         height: 10px;
         
-        @include gradient(left, $gradient2);
+        @include gradient(left, $gradient19);
         animation: gradient2 6s ease infinite;
     }
 }
 
+// Nav items
 .navbar-nav {
     padding: 0;
     margin: 0;
-    height: 100%;
+    height: 100vh;
     
     display: flex;
     flex-direction: column;
     justify-content: center;
     
     
-    // background-color: red;
+    background-color: red;
     
 }
 

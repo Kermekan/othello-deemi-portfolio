@@ -1,0 +1,78 @@
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+
+
+/* -------------------------------- Gradients ------------------------------- */
+// Color Variables
+$black:   #000;
+$bg-secondary: #2b2a33;      
+$solid-1: #e92605;
+$solid-2: #270e74;
+$solid-3: #d96a18;
+$solid-4: #0bd0df;
+$solid-5: #f955ad;
+
+/* I tried turning this into a function that will just allow me to pick which colors to mix but I couldn't get it to work
+ * unless I typed the whole thing into the file I want to create the gradient, and I didn't want to do that. */
+ 
+/* ===================== Gradient List ===================== */
+// black base gradients
+$gradient1: $black, $solid-1;
+$gradient2: $black, $solid-2; 
+$gradient3: $black, $solid-3; 
+$gradient4: $black, $solid-4; 
+$gradient5: $black, $solid-5;
+
+// solid-1 base gradients
+$gradient6: $solid-1, $solid-2; 
+$gradient7: $solid-1, $solid-3; 
+$gradient8: $solid-1, $solid-4; 
+$gradient9: $solid-1, $solid-5;
+
+// solid-2 base gradients
+$gradient10: $solid-2, $solid-1; 
+$gradient11: $solid-2, $solid-3; 
+$gradient12: $solid-2, $solid-4; 
+$gradient13: $solid-2, $solid-5;
+
+// solid-3 base gradients
+$gradient14: $solid-3, $solid-1; 
+$gradient15: $solid-3, $solid-2; 
+$gradient16: $solid-3, $solid-4; 
+$gradient17: $solid-3, $solid-5;
+
+// solid-4 base gradients
+$gradient18: $solid-4, $solid-1; 
+$gradient19: $solid-4, $solid-2; 
+$gradient20: $solid-4, $solid-3; 
+$gradient21: $solid-4, $solid-5;
+
+// solid-5 base gradients
+$gradient22: $solid-5, $solid-1; 
+$gradient23: $solid-5, $solid-2; 
+$gradient24: $solid-5, $solid-3; 
+$gradient25: $solid-5, $solid-4;
+ /* ===================== Gradient Mixin ===================== */
+@mixin gradient($direction, $gradient) { 
+  background: linear-gradient($direction, $gradient);  
+  background: -webkit-linear-gradient($direction, $gradient);
+  background: -moz-linear-gradient($direction, $gradient);
+  background: -o-linear-gradient($direction, $gradient);
+  @content;
+}
+    
+ /* ===================== Animated gradient ===================== */
+//  Gradient1
+@mixin backgroundGradient1 {
+    background: linear-gradient(320deg, 
+    $solid-1,
+    $solid-2,
+    $solid-3, 
+    $solid-4,
+    $solid-5, 
+    );
+    background-size: 1000% 100%; //height width
+    background-repeat: no-repeat;
+    
+    animation: background-gradient1 6s ease infinite;
+}
