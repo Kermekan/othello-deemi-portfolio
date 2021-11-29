@@ -7,10 +7,14 @@
 .inner {
     width: 100%;
     max-width: 82.5rem; /* 1500px; */
-    margin: auto;
-    padding: 0 3rem;    
+    margin: auto;    
     
     // background-color: red;
+}
+
+.scroll {
+    font-size: 50px;
+    @include absoluteCenter;
 }
 
 .flex {

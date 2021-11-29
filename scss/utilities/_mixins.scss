@@ -1,5 +1,13 @@
-@use '../custom';
+@use '../custom' as *;
 
+
+
+
+// Full Size
+@mixin fullSize {
+    width: 100%;
+    height: 100%;
+}
 
 // Center an Element
 @mixin absoluteCenter {
@@ -15,6 +23,12 @@
     transition-property: all;
 }
 
+// Scroll Hover
+
+
+@mixin btnHover {
+    transform: scale(1.2);
+}
 
 /* ------------------------------- breakpoints ------------------------------ */
 // Breakpoints Map

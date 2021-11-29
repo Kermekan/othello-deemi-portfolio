@@ -2,56 +2,85 @@
 @use '../utilities/mixins' as *;
 
 
+/* For some reason I can't call variables from custom.scss Even though I could within the mixins partial
+** Also wanted to create loops for these gradients but I spent too much time on it and couldn't get it to work */
+
+
 /* -------------------------------- Gradients ------------------------------- */
 // Color Variables
-$black:   #000;
-$bg-secondary: #2b2a33;      
+$white:   #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:   #000; 
+  
 $solid-1: #e92605;
 $solid-2: #270e74;
 $solid-3: #d96a18;
 $solid-4: #0bd0df;
 $solid-5: #f955ad;
 
-/* I tried turning this into a function that will just allow me to pick which colors to mix but I couldn't get it to work
- * unless I typed the whole thing into the file I want to create the gradient, and I didn't want to do that. */
+$bg-primary: #121212;
+$bg-primary-light: lighten($bg-primary, 10%);
+
+$bg-secondary: #2b2a33;
+$bg-secondary-light: lighten($bg-secondary, 10%);
+
  
-/* ===================== Gradient List ===================== */
+/* ===================== Static Gradients ===================== */
+// Background Colors
+
+// white base gradients
+$gradientwhite1: $white, $solid-1;
+$gradientwhite2: $white, $solid-2; 
+$gradientwhite3: $white, $solid-3; 
+$gradientwhite4: $white, $solid-4; 
+$gradientwhite5: $white, $solid-5;
+
 // black base gradients
-$gradient1: $black, $solid-1;
-$gradient2: $black, $solid-2; 
-$gradient3: $black, $solid-3; 
-$gradient4: $black, $solid-4; 
-$gradient5: $black, $solid-5;
+$gradientblack1: $black, $solid-1;
+$gradientblack2: $black, $solid-2; 
+$gradientblack3: $black, $solid-3; 
+$gradientblack4: $black, $solid-4; 
+$gradientblack5: $black, $solid-5;
+
 
 // solid-1 base gradients
-$gradient6: $solid-1, $solid-2; 
-$gradient7: $solid-1, $solid-3; 
-$gradient8: $solid-1, $solid-4; 
-$gradient9: $solid-1, $solid-5;
+$gradientred1: $solid-1, $solid-2; 
+$gradientred2: $solid-1, $solid-3; 
+$gradientred3: $solid-1, $solid-4; 
+$gradientred4: $solid-1, $solid-5;
 
-// solid-2 base gradients
-$gradient10: $solid-2, $solid-1; 
-$gradient11: $solid-2, $solid-3; 
-$gradient12: $solid-2, $solid-4; 
-$gradient13: $solid-2, $solid-5;
+// solid-2 base gradients dblue=dark $solid-2
+$gradientdblue1: $solid-2, $solid-1; 
+$gradientdblue2: $solid-2, $solid-3; 
+$gradientdblue3: $solid-2, $solid-4; 
+$gradientdblue4: $solid-2, $solid-5;
 
 // solid-3 base gradients
-$gradient14: $solid-3, $solid-1; 
-$gradient15: $solid-3, $solid-2; 
-$gradient16: $solid-3, $solid-4; 
-$gradient17: $solid-3, $solid-5;
+$gradientorange1: $solid-3, $solid-1; 
+$gradientorange2: $solid-3, $solid-2; 
+$gradientorange3: $solid-3, $solid-4; 
+$gradientorange4: $solid-3, $solid-5;
 
-// solid-4 base gradients
-$gradient18: $solid-4, $solid-1; 
-$gradient19: $solid-4, $solid-2; 
-$gradient20: $solid-4, $solid-3; 
-$gradient21: $solid-4, $solid-5;
+// solid-4 base gradients lblue=$solid-4
+$gradientlblue1: $solid-4, $solid-1; 
+$gradientlblue2: $solid-4, $solid-2; 
+$gradientlblue3: $solid-4, $solid-3; 
+$gradientlblue4: $solid-4, $solid-5;
 
 // solid-5 base gradients
-$gradient22: $solid-5, $solid-1; 
-$gradient23: $solid-5, $solid-2; 
-$gradient24: $solid-5, $solid-3; 
-$gradient25: $solid-5, $solid-4;
+$gradientpink1: $solid-5, $solid-1; 
+$gradientpink2: $solid-5, $solid-2; 
+$gradientpink3: $solid-5, $solid-3; 
+$gradientpink4: $solid-5, $solid-4;
+
  /* ===================== Gradient Mixin ===================== */
 @mixin gradient($direction, $gradient) { 
   background: linear-gradient($direction, $gradient);  
@@ -59,20 +88,62 @@ $gradient25: $solid-5, $solid-4;
   background: -moz-linear-gradient($direction, $gradient);
   background: -o-linear-gradient($direction, $gradient);
   @content;
+
 }
     
- /* ===================== Animated gradient ===================== */
-//  Gradient1
-@mixin backgroundGradient1 {
-    background: linear-gradient(320deg, 
-    $solid-1,
-    $solid-2,
-    $solid-3, 
-    $solid-4,
-    $solid-5, 
-    );
-    background-size: 1000% 100%; //height width
-    background-repeat: no-repeat;
-    
-    animation: background-gradient1 6s ease infinite;
+/* -------------------------------------------------------------------------- */
+/*                             Animated Gradients                             */
+/* -------------------------------------------------------------------------- */
+
+// Full Gradient
+@mixin gradientAnimation {
+  background: linear-gradient(320deg, 
+  $solid-1,
+  $solid-2,
+  $solid-3, 
+  $solid-4,
+  $solid-5, 
+  );
+  background-size: 700% 100%; //height width
+  background-repeat: no-repeat;
+  
+  animation: gradientAnimation1 7s ease infinite;
 }
+
+// Custom Gradients
+@mixin full-gradient-animation($colour-one, $colour-two, $colour-three, $colour-four, $colour-five, $angle, $length, $iteration) {
+	background: $colour-one;
+	background: linear-gradient($angle, $colour-one 0%, $colour-two 50%, $colour-three 100%);
+	background-size: 700% 100%;
+
+  animation: animation-background-gradient $length ease $iteration;
+}
+
+// 4 colours
+@mixin FourColourAnimation($colour-one, $colour-two, $colour-three, $colour-four, $angle, $length, $iteration) {
+	background: $colour-one;
+	background: linear-gradient($angle, $colour-one 0%, $colour-two 33.33%, $colour-three  66.66%, $colour-four 100%);
+	background-size: 700% 100%;
+
+  animation: animation-background-gradient $length ease $iteration;
+}
+
+// 3 colours
+@mixin ThreeColourAnimation($colour-one, $colour-two, $colour-three, $angle, $length, $iteration) {
+	background: $colour-one;
+	background: linear-gradient($angle, $colour-one 0%, $colour-two 50%, $colour-three 100%);
+	background-size: 700% 100%;
+
+  animation: animation-background-gradient $length ease $iteration;
+}
+
+// 2 colours
+@mixin TwoColourAnimation($colour-one, $colour-two, $angle, $length, $iteration) {
+	background: $colour-one;
+	background: linear-gradient($angle, $colour-one 0%, $colour-two 100%);
+	background-size: 700% 100%;
+
+  animation: animation-background-gradient $length ease $iteration;
+}
+
+

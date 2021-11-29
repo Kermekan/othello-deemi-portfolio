@@ -3,8 +3,6 @@
 @use '../utilities/gradients' as *;
 
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poppins:wght@400;500;600;700;800;900&display=swap');
-
 /* Box sizing rules */
 * {
   box-sizing: border-box;
@@ -26,9 +24,7 @@ dl,
 dd,
 ul,
 ol,
-li,
-span,
-i {
+li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -52,7 +48,7 @@ html {
     position: relative;
     min-height: 100vh;
     overflow-x: hidden;
-    color: $white;
+    color: white;
     background-color: $bg-primary;
 }
 
@@ -64,6 +60,7 @@ a {
   &:hover, &:active, &:focus {
     color: inherit;
     outline: none;
+    box-shadow: none !important;
   }
 }
 

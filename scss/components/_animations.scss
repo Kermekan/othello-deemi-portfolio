@@ -1,16 +1,43 @@
 @use '../custom' as *;
 @use '../utilities/mixins' as *;
 
-// Background gradient-1 animation
-@keyframes background-gradient1 {
-    0%{background-position:0% 28%}
-    50%{background-position:100% 73%}
-    100%{background-position:0% 28%}
+
+
+/* --------------------------- Animated gradients --------------------------- */
+// Gradient Animation
+@keyframes gradientAnimation1 {
+    0%{
+        background-position:0% 28%
+    }
+    50%{
+        background-position:100% 73%
+    }
+    100%{
+        background-position:0% 28%
+    }
 }
 
-// Gradient-list
-@keyframes gradient2 {
-    0%{background-position:0% 28%}
-    50%{background-position:100% 73%}
-    100%{background-position:0% 28%}
+// Custom Gradient Animation
+@keyframes animation-background-gradient {
+
+	0% {
+        background-position: 0% 5%;
+    }
+	50% {
+        background-position: 100% 95%;
+    }
+	100% {
+        background-position: 0% 5%;
+    }
+}
+
+// Scroll Gradient
+@keyframes scroll {
+    0% {
+        top: 50%;
+    } 
+    
+    100% {
+        top: 200%;
+    }
 }

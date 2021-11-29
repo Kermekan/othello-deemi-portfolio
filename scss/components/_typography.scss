@@ -4,13 +4,30 @@
 
 .display-2 {
    margin-bottom: 1rem;
+   line-height: 1.5;
    text-transform: capitalize;
    
-   &--title {
-      font-size: 19px;
-      line-height: 3;
-      letter-spacing: 1px;
+   &--description {
+      font-size: clamp(0.781rem, 1.7vw + 0.5rem, 2.5rem); //min size(12.5px), preferred, max size(40px).
+      letter-spacing: 2px;
    }
+   
+   &--title {
+      display: block;
+      font-size: clamp(2.125rem, 2.8vw + 1.6rem, 5rem); //clamp(2.125rem, 1.6341rem + 2.8049vw, 5rem); //min(34px) max(80px)
+      letter-spacing: clamp(0.063rem, -0.0330rem + 0.5483vw, 0.625rem);      
+   }
+   
+   &--subtitle {
+      display: block;
+      text-transform: none;
+      
+      font-size: clamp(1rem, 0.5838rem + 2.3785vw, 3.438rem); //min(16px) max(55px)
+      letter-spacing: 5px;
+   }
+   
+   
+   // background-color: red;
 }
 
 

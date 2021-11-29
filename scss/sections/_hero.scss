@@ -4,25 +4,52 @@
 
 
 /* -------------------------- Full Page Background -------------------------- */
-.bg-full {
+.full-page {
     position: relative;
     width: 100vw;
     height: 100vh;
+}
+
+.bg-full {
     background: url(/assets/images/background-images/bg-1.jpg) no-repeat center center/cover;
 }
 
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
+    
     height: 100%;
     position: relative;
     
     .hero-inner {
         height: 100%;
         flex-direction: column;
+        padding: 0;
+        
+        
+        // background-color: aqua;
     }
     
-    // background-color: blue;
 }
+
+.heading {
+    margin: auto;
+}
+
+.scroll-down {
+    margin-bottom: 10%;
+    // background-color: white;
+    
+    a {
+        position: relative;
+        // padding: 1rem 3rem; 
+        
+        // HOVER EFFECT
+        span:hover {
+            animation: scroll 1s ease-in-out alternate infinite;
+        }
+    }
+}
+
 
 
 
