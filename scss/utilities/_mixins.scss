@@ -1,7 +1,9 @@
 @use '../custom' as *;
 
 
-
+/* If I want to create a mixin that uses any color I have to include my color variables in this file
+** but I don't want to do that since I have a lot of gradient colors and don't want to fill this file with
+** just colors so all color related mixins go in gradients partial */
 
 // Full Size
 @mixin fullSize {
@@ -24,27 +26,57 @@
 }
 
 // Scroll Hover
-
-
 @mixin btnHover {
     transform: scale(1.2);
 }
 
-/* ------------------------------- breakpoints ------------------------------ */
+
+// Transition Speed
+@mixin transitionSpeed {
+    transition: all 200ms ease ;
+}
+
+
+// Section Container
+@mixin sectionBorder($color) {
+    background-color: $bg-primary-light;
+    position: relative;
+    
+    flex-direction: column;
+    // justify-content: center;
+    padding-bottom: 3.125rem; // 50px
+    border-top: 10px inset $color;
+    width: 100%;
+} 
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 Breakpoints                                */
+/* -------------------------------------------------------------------------- */
 // Breakpoints Map
 $breakpoints: (
-    'xs': 360px,
-  'sm': 576px,
-  'md': 768px,
-  'lg': 992px,
-  'xl': 1200px,
-  'xxl': 1400px,
-  
+  'xs': 361px,
+  'sm': 577px,
+  'md': 769px,
+  'lg': 993px,
+  'xl': 1201px,
+  'xxl': 1401px,
   ) !default;
   
 // ======= Mixin to manage responsive breakpoints
 // name of mixin
-@mixin respond-to($breakpoint) {
+@mixin respond-to-up($breakpoint) {                    // Viewports higher than target will apply media query
+    // if key exists
+    @if map-has-key($breakpoints, $breakpoint) {
+        // query printed based on value
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }        
+    }
+    
+}
+
+@mixin respond-to-down($breakpoint) {                    // Viewports lower than target will apply media query
     // if key exists
     @if map-has-key($breakpoints, $breakpoint) {
         // query printed based on value
@@ -54,6 +86,10 @@ $breakpoints: (
     }
     
 }
+
+
+
+
 
 
 

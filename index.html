@@ -12,69 +12,222 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Icons -->    
-    <link rel="stylesheet" href="https://i.icomoon.io/public/21140f81e3/NetMatters/style.css">
     <script src="https://kit.fontawesome.com/d1cb6fec79.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://i.icomoon.io/public/21140f81e3/OthelloDeemi/style.css">
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-   <div class="full-page bg-full">
-       <!-- ----------------------------------------------------------------------- -->
-       <!--                             Navigation Bar                              -->
-       <!-- ----------------------------------------------------------------------- -->
-       <div class="menu-wrap">
-           <input type="checkbox" class="toggler">
-           <!-- hamburger -->
-           <div class="hamburger">
-               <div></div>
-           </div>
-           <div class="menu-container">
-               <div class="menu">
-                   <div class="menu-items">
-                       <ul class="items">
-                           <!-- About -->
-                           <li class="menu-item">
-                               <a href="#about">About Me</a>
-                           </li>
-                           <!-- Portfolio -->
-                           <li class="menu-item">
-                               <a href="#portfolio">Portfolio</a>
-                           </li>
-                           <!-- Coding Examples -->
-                           <li class="menu-item">
-                               <a href="#coding">Coding Examples</a>
-                           </li>
-                           <!-- SCS SCheme -->
-                           <li class="menu-item">
-                               <a href="#scs-scheme">SCS Scheme</a>
-                           </li>
-                       </ul>
-                   </div>
-               </div>
-           </div>  
-       </div>
-       <!-- ----------------------------------------------------------------------- -->
-       <!--                              Hero Section                               -->
-       <!-- ----------------------------------------------------------------------- -->
-       <header class="hero"><!-- showcase -->
-           <div class="inner hero-inner text-center flex"><!-- showcase inner -->
-              <h1 class="display-2 heading">
-                  <span class="display-2--description">My Name is</span>
-                  <span class="display-2--title fw-bold">Othello Deemi</span>
-                  <span class="display-2--subtitle">and I'm a Web Developer</span>
-              </h1>
-              <!-- Scroll down-->
-              <div class="scroll-down">
-                  <a href="#portfolio" class="btn btn-scroll text-white">
-                    <span class="fas fa-chevron-down scroll"></span>
-                  </a>
-              </div> 
-           </div>
-       </header>
-   </div>
+    <div class="full-page bg-full img-fluid">
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                             Navigation Bar                              -->
+        <!-- ----------------------------------------------------------------------- -->
+        <nav class="menubar flex">
+            <!-- hamburger -->
+            <div class="hamburger-container flex">
+                <!-- logo -->
+                <div class="hamburger-image">
+                    <!-- <input type="checkbox" class="toggler"> --> <!-- Not Working -->
+                    <a href="#home">
+                        <img src="/assets/images/logo/logo-1.png" alt="">
+                    </a>
+                </div>
+            </div> 
+            
+            <!-- Menu Items -->
+            <ul class="menubar-nav flex">
+                <!-- About -->
+                <li class="menu-item about">
+                    <a href="#about" class="menu-link" >
+                        <span class="icon fas fa-user" ></span>
+                        <span class="link-text fw-bold">About</span>
+                    </a>
+                </li>
+                <!-- Portfolio -->
+                <li class="menu-item portfolio">
+                    <a href="#portfolio" class="menu-link" >
+                        <span class="icon fas fa-suitcase" ></span>
+                        <span class="link-text fw-bold">Portfolio</span>
+                    </a>
+                </li>
+                <!-- Coding Examples -->
+                <li class="menu-item coding">
+                    <a href="#coding" class="menu-link" >
+                        <span class="icon fas fa-code" ></span>
+                        <span class="link-text fw-bold">Coding Examples</span>
+                    </a>
+                </li>
+                <!-- SCS SCheme -->
+                <li class="menu-item scs-scheme">
+                    <a href="#scs-scheme" class="menu-link" >
+                        <span class="icon fas fa-graduation-cap" ></span>
+                        <span class="link-text fw-bold">SCS Scheme</span>
+                    </a>
+                </li>
+                <!-- Contacts -->
+                <li class="menu-item contacts">
+                    <a href="#contacts" class="menu-link" >
+                        <span class="icon fas fa-phone-alt" ></span>
+                        <span class="link-text fw-bold">Contacts</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>  
+        
+        
+        <div class="main-sections">
+            <!-- ----------------------------------------------------------------------- -->
+            <!--                              Hero Section                               -->
+            <!-- ----------------------------------------------------------------------- -->
+            <header id="home" class="hero"><!-- showcase -->
+                <div class="hero-inner text-center flex">
+                    <h1 class="display-2 heading">
+                        <span class="display-2--description">My Name is</span>
+                        <span class="display-2--title fw-bold">Othello Deemi</span>
+                        <span class="display-2--subtitle">and I'm a Web Developer</span>
+                    </h1>
+                    <!-- Scroll down-->
+                    <div class="scroll-down">
+                        <a href="#portfolio" class="btn btn-scroll text-white">
+                            <span class="fas fa-chevron-down scroll"></span>
+                        </a>
+                    </div> 
+                </div>
+            </header>
+            <!-- ----------------------------------------------------------------------- -->
+            <!--                                Portfolio                                -->
+            <!-- ----------------------------------------------------------------------- -->
+            <section id="portfolio" class="portfolio-container flex">
+                <div class="inner portfolio-inner">
+                    <div class="container">
+                        <!-- Heading -->
+                        <div class="row portfolio-heading text-center mt-5">
+                            <h1 class="display-3 fw-bold text-capitalize">Portfolio</h1>
+                            <div class="heading-line pt-1"></div>
+                             <p class="lead pt-3"></p>
+                        </div>
+                        <!-- --------------------------- Portfolio Items --------------------------- -->
+                        <div class="portfolio-box row flex">
+                            <!-- Project 1 -->
+                            <div class="card-container col-lg-4 col-md-6">
+                                <div class="portfolio-card">
+                                    <img src="/assets/images/portfolio/portfolio-img.jpg" alt="Project 1">
+                                    <!-- Caption -->
+                                    <div class="portfolio-info">
+                                        <div class="caption flex">
+                                            <h4 class="pb-1">Project 1</h4>
+                                            <div class="heading-line pt-"></div>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, illum?</p>
+                                            <!-- Button -->
+                                            <a href="#" class="btn portfolio-btn text-center">
+                                                <span>View Project</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- .card-container -->
+                            
+                            <!-- Project 2 -->
+                            <div class="card-container col-lg-4 col-md-6">
+                                <div class="portfolio-card">
+                                    <img src="/assets/images/portfolio/portfolio-img.jpg" alt="Project 2">
+                                    <!-- Caption -->
+                                    <div class="portfolio-info">
+                                        <div class="caption flex">
+                                            <h4 class="pb-1">Project 2</h4>
+                                            <div class="heading-line pt-"></div>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, illum?</p>
+                                            <!-- Button -->
+                                            <a href="#" class="btn portfolio-btn text-center">
+                                            <span>View Project</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- .card-container -->
+
+                            <!-- Project 3 -->
+                            <div class="card-container col-lg-4 col-md-6">
+                                <div class="portfolio-card">
+                                    <img src="/assets/images/portfolio/portfolio-img.jpg" alt="Project 3">
+                                    <!-- Caption -->
+                                    <div class="portfolio-info">
+                                        <div class="caption flex">
+                                            <h4 class="pb-1">Project 3</h4>
+                                            <div class="heading-line pt-"></div>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, illum?</p>
+                                            <!-- Button -->
+                                            <a href="#" class="btn portfolio-btn text-center">
+                                                <span>View Project</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- .card-container -->
+                            <!-- Project 4 -->
+                            <div class="card-container col-lg-4 col-md-6">
+                                <div class="portfolio-card">
+                                    <img src="/assets/images/portfolio/portfolio-img.jpg" alt="Project 4">
+                                    <!-- Caption -->
+                                    <div class="portfolio-info">
+                                        <div class="caption flex">
+                                            <h4 class="pb-1">Project 4</h4>
+                                            <div class="heading-line pt-"></div>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, illum?</p>
+                                            <!-- Button -->
+                                            <a href="#" class="btn portfolio-btn text-center">
+                                                <span>View Project</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- .card-container -->
+                            <!-- Project 5 -->
+                            <div class="card-container col-lg-4 col-md-6">
+                                <div class="portfolio-card">
+                                    <img src="/assets/images/portfolio/portfolio-img.jpg" alt="Project 5">
+                                    <!-- Caption -->
+                                    <div class="portfolio-info">
+                                        <div class="caption flex">
+                                            <h4 class="pb-1">Project 5</h4>
+                                            <div class="heading-line pt-"></div>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, illum?</p>
+                                            <!-- Button -->
+                                            <a href="#" class="btn portfolio-btn text-center">
+                                                <span>View Project</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- .card-container -->
+                            <!-- Project 6 -->
+                            <div class="card-container col-lg-4 col-md-6">
+                                <div class="portfolio-card">
+                                    <img src="/assets/images/portfolio/portfolio-img.jpg" alt="Project 6">
+                                    <!-- Caption -->
+                                    <div class="portfolio-info">
+                                        <div class="caption flex">
+                                            <h4 class="pb-1">Project 6</h4>
+                                            <div class="heading-line pt-"></div>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, illum?</p>
+                                            <!-- Button -->
+                                            <a href="#" class="btn portfolio-btn text-center">
+                                                <span>View Project</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- .card-container -->
+                        </div><!-- .portfolio-box -->  
+                    </div><!-- .container -->       
+                </div><!-- .portfolio-inner -->
+            </section>
+           
+        </div><!-- .main-sections -->
+    </div><!-- .full-page -->
    
-   <!-- Bootstrap -->
-   <script src="/assets/js/bootstrap.bundle.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/js/bootstrap.bundle.js"></script>
 </body>
 </html>

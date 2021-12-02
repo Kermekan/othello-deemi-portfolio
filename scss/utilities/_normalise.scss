@@ -40,16 +40,18 @@ ol {
 html {
   font-size: 16px;
   line-height: 1.6;
-  }
+}
   
   /* Set core body defaults */
   body {
     font-family: 'Poppins', sans-serif;
     position: relative;
-    min-height: 100vh;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     color: white;
-    background-color: $bg-primary;
+    background-color: $bg-primary-light;
+    width: 100vw;
+    height: 100vh;
+    
 }
 
 /* Removes styling from links */

@@ -2,20 +2,82 @@
 @use '../utilities/mixins' as *;
 @use '../utilities/gradients' as *;
 
+/* -------------------------------- Full Page ------------------------------- */
+.full-page {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+    
+    // border: 5px solid purple;
+    
+}
+
+.bg-full {
+    background: url(/assets/images/background-images/bg-1.jpg) no-repeat center center/cover;
+    
+    // keep inherited Background full size
+    background-attachment: fixed;
+}
+/* ---------------------------- Sections styling ---------------------------- */
+.main-sections {
+    @include respond-to-down(md) {
+        // mobile phones
+        //Moves in line with the navbar
+        max-width: 100vw;
+        margin-bottom: 90px;
+        
+        // For some reason there's overflow on .full-page
+        margin-right: 0px;
+        
+    }
+    @include respond-to-up(md) {
+        //Laptops/ Desktops
+        //Moves in line with navbar
+        margin-left: 5.625rem; // 90px
+    }
+    // border: 3px solid gray;
+    
+}
 
 
 .inner {
-    width: 100%;
-    max-width: 82.5rem; /* 1500px; */
-    margin: auto;    
+    margin: 0 auto;
+    padding: 0 1.25rem;
     
-    // background-color: red;
+    @include respond-to-down(md) {
+        padding: 0;
+        // margin-right: 10px;
+    }
+    // background-color: palegreen;    
+    // border: 3px solid gold;
 }
 
+.container {
+    margin: auto;
+    padding: auto;
+}
+
+// Scroll Down button
 .scroll {
     font-size: 50px;
     @include absoluteCenter;
 }
+
+// Glass
+.glass {
+    // BGlass effect
+   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5); //$bg-secondary // h w spread color
+   background: inherit;
+   
+   overflow: hidden;
+   
+   &::before {
+      @include glassBlur;
+    }
+}
+
+/* ------------------------------- Layout ------------------------------- */
 
 .flex {
     display: flex;
@@ -23,3 +85,16 @@
     align-items: center;
     height: 100%;
 }
+/* Ended up giving up discarding grid. Took too much code to compared to flexbox */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+
+

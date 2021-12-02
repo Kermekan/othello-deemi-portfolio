@@ -1,0 +1,176 @@
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/gradients' as *;
+
+
+/* ----------------------- Portfolio Container Styling ---------------------- */
+#portfolio {
+    @include sectionBorder($solid-1);
+    
+    // border: 5px solid red;
+}
+
+// Heading Styling
+.portfolio-heading {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    // background-color: darkcyan;
+    // border: 5px solid purple;
+}
+
+/* ------------------------------ Cards Styling ----------------------------- */
+.portfolio-box {
+    position: relative;
+    // max-height: 18rem;
+    width: 100%;
+    
+    justify-content: center;
+    // height: 100%;
+    
+    padding: 0 auto;
+    margin: 0 auto;
+    // padding: 1.875rem 1.25rem 3.125rem 1.25rem; // 30px 20px 50px 20px
+    // margin: 0.625rem 1.25rem 0 1.25rem; // 10px 20px 0px 20px
+    
+    // top border styling
+    border-radius: 1.875rem / 1.875rem; //top bottom 30px
+    border-top: 10px solid $solid-1;
+    
+    border-bottom: 10px solid $solid-1;
+    
+    // glass effect
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5); //$bg-secondary // h w spread color
+    background: inherit;
+    
+    overflow: hidden;
+    // background-color: red;
+}
+
+.card-container {
+    position: relative;
+    flex-grow: 1;
+    gap: 20px;
+    padding: 10px 15px;
+    margin: 0;
+    // padding: 0.625rem; //10px
+    
+    // Cards Styling
+    .portfolio-card {
+        position: relative;
+        width: 100%;
+        padding: 0 auto;
+        margin: auto;
+        overflow: hidden;
+        z-index: 3;
+        
+        // Card border
+        border-top: 0.5rem solid $solid-3;
+        
+        
+        .portfolio-info {
+            @include fullSize;
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            //hide for hover
+            opacity: 1;
+            visibility: hidden;
+            
+            // Overlay
+            &::before {
+                content: "";
+                @include fullSize;
+                position: absolute;
+                @include gradient(to left, $gradientorange2);
+                opacity: 0.75;
+            }
+            // Text
+            .caption {
+                text-align: center;
+                color: $white;
+                flex-direction: column;
+                position: relative;
+                z-index: 2;
+                
+                h4 {
+                    display: block;
+                    text-transform: uppercase;
+                    font-size: 1.875rem; //30px
+                    margin-top: 10%; //controls spacing of text
+                }
+                
+                p {
+                    margin-top: 3%;
+                    margin-bottom: auto;
+                    font-size: 18px;
+                }
+                
+                @include respond-to-down(md) {
+                    h4 {
+                       margin-top: 5%;
+                       font-size: 1.25rem; // 20px
+                    }
+                    
+                    p {
+                        margin-bottom: 5%; 
+                        font-size: 1rem;
+                        font-weight: 200;                   
+                    }
+                }
+            }
+            
+        }
+        &:hover {
+    
+            img {
+                transform: scale(1.5);
+                @include transitionProperty;
+                
+            }
+            .portfolio-info {
+                opacity: 1;
+                visibility: visible;
+                @include transitionProperty;
+            }
+        }
+    }
+}
+
+
+// Portfolio Button
+.portfolio-btn {
+    
+    position: relative;
+    font-weight: 700;
+    
+    padding: 0.625rem 1.25rem; //h(10px) w(20px)
+    margin: 0;
+    
+    border: 0.1rem solid rgba($white, 0.6);
+    border-radius: 30px;
+    background-color: $solid-1;
+    
+    margin-bottom: 5%;
+    //Icon container
+    span {
+        width: 100%;
+        height: 100%;
+        margin-left: auto;      
+    }
+    
+    // Hover effect
+    &:hover {
+        @include gradient(to left, $gradientred1);
+        color: $white;
+        
+    }
+    @include respond-to-down(sm) {
+        // display: none;
+        padding: 0.313rem 0.625; //h(5px) w(10px)
+        font-size: 1rem;
+    }
+}
+

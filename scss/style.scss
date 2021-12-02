@@ -2,9 +2,9 @@
 
 // Utilities
 @use 'utilities/normalise';
+@use 'utilities/classes';
 @use 'utilities/mixins';
 @use 'utilities/gradients';
-@use 'utilities/classes';
 
 // Components
 @use 'components/animations';
@@ -13,6 +13,7 @@
 //Sections
 @use 'sections/navigation';
 @use 'sections/hero';
+@use 'sections/portfolio';
 
 
 

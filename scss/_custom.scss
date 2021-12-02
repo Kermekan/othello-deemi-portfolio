@@ -13,17 +13,17 @@ $black:    #000;
 
 /* ------------------------------ Theme Colors ------------------------------ */
 // Solid Colors
-$solid-1: #e92605;
-$solid-2: #260c70;
-$solid-3: #d96a18;
-$solid-4: #0bd0df;
-$solid-5: #f955ad;
+$solid-1: rgb(249, 85, 173); //#f953ab
+$solid-2: rgb(186, 39, 81);  //#b92751
+$solid-3: rgb(217, 106, 24); //#d86818
+$solid-4: rgb(11, 208, 223); //#0bd2e0
+$solid-5: rgb(49, 28, 97);   //#321d63
 
 // Background Colors
 $bg-primary: #121212;
 $bg-primary-light: lighten($bg-primary, 10%);
 
-$bg-secondary: #2b2a33;
+$bg-secondary: #333d48;
 $bg-secondary-light: lighten($bg-secondary, 10%);
  
 

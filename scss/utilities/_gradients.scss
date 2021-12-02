@@ -2,11 +2,50 @@
 @use '../utilities/mixins' as *;
 
 
-/* For some reason I can't call variables from custom.scss Even though I could within the mixins partial
-** Also wanted to create loops for these gradients but I spent too much time on it and couldn't get it to work */
+// For some reason I can't call variables from custom.scss Even though I could within the mixins partial So I have to put them here
 
+// Also wanted to create loops for these gradients but I spent too much time on it and couldn't get it to work in the end
 
-/* -------------------------------- Gradients ------------------------------- */
+/* ------------------------------- Glass Blur ------------------------------- */
+@mixin glassBlur {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -20px;
+  
+  box-shadow: inset 0 0 2000px $bg-secondary;
+  -webkit-box-shadow: inset 0 0 2000px $bg-secondary;
+  
+  background: inherit;
+  -webkit-background: inherit;
+  
+  filter: blur(1000px);
+  -webkit-filter: blur(300px); //Filter not working in chrome
+  -ms-filter: blur(300px);
+}
+
+/* ---------------------------- Slantbox Gradient --------------------------- */
+@mixin gradientSlantBox($direction, $color) {
+  content: '';
+  height: 30px;
+  position: absolute;
+  z-index: -1;
+  top: -5%;
+  right: 0;
+  left: 0;
+  @include gradient($direction, $color);
+  transform: skewY(-3deg);
+  /* different browsers */
+  -webkit-transform: skewY(-3deg);/* Chromium browsers */
+  -moz-transform: skewY(-3deg);/* Firefox */
+  -ms-transform: skewY(-3deg);/* IE */
+}
+/* -------------------------------------------------------------------------- */
+/*                                  Gradients                                 */
+/* -------------------------------------------------------------------------- */
 // Color Variables
 $white:   #fff;
 $gray-100: #f8f9fa;
@@ -20,16 +59,16 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black:   #000; 
   
-$solid-1: #e92605;
-$solid-2: #270e74;
-$solid-3: #d96a18;
-$solid-4: #0bd0df;
-$solid-5: #f955ad;
+$solid-1: rgb(249, 85, 173); //#f953ab
+$solid-2: rgb(186, 39, 81);  //#b92751
+$solid-3: rgb(217, 106, 24); //#d86818
+$solid-4: rgb(11, 208, 223); //#0bd2e0
+$solid-5: rgb(49, 28, 97);   //#321d63
 
 $bg-primary: #121212;
 $bg-primary-light: lighten($bg-primary, 10%);
 
-$bg-secondary: #2b2a33;
+$bg-secondary: #333d48;
 $bg-secondary-light: lighten($bg-secondary, 10%);
 
  
@@ -50,18 +89,17 @@ $gradientblack3: $black, $solid-3;
 $gradientblack4: $black, $solid-4; 
 $gradientblack5: $black, $solid-5;
 
-
 // solid-1 base gradients
-$gradientred1: $solid-1, $solid-2; 
-$gradientred2: $solid-1, $solid-3; 
-$gradientred3: $solid-1, $solid-4; 
-$gradientred4: $solid-1, $solid-5;
+$gradientpink1: $solid-1, $solid-2; 
+$gradientpink2: $solid-1, $solid-3; 
+$gradientpink3: $solid-1, $solid-4; 
+$gradientpink4: $solid-1, $solid-5;
 
-// solid-2 base gradients dblue=dark $solid-2
-$gradientdblue1: $solid-2, $solid-1; 
-$gradientdblue2: $solid-2, $solid-3; 
-$gradientdblue3: $solid-2, $solid-4; 
-$gradientdblue4: $solid-2, $solid-5;
+// solid-2 base gradients
+$gradientred1: $solid-2, $solid-1; 
+$gradientred2: $solid-2, $solid-3; 
+$gradientred3: $solid-2, $solid-4; 
+$gradientred4: $solid-2, $solid-5;
 
 // solid-3 base gradients
 $gradientorange1: $solid-3, $solid-1; 
@@ -75,13 +113,15 @@ $gradientlblue2: $solid-4, $solid-2;
 $gradientlblue3: $solid-4, $solid-3; 
 $gradientlblue4: $solid-4, $solid-5;
 
-// solid-5 base gradients
-$gradientpink1: $solid-5, $solid-1; 
-$gradientpink2: $solid-5, $solid-2; 
-$gradientpink3: $solid-5, $solid-3; 
-$gradientpink4: $solid-5, $solid-4;
+// solid-5 base gradients dblue=dark $solid-5
+$gradientdblue1: $solid-5, $solid-1; 
+$gradientdblue2: $solid-5, $solid-2; 
+$gradientdblue3: $solid-5, $solid-3; 
+$gradientdblue4: $solid-5, $solid-4;
 
- /* ===================== Gradient Mixin ===================== */
+ /* -------------------------------------------------------------------------- */
+ /*                              Gradients Mixins                              */
+ /* -------------------------------------------------------------------------- */
 @mixin gradient($direction, $gradient) { 
   background: linear-gradient($direction, $gradient);  
   background: -webkit-linear-gradient($direction, $gradient);
@@ -91,9 +131,7 @@ $gradientpink4: $solid-5, $solid-4;
 
 }
     
-/* -------------------------------------------------------------------------- */
-/*                             Animated Gradients                             */
-/* -------------------------------------------------------------------------- */
+/* --------------------------- Animated Gradients --------------------------- */
 
 // Full Gradient
 @mixin gradientAnimation {
