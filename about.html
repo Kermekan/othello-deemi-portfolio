@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Othello Deemi Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->    
+    <script src="https://kit.fontawesome.com/d1cb6fec79.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://i.icomoon.io/public/21140f81e3/OthelloDeemi/style.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+</head>
+<body>
+    <div class="full-page bg-full img-fluid">
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                             Navigation Bar                              -->
+        <!-- ----------------------------------------------------------------------- -->
+        <nav class="menubar flex">
+            <!-- hamburger -->
+            <div class="hamburger-container flex">
+                <!-- logo -->
+                <div class="hamburger-image">
+                    <!-- <input type="checkbox" class="toggler"> --> <!-- Not Working -->
+                    <a href="index.html">
+                        <img src="/assets/images/logo/logo-1.png" alt="Logo">
+                    </a>
+                </div>
+            </div> 
+            <!-- Menu Items -->
+            <ul class="menubar-nav flex">
+                <!-- About
+                <li id="about=link" class=".about-link menu-item"> 
+                    <a href="about.html" class="menu-link" >
+                        <span class="icon fas fa-user" ></span>
+                        <span class="link-text fw-bold">About</span>
+                    </a>
+                </li> -->
+                
+                <!-- Home --> 
+                <!-- want to only show on tablet/ mobile, but I can't target it for some reason in css -->
+                <li id="home-link" class="menu-item">
+                    <a href="index.html" class="menu-link" >
+                        <span class="icon icon-home" ></span>
+                        <span class="link-text fw-bold">Home</span>
+                    </a>
+                </li>
+                <!-- Portfolio -->
+                <li id="portfolio-link" class="menu-item">
+                    <a href="index.html#portfolio" class="menu-link" >
+                        <span class="icon fas fa-suitcase" ></span>
+                        <span class="link-text fw-bold">Portfolio</span>
+                    </a>
+                </li>
+                <!-- Coding Examples -->
+                <li id="coding-link" class="menu-item">
+                    <a href="coding.html" class="menu-link" >
+                        <span class="icon fas fa-code" ></span>
+                        <span class="link-text fw-bold">Coding Examples</span>
+                    </a>
+                </li>
+                <!-- SCS SCheme -->
+                <li id="scs-link" class="menu-item">
+                    <a href="scs-scheme.html" class="menu-link" >
+                        <span class="icon fas fa-graduation-cap" ></span>
+                        <span class="link-text fw-bold">SCS Scheme</span>
+                    </a>
+                </li>
+                <!-- Contacts -->
+                <li id="contacts-link" class="menu-item">
+                    <a href="index.html#contacts" class="menu-link" >
+                        <span class="icon fas fa-phone-alt" ></span>
+                        <span class="link-text fw-bold">Contacts</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>  
+        
+        <div class="main-sections about-page">
+            <!-- ----------------------------------------------------------------------- -->
+            <!--                                About Me                                 -->
+            <!-- ----------------------------------------------------------------------- -->
+            <section id="about-me" class="about-me-container flex">
+                <div class="inner about-me-inner">
+                    <div class="container">
+                        <!-- Heading -->
+                        <div class="row about-heading text-center mt-2">
+                            <h1 class="display-3 fw-bold text-capitalize">Who am I?</h1>
+                            <div class="heading-line pt-1"></div>
+                        </div>
+                        <!-- About Me -->
+                        <div class="about-box row flex">
+                            <p class="lead my-5">I am a 20 year old software developer based in Cambridge. I used to be an 
+                                audio engineer before deciding to switch careers; and worked with and befriended many
+                                software developers from web designers to game developers. It's because of these experiences that
+                                lead me to pursue software development myself.
+                            </p>
+                        </div>
+                    </div>
+                </div> 
+                
+            </section>
+            
+            <!-- ------------------------- Back to top Button -------------------------- -->
+            <a href="#home" class="shadow btn rounded-circle back-to-top">
+                <span class="fas fa-chevron-up"></span>
+            </a>
+            
+        </div><!-- .main-sections -->
+    </div><!-- .full-page -->
+   
+    <!-- Bootstrap -->
+    <script src="/assets/js/bootstrap.bundle.js"></script>
+</body>
+</html>

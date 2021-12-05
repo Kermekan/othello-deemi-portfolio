@@ -1,7 +1,7 @@
 @use '../custom' as *;
 
 
-/* If I want to create a mixin that uses any color I have to include my color variables in this file
+/* If I want to create a mixin that uses any gradient color I have to include my color variables in this file
 ** but I don't want to do that since I have a lot of gradient colors and don't want to fill this file with
 ** just colors so all color related mixins go in gradients partial */
 
@@ -30,25 +30,116 @@
     transform: scale(1.2);
 }
 
-
 // Transition Speed
 @mixin transitionSpeed {
     transition: all 200ms ease ;
 }
 
+// Section Border
+@mixin sectionBottomMargin {
+    margin-bottom: 3.125rem; // 50px
+}
 
-// Section Container
 @mixin sectionBorder($color) {
     background-color: $bg-primary-light;
     position: relative;
-    
     flex-direction: column;
-    // justify-content: center;
-    padding-bottom: 3.125rem; // 50px
+    justify-content: center;
+    padding-bottom: 5.625rem; // 90px
+    padding-top: 1.25rem; // 20px
+    
+    // Top border darker than bottom border
     border-top: 10px inset $color;
+    border-bottom: 10px inset $color;
     width: 100%;
+    height: fit-content;
 } 
 
+// y-axis borders
+@mixin borderYStyling($color) {
+    border-top: 10px inset $color !important;
+    border-bottom: 10px inset $color !important;
+}
+
+// x-axis border
+@mixin borderXStyling($color) {
+    border-left: 10px inset $color;
+    border-right: 10px inset $color;
+}
+
+
+// Headings ===============
+@mixin headingStyling {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+
+// Heading Line
+@mixin headingLine($color) {
+    
+    &::before {
+        content: "";
+        width: 10rem; //160px
+        height: 0.125rem;
+        display: block;
+        margin: 0 auto;
+        background-color: $color;
+   }
+   
+   &::after {
+        content: "";
+        width: 2.5rem; //40px
+        height: 0.2rem;
+        padding-top: 0.5rem;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        background-color: $color;
+        border-radius: 0 0 1rem 1rem; // top-left/ top-right/ bottom-right/ bottom-left
+   }
+}
+
+// Card Container
+ @mixin Card($color) {
+    position: relative;
+    width: 100%;    
+    // padding: 0 auto;
+    // margin: 0 auto;
+    
+    // top border styling
+    border-radius: 1.875rem / 1.875rem; //top bottom 30px
+    border-top: 5px solid $color;
+    border-bottom: 5px solid $color;
+    
+    // glass effect
+    @include boxShadow;
+    background: inherit;
+    
+    overflow: hidden;
+    // background-color: red;
+ }
+ @mixin boxShadow {
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5); // h w spread color
+ }
+ 
+ @mixin button($color) {
+    position: relative;
+    font-weight: 700;
+    font-size: 18px;
+    color: $white;
+    
+    // Button size
+    padding: 0.938rem 1.875rem; //h(15px) w(30px)
+    margin: 0;
+    
+    border: 0.1rem solid rgba($white, 0.6);
+    border-radius: 30px;
+    background-color: $color;
+    @content;
+     
+ }
 
 /* -------------------------------------------------------------------------- */
 /*                                 Breakpoints                                */
@@ -87,8 +178,13 @@ $breakpoints: (
     
 }
 
+// Targets anything within a range
 
+/* don't know how to declare variable multiple times to create mixin with it */
 
+// @media only screen and (min-width: 360px) and (max-width: 768px) {
+// 	// do something in this width range.
+// }
 
 
 

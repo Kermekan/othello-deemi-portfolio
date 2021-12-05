@@ -34,39 +34,39 @@
                     </a>
                 </div>
             </div> 
-            
             <!-- Menu Items -->
             <ul class="menubar-nav flex">
                 <!-- About -->
-                <li class="menu-item about">
-                    <a href="#about" class="menu-link" >
+                <li id="about=link" class="menu-item">
+                    <a href="about.html" class="menu-link" >
                         <span class="icon fas fa-user" ></span>
                         <span class="link-text fw-bold">About</span>
                     </a>
                 </li>
+                
                 <!-- Portfolio -->
-                <li class="menu-item portfolio">
+                <li id="portfolio-link" class="menu-item">
                     <a href="#portfolio" class="menu-link" >
                         <span class="icon fas fa-suitcase" ></span>
                         <span class="link-text fw-bold">Portfolio</span>
                     </a>
                 </li>
                 <!-- Coding Examples -->
-                <li class="menu-item coding">
-                    <a href="#coding" class="menu-link" >
+                <li id="coding-link" class="menu-item">
+                    <a href="coding.html" class="menu-link" >
                         <span class="icon fas fa-code" ></span>
                         <span class="link-text fw-bold">Coding Examples</span>
                     </a>
                 </li>
                 <!-- SCS SCheme -->
-                <li class="menu-item scs-scheme">
-                    <a href="#scs-scheme" class="menu-link" >
+                <li id="scs-scheme-link" class="menu-item">
+                    <a href="scs-scheme.html" class="menu-link" >
                         <span class="icon fas fa-graduation-cap" ></span>
                         <span class="link-text fw-bold">SCS Scheme</span>
                     </a>
                 </li>
                 <!-- Contacts -->
-                <li class="menu-item contacts">
+                <li id="contacts-link" class="menu-item">
                     <a href="#contacts" class="menu-link" >
                         <span class="icon fas fa-phone-alt" ></span>
                         <span class="link-text fw-bold">Contacts</span>
@@ -74,13 +74,11 @@
                 </li>
             </ul>
         </nav>  
-        
-        
         <div class="main-sections">
             <!-- ----------------------------------------------------------------------- -->
             <!--                              Hero Section                               -->
             <!-- ----------------------------------------------------------------------- -->
-            <header id="home" class="hero"><!-- showcase -->
+            <header id="home" class="hero">
                 <div class="hero-inner text-center flex">
                     <h1 class="display-2 heading">
                         <span class="display-2--description">My Name is</span>
@@ -93,6 +91,11 @@
                             <span class="fas fa-chevron-down scroll"></span>
                         </a>
                     </div> 
+                    
+                    <!-- Back to top Button -->
+                    <a href="#home" class="shadow btn rounded-circle back-to-top">
+                        <span class="fas fa-chevron-up"></span>
+                    </a>
                 </div>
             </header>
             <!-- ----------------------------------------------------------------------- -->
@@ -105,10 +108,10 @@
                         <div class="row portfolio-heading text-center mt-5">
                             <h1 class="display-3 fw-bold text-capitalize">Portfolio</h1>
                             <div class="heading-line pt-1"></div>
-                             <p class="lead pt-3"></p>
+                             <p class="lead pt-3">A Showing of my work</p>
                         </div>
                         <!-- --------------------------- Portfolio Items --------------------------- -->
-                        <div class="portfolio-box row flex">
+                        <div class="portfolio-box row flex py-3">
                             <!-- Project 1 -->
                             <div class="card-container col-lg-4 col-md-6">
                                 <div class="portfolio-card">
@@ -223,7 +226,85 @@
                     </div><!-- .container -->       
                 </div><!-- .portfolio-inner -->
             </section>
-           
+            <!-- ----------------------------------------------------------------------- -->
+            <!--                                Contacts                                 -->
+            <!-- ----------------------------------------------------------------------- -->
+            <section id="contacts" class="contacts">
+                <div class="inner contacts-inner">
+                    <div class="container">
+                        <!-- Heading -->
+                        <div class="row contacts-heading text-center mt-5">
+                            <h1 class="display-3 fw-bold text-capitalize">Contact Me</h1>
+                            <div class="heading-line pt-1"></div>
+                        </div>
+                        <!-- ---------------------------- Contact Info Card ----------------------------- -->
+                        <div class="row contacts-container flex">
+                            <!-- left card -->
+                            <div class="col-12 col-lg-6 left-card flex">
+                                <div class="contact-info w-100">
+                                    <h4 class="display-4 fw-bold">Get In Touch</h4>
+                                    <p class="lh-lg mt-3">
+                                        You can use the following contact form for any questions or opportunities. 
+                                        I'll respond to you within the next 2-3 days.
+                                    </p>
+                                    <p class="lh-lg mt-3 phone-number">
+                                        You can also call me on: &nbsp; <span><a>07954852929</a></span>
+                                    </p>
+                                    <p class="lh-lg mt-3">
+                                         You can also follow me on social media to see what I get up to every day
+                                    </p>
+                                    
+                                    <!-- Social Media -->
+                                    <p class="lead mt-4 text-capitalize">Hit me up on social media</p>
+                                    <div class="contact-box flex">
+                                        <!-- GitHub -->
+                                        <div class="contact-box__icon">
+                                            <a href="https://github.com/Kermekan" target="_blank">
+                                                <span class="fab fa-github"></span>
+                                            </a>
+                                        </div>
+                                        <!-- LinkedIn -->
+                                        <div class="contact-box__icon">
+                                            <a href="https://www.linkedin.com/in/othello-monti-deemi/" target="_blank">
+                                                <span class="fab fa-linkedin"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- .left-card -->
+                            <!-- Right Card -->
+                            <div class="col-12 col-lg-6 right-card flex">
+                                <!-- Form -->
+                                <div class="form mb-2">
+                                    <h4 class="display-3--title mb-3">Contact Me</h4>
+                                    <form action="#" class="row">
+                                        <!-- F.Name -->
+                                        <div class="col-lg-6 col-md-6 mb-2">
+                                            <input type="text" placeholder="First Name" id="inputFirstName" class="form-control shadow form-control-lg">
+                                        </div>
+                                        <!-- L.Name -->
+                                        <div class="col-lg-6 col-md-6 mb-2">
+                                            <input type="text" placeholder="Last Name" id="inputLastName" class="form-control shadow form-control-lg">
+                                        </div>
+                                        <!-- Email -->
+                                        <div class="col-lg-12 mb-2">
+                                            <input type="email" placeholder="Email Address" id="inputEmail" class="form-control shadow form-control-lg">
+                                        </div>
+                                        <!-- Message -->
+                                        <div class="col-lg-12 mb-1">
+                                            <textarea name="message" placeholder="Message" id="message" rows="8" class="form-control shadow form-control-lg"></textarea>
+                                        </div>
+                                        <!-- Button -->
+                                        <a href="#" class="btn contact-btn text-center mt-2">
+                                            <span>Contact Me</span>
+                                        </a>
+                                    </form>
+                                </div>
+                            </div><!-- .right-card -->
+                        </div><!-- .contacts-container -->
+                    </div>
+                </div><!-- .inner -->
+            </section> <!-- #contacts -->            
         </div><!-- .main-sections -->
     </div><!-- .full-page -->
    

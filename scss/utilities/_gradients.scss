@@ -6,6 +6,8 @@
 
 // Also wanted to create loops for these gradients but I spent too much time on it and couldn't get it to work in the end
 
+// Ended up not using gradients because they would lag in chrome, but other browsers were fine
+
 /* ------------------------------- Glass Blur ------------------------------- */
 @mixin glassBlur {
   content: "";
@@ -26,6 +28,8 @@
   -webkit-filter: blur(300px); //Filter not working in chrome
   -ms-filter: blur(300px);
 }
+
+
 
 /* ---------------------------- Slantbox Gradient --------------------------- */
 @mixin gradientSlantBox($direction, $color) {
@@ -89,35 +93,20 @@ $gradientblack3: $black, $solid-3;
 $gradientblack4: $black, $solid-4; 
 $gradientblack5: $black, $solid-5;
 
-// solid-1 base gradients
-$gradientpink1: $solid-1, $solid-2; 
-$gradientpink2: $solid-1, $solid-3; 
-$gradientpink3: $solid-1, $solid-4; 
-$gradientpink4: $solid-1, $solid-5;
+// Solid Color gradients lettters = colors | p=pink r=red o=orange  c=cyan b=blue
+$gradientP_R: $solid-1, $solid-2;
+$gradientP_O: $solid-1, $solid-3;
+$gradientP_C: $solid-1, $solid-4;
+$gradientP_B: $solid-1, $solid-5;
 
-// solid-2 base gradients
-$gradientred1: $solid-2, $solid-1; 
-$gradientred2: $solid-2, $solid-3; 
-$gradientred3: $solid-2, $solid-4; 
-$gradientred4: $solid-2, $solid-5;
+$gradientR_O: $solid-2, $solid-3;
+$gradientR_C: $solid-2, $solid-4;
+$gradientR_B: $solid-2, $solid-5;
 
-// solid-3 base gradients
-$gradientorange1: $solid-3, $solid-1; 
-$gradientorange2: $solid-3, $solid-2; 
-$gradientorange3: $solid-3, $solid-4; 
-$gradientorange4: $solid-3, $solid-5;
+$gradientO_C: $solid-3, $solid-4; 
+$gradientO_B: $solid-3, $solid-5;
 
-// solid-4 base gradients lblue=$solid-4
-$gradientlblue1: $solid-4, $solid-1; 
-$gradientlblue2: $solid-4, $solid-2; 
-$gradientlblue3: $solid-4, $solid-3; 
-$gradientlblue4: $solid-4, $solid-5;
-
-// solid-5 base gradients dblue=dark $solid-5
-$gradientdblue1: $solid-5, $solid-1; 
-$gradientdblue2: $solid-5, $solid-2; 
-$gradientdblue3: $solid-5, $solid-3; 
-$gradientdblue4: $solid-5, $solid-4;
+$gradientC_B: $solid-4, $solid-5;
 
  /* -------------------------------------------------------------------------- */
  /*                              Gradients Mixins                              */

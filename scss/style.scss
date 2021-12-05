@@ -2,7 +2,7 @@
 
 // Utilities
 @use 'utilities/normalise';
-@use 'utilities/classes';
+@use 'utilities/global';
 @use 'utilities/mixins';
 @use 'utilities/gradients';
 
@@ -14,6 +14,9 @@
 @use 'sections/navigation';
 @use 'sections/hero';
 @use 'sections/portfolio';
+@use 'sections/contacts';
+@use 'sections/about';
+@use 'sections/scs-scheme';
 
 
 

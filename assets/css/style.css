@@ -11120,12 +11120,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-/* If I want to create a mixin that uses any color I have to include my color variables in this file
+/* If I want to create a mixin that uses any gradient color I have to include my color variables in this file
 ** but I don't want to do that since I have a lot of gradient colors and don't want to fill this file with
 ** just colors so all color related mixins go in gradients partial */
 /* -------------------------------------------------------------------------- */
 /*                                 Breakpoints                                */
 /* -------------------------------------------------------------------------- */
+/* don't know how to declare variable multiple times to create mixin with it */
 /* ------------------------------- Glass Blur ------------------------------- */
 /* ---------------------------- Slantbox Gradient --------------------------- */
 /* -------------------------------------------------------------------------- */
@@ -11220,22 +11221,29 @@ img {
 }
 
 /* ---------------------------- Sections styling ---------------------------- */
+.main-sections {
+  height: 100%;
+}
 @media (max-width: 769px) {
   .main-sections {
+    height: fit-content;
     max-width: 100vw;
-    margin-bottom: 90px;
+    margin-bottom: 5.625rem;
     margin-right: 0px;
   }
 }
 @media (min-width: 769px) {
   .main-sections {
     margin-left: 5.625rem;
+    height: 100%;
   }
 }
 
 .inner {
   margin: 0 auto;
   padding: 0 1.25rem;
+  position: relative;
+  height: 100%;
 }
 @media (max-width: 769px) {
   .inner {
@@ -11276,6 +11284,24 @@ img {
   filter: blur(1000px);
   -webkit-filter: blur(300px);
   -ms-filter: blur(300px);
+}
+
+.back-to-top {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  right: 1.875em;
+  bottom: 500px;
+  z-index: 1;
+  background-color: #311c61;
+}
+.back-to-top span {
+  color: #0bd0df;
+  font-size: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* ------------------------------- Layout ------------------------------- */
@@ -11352,41 +11378,27 @@ img {
   font-family: "Poppins", sans-serif;
 }
 .display-3--title {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-transform: capitalize;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   display: inline-block;
-  background-image: linear-gradient(to right, #ba2751, #f955ad);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 @media (min-width: 993px) {
   .display-3--title {
-    font-size: 1.8rem;
+    font-size: 2.375rem;
   }
 }
 
-.heading-line::before {
-  content: "";
-  width: 10rem;
-  height: 0.125rem;
-  display: block;
-  margin: 0 auto;
-  background-color: #f955ad;
+.lead {
+  font-size: 1.563rem;
+  font-weight: 500;
 }
-
-.heading-line::after {
-  content: "";
-  width: 2rem;
-  height: 0.2rem;
-  padding-top: 0.5rem;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-  background-color: #f955ad;
-  border-radius: 0 0 1rem 1rem;
+@media (max-width: 769px) {
+  .lead {
+    font-size: 1.25rem;
+    padding-top: 0.625rem;
+  }
 }
 
 /* --------------------------- Menu Bar container --------------------------- */
@@ -11417,11 +11429,12 @@ img {
     margin: 0 auto;
   }
   .menubar:hover .menubar-nav {
+    display: hidden;
     margin-left: 0.625rem;
     transition: all 250ms ease;
   }
   .menubar:hover .menubar-nav .menu-item {
-    color: #f955ad;
+    color: #0bd0df;
   }
   .menubar:hover .link-text {
     display: inline;
@@ -11442,10 +11455,11 @@ img {
     justify-content: center;
     align-items: center;
     padding: 0.313rem 0.438rem;
+    display: hidden !important;
   }
   .menubar .menubar-nav .menu-item:hover {
     border-radius: 1.063rem 1.063rem 0 0;
-    border-top: 5px solid #f955ad;
+    border-top: 5px solid #0bd0df;
   }
 }
 
@@ -11481,18 +11495,18 @@ img {
   background-color: #333d48;
 }
 .menubar-nav .menu-item:hover .icon {
-  color: #f955ad;
+  color: #0bd0df;
 }
 @media (min-width: 769px) {
   .menubar-nav .menu-item:hover {
     border-radius: 0 1.063rem 1.063rem 0;
-    border-right: 5px solid #f955ad;
+    border-right: 5px solid #0bd0df;
   }
 }
 @media (max-width: 769px) {
   .menubar-nav .menu-item:hover {
     border-radius: 1.063rem 1.063rem 0 0;
-    border-top: 5px solid #f955ad;
+    border-top: 5px solid #0bd0df;
   }
 }
 @media (max-width: 769px) {
@@ -11526,13 +11540,15 @@ img {
 
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
-  position: relative;
+  position: static;
   width: 100%;
   height: 100vh !important;
+  overflow-y: hidden;
 }
 .hero .hero-inner {
   flex-direction: column;
   padding: 0;
+  z-index: 99;
 }
 
 .heading {
@@ -11556,15 +11572,47 @@ img {
 .scroll-down a span:hover {
   animation: scroll 1s ease-in-out alternate infinite;
 }
+@media (max-width: 769px) {
+  .scroll-down {
+    display: none;
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  right: 1.875em;
+  bottom: 2.5rem;
+  z-index: 1;
+  background-color: #311c61;
+}
+.back-to-top span {
+  color: #0bd0df;
+  font-size: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /* ----------------------- Portfolio Container Styling ---------------------- */
 #portfolio {
+  margin-bottom: 3.125rem;
+  height: fit-content;
+}
+
+.portfolio-inner {
   background-color: #2c2c2c;
   position: relative;
   flex-direction: column;
-  padding-bottom: 3.125rem;
+  justify-content: center;
+  padding-bottom: 5.625rem;
+  padding-top: 1.25rem;
   border-top: 10px inset #f955ad;
+  border-bottom: 10px inset #f955ad;
   width: 100%;
+  height: fit-content;
 }
 
 .portfolio-heading {
@@ -11573,20 +11621,39 @@ img {
   margin: 0 auto;
   margin-bottom: 5%;
 }
+.portfolio-heading .heading-line::before {
+  content: "";
+  width: 10rem;
+  height: 0.125rem;
+  display: block;
+  margin: 0 auto;
+  background-color: #f955ad;
+}
+.portfolio-heading .heading-line::after {
+  content: "";
+  width: 2.5rem;
+  height: 0.2rem;
+  padding-top: 0.5rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  background-color: #f955ad;
+  border-radius: 0 0 1rem 1rem;
+}
 
 /* ------------------------------ Cards Styling ----------------------------- */
 .portfolio-box {
   position: relative;
   width: 100%;
-  justify-content: center;
-  padding: 0 auto;
-  margin: 0 auto;
   border-radius: 1.875rem/1.875rem;
-  border-top: 10px solid #f955ad;
-  border-bottom: 10px solid #f955ad;
+  border-top: 5px solid #f955ad;
+  border-bottom: 5px solid #f955ad;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
   background: inherit;
   overflow: hidden;
+  justify-content: center;
+  padding: 2.5rem auto;
+  margin: 0 auto;
 }
 
 .card-container {
@@ -11594,7 +11661,7 @@ img {
   flex-grow: 1;
   gap: 20px;
   padding: 10px 15px;
-  margin: 0;
+  margin: 0 auto;
 }
 .card-container .portfolio-card {
   position: relative;
@@ -11613,16 +11680,17 @@ img {
   left: 0;
   opacity: 1;
   visibility: hidden;
+  /* ------------------------------ Text Styling ------------------------------ */
 }
 .card-container .portfolio-card .portfolio-info::before {
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
-  background: linear-gradient(to left, #d96a18, #ba2751);
-  background: -webkit-linear-gradient(to left, #d96a18, #ba2751);
-  background: -moz-linear-gradient(to left, #d96a18, #ba2751);
-  background: -o-linear-gradient(to left, #d96a18, #ba2751);
+  background: linear-gradient(to right, #ba2751, #d96a18);
+  background: -webkit-linear-gradient(to right, #ba2751, #d96a18);
+  background: -moz-linear-gradient(to right, #ba2751, #d96a18);
+  background: -o-linear-gradient(to right, #ba2751, #d96a18);
   opacity: 0.75;
 }
 .card-container .portfolio-card .portfolio-info .caption {
@@ -11631,26 +11699,48 @@ img {
   flex-direction: column;
   position: relative;
   z-index: 2;
+  padding: 0.313rem;
 }
 .card-container .portfolio-card .portfolio-info .caption h4 {
   display: block;
   text-transform: uppercase;
-  font-size: 1.875rem;
+  font-size: 25px;
   margin-top: 10%;
 }
 .card-container .portfolio-card .portfolio-info .caption p {
-  margin-top: 3%;
-  margin-bottom: auto;
-  font-size: 18px;
+  margin: 4% 2%;
+  font-size: 1.125rem;
 }
 @media (max-width: 769px) {
   .card-container .portfolio-card .portfolio-info .caption h4 {
-    margin-top: 5%;
-    font-size: 1.25rem;
+    margin-top: 3%;
+    font-size: 1.875rem;
   }
   .card-container .portfolio-card .portfolio-info .caption p {
-    margin-bottom: 5%;
-    font-size: 1rem;
+    margin-bottom: 12%;
+    font-size: 20px;
+    font-weight: 200;
+  }
+}
+@media (max-width: 577px) {
+  .card-container .portfolio-card .portfolio-info .caption h4 {
+    margin-top: 3%;
+    font-size: 28px;
+  }
+  .card-container .portfolio-card .portfolio-info .caption p {
+    margin: 10% 0;
+    font-size: 1.125rem;
+    font-weight: 200;
+  }
+}
+@media (max-width: 361px) {
+  .card-container .portfolio-card .portfolio-info .caption h4 {
+    margin-top: 3%;
+    font-size: 28px;
+  }
+  .card-container .portfolio-card .portfolio-info .caption p {
+    margin: 10% 0;
+    font-size: 1.125rem;
     font-weight: 200;
   }
 }
@@ -11669,30 +11759,366 @@ img {
 .portfolio-btn {
   position: relative;
   font-weight: 700;
-  padding: 0.625rem 1.25rem;
+  font-size: 18px;
+  color: #fff;
+  padding: 0.938rem 1.875rem;
   margin: 0;
   border: 0.1rem solid rgba(255, 255, 255, 0.6);
   border-radius: 30px;
   background-color: #f955ad;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
+  padding: 5px 1.25rem;
 }
 .portfolio-btn span {
   width: 100%;
   height: 100%;
   margin-left: auto;
+  color: #fff;
 }
 .portfolio-btn:hover {
-  background: linear-gradient(to left, #ba2751, #f955ad);
-  background: -webkit-linear-gradient(to left, #ba2751, #f955ad);
-  background: -moz-linear-gradient(to left, #ba2751, #f955ad);
-  background: -o-linear-gradient(to left, #ba2751, #f955ad);
-  color: #fff;
+  background: linear-gradient(to left, #f955ad, #ba2751);
+  background: -webkit-linear-gradient(to left, #f955ad, #ba2751);
+  background: -moz-linear-gradient(to left, #f955ad, #ba2751);
+  background: -o-linear-gradient(to left, #f955ad, #ba2751);
+  transform: scale(1.1);
 }
 @media (max-width: 577px) {
   .portfolio-btn {
-    padding: 0.313rem 0.625;
+    padding: 5px 12px;
     font-size: 1rem;
   }
+}
+
+#contacts {
+  background-color: #2c2c2c;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 5.625rem;
+  padding-top: 1.25rem;
+  border-top: 10px inset #ba2751;
+  border-bottom: 10px inset #ba2751;
+  width: 100%;
+  height: fit-content;
+}
+
+.contacts-heading {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+.contacts-heading .heading-line::before {
+  content: "";
+  width: 10rem;
+  height: 0.125rem;
+  display: block;
+  margin: 0 auto;
+  background-color: #ba2751;
+}
+.contacts-heading .heading-line::after {
+  content: "";
+  width: 2.5rem;
+  height: 0.2rem;
+  padding-top: 0.5rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  background-color: #ba2751;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.contacts-container {
+  position: relative;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
+  /* ---------------------------- Left Card Styling --------------------------- */
+}
+@media (max-width: 769px) {
+  .contacts-container {
+    margin: 0 auto;
+  }
+}
+.contacts-container .left-card {
+  position: relative;
+  height: auto;
+  padding: 1.875rem 2.5rem;
+  align-items: start;
+  background: linear-gradient(to right, #ba2751, #d96a18);
+  background: -webkit-linear-gradient(to right, #ba2751, #d96a18);
+  background: -moz-linear-gradient(to right, #ba2751, #d96a18);
+  background: -o-linear-gradient(to right, #ba2751, #d96a18);
+  border-top: 10px inset #ba2751 !important;
+  border-bottom: 10px inset #ba2751 !important;
+}
+@media (max-width: 769px) {
+  .contacts-container .left-card {
+    flex-direction: column;
+    padding: 10px 20px;
+    height: 100%;
+  }
+}
+
+.phone-number span {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #0bd0df;
+}
+
+.contact-box {
+  position: relative;
+  width: fit-content;
+  padding: 0;
+}
+.contact-box__icon {
+  position: relative;
+  width: fit-content;
+  font-size: 2.5rem;
+  padding: 10px 0;
+}
+.contact-box__icon a {
+  padding-right: 1.25rem;
+}
+.contact-box__icon a span:hover {
+  color: #0bd0df;
+  transform: scale(1.3) !important;
+}
+
+/* --------------------------- Right Card Styling --------------------------- */
+.right-card {
+  position: relative;
+  height: auto;
+  padding: 1.875rem 2.5rem 0.625rem 2.5rem;
+  align-items: center;
+  background-color: #e9ecef;
+  border-top: 10px inset #121212 !important;
+  border-bottom: 10px inset #121212 !important;
+}
+@media (max-width: 769px) {
+  .right-card {
+    flex-direction: column;
+    padding: 10px 20px;
+    height: 100%;
+  }
+}
+
+.form h4 {
+  background: linear-gradient(to left, #ba2751, #d96a18);
+  background: -webkit-linear-gradient(to left, #ba2751, #d96a18);
+  background: -moz-linear-gradient(to left, #ba2751, #d96a18);
+  background: -o-linear-gradient(to left, #ba2751, #d96a18);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-btn {
+  position: relative;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  padding: 0.938rem 1.875rem;
+  margin: 0;
+  border: 0.1rem solid rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  background-color: #ba2751;
+}
+.contact-btn:hover {
+  background: linear-gradient(to right, #ba2751, #d96a18);
+  background: -webkit-linear-gradient(to right, #ba2751, #d96a18);
+  background: -moz-linear-gradient(to right, #ba2751, #d96a18);
+  background: -o-linear-gradient(to right, #ba2751, #d96a18);
+  color: white;
+  transform: scale(1.03);
+}
+@media (max-width: 769px) {
+  .contact-btn:hover {
+    transform: scale(1.01);
+  }
+}
+
+.about-page {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.about-me-container {
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+@media (max-width: 769px) {
+  .about-me-container {
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.about-me-inner {
+  background-color: #2c2c2c;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 5.625rem;
+  padding-top: 1.25rem;
+  border-top: 10px inset #0bd0df;
+  border-bottom: 10px inset #0bd0df;
+  width: 100%;
+  height: fit-content;
+  width: 80%;
+}
+@media (min-width: 769px) {
+  .about-me-inner {
+    border-left: 10px inset #0bd0df;
+    border-right: 10px inset #0bd0df;
+  }
+}
+@media (max-width: 769px) {
+  .about-me-inner {
+    width: 100%;
+    padding: 20px 10px;
+  }
+}
+
+.about-heading {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+.about-heading .heading-line::before {
+  content: "";
+  width: 10rem;
+  height: 0.125rem;
+  display: block;
+  margin: 0 auto;
+  background-color: #0bd0df;
+}
+.about-heading .heading-line::after {
+  content: "";
+  width: 2.5rem;
+  height: 0.2rem;
+  padding-top: 0.5rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  background-color: #0bd0df;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.about-box {
+  position: relative;
+  width: 100%;
+  border-radius: 1.875rem/1.875rem;
+  border-top: 5px solid #0bd0df;
+  border-bottom: 5px solid #0bd0df;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
+  background: inherit;
+  overflow: hidden;
+  padding: 2.5rem auto;
+  margin: 0 auto;
+}
+@media (max-width: 769px) {
+  .about-box .lead {
+    font-size: 15px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+  }
+}
+
+/* ----------------------- Portfolio Container Styling ---------------------- */
+#scs {
+  height: 100%;
+  border: 3px solid blue;
+}
+@media (max-width: 769px) {
+  #scs {
+    max-width: 100vw;
+    height: 100vh;
+    margin-bottom: 5.625rem;
+  }
+}
+@media (min-width: 769px) {
+  #scs {
+    height: 100%;
+  }
+}
+@media (max-width: 577px) {
+  #scs {
+    max-width: 100vw;
+    margin-bottom: 5.625rem;
+    height: fit-content;
+  }
+}
+
+.scs-inner {
+  background-color: #2c2c2c;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 5.625rem;
+  padding-top: 1.25rem;
+  border-top: 10px inset #d96a18;
+  border-bottom: 10px inset #d96a18;
+  width: 100%;
+  height: fit-content;
+  height: fit-content;
+  width: fit-content;
+  border-right: 10px inset #d96a18;
+  border-left: 10px inset #d96a18;
+}
+
+/* ------------------------------ Scion Scheme ------------------------------ */
+.scs-box {
+  justify-content: start;
+}
+
+.scs-heading {
+  display: inline-block;
+  width: fit-content;
+  padding: 0;
+  margin-bottom: 1.25rem;
+  border-bottom: 5px solid #d96a18;
+}
+@media (max-width: 769px) {
+  .scs-heading {
+    text-align: center;
+  }
+}
+
+/* -------------------------------- Treehouse ------------------------------- */
+.treehouse {
+  justify-content: start;
+  width: fit-content;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+.treehouse .scs-heading {
+  margin-left: 1%;
+}
+.treehouse .lead {
+  color: #5fcf80;
+}
+.treehouse .score {
+  color: #5fcf80;
+  font-size: 1.125rem;
+}
+.treehouse .score--profile a {
+  color: #5fcf80;
+}
+.treehouse .score--profile a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */
