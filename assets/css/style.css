@@ -12037,7 +12037,6 @@ img {
 /* ----------------------- Portfolio Container Styling ---------------------- */
 #scs {
   height: 100%;
-  border: 3px solid blue;
 }
 @media (max-width: 769px) {
   #scs {
