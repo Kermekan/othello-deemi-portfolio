@@ -11470,7 +11470,7 @@ img {
   }
 }
 @media (max-width: 769px) and (orientation: landscape) {
-  .menubar .menubar-nav {
+  .menubar .menubar-nav .menubar-nav {
     flex-direction: column;
   }
   .menubar .menubar-nav .menu-item:hover {
@@ -11572,6 +11572,7 @@ img {
   }
 }
 
+/* Doesn't work */
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
   position: static;
