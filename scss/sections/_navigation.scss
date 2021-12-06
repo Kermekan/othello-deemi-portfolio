@@ -84,10 +84,7 @@
          // Change Menu for landscape orientation 
          // Orientation Styling doesn't work on phones with height higher than 768px 
          @media (orientation: landscape) {
-            .menubar-nav {
-               flex-direction: column;
-               
-            }
+            flex-direction: column;
             
             .menu-item:hover {
                border-radius: 0 1.063rem 1.063rem 0; //top left/ top right/ bottom right/ bottom left
@@ -163,6 +160,7 @@
          
          // Landscape Orientation
          @media (orientation: landscape) {
+            flex-direction: column;
             margin: 0;
             width: 110%;
          }
@@ -206,19 +204,6 @@
    }
 }
 
-/* Doesn't work */
-// // Change Menu for landscape orientation
-// @include respond-to-down(md) {
-   
-//    @media (orientation: landscape) {
-//       .menu-bar {
-//          width: 5.625rem; //90px
-//          height: 100vh;
-//          flex-direction: column;
-         
-//       }
-//    }
-// }
 
 
 
