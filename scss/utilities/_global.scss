@@ -28,6 +28,12 @@
         max-width: 100vw;
         margin-bottom: 5.625rem;
         margin-right: 0px; 
+        
+        // Landscape Phone
+        @media (orientation: landscape) {
+            margin-left: 5.625rem; // 90px
+            height: 100%;
+        }
     }
     
     @include respond-to-up(md) {
@@ -48,7 +54,6 @@
     height: 100%;
     @include respond-to-down(md) {
         padding: 0;
-        // margin-right: 10px;
     }
     // background-color: palegreen;    
     // border: 3px solid gold;
@@ -59,7 +64,7 @@
     padding: auto;
 }
 
-// Scroll Down button
+// Scroll Down button               // Can't Hide so it doesn't show in the header
 .scroll {
     font-size: 50px;
     @include absoluteCenter;
