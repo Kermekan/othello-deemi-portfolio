@@ -11491,7 +11491,7 @@ img {
   justify-self: start;
 }
 .menubar-nav .menu-item:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
   background-color: #333d48;
 }
 .menubar-nav .menu-item:hover .icon {
@@ -11670,7 +11670,7 @@ img {
   margin: auto;
   overflow: hidden;
   z-index: 3;
-  border-top: 0.5rem solid #d96a18;
+  border-top: 0.5rem solid #f955ad;
 }
 .card-container .portfolio-card .portfolio-info {
   width: 100%;
@@ -11700,6 +11700,7 @@ img {
   position: relative;
   z-index: 2;
   padding: 0.313rem;
+  /* ------------------------------- Breakpoints ------------------------------ */
 }
 .card-container .portfolio-card .portfolio-info .caption h4 {
   display: block;
@@ -11939,6 +11940,19 @@ img {
   }
 }
 
+@media (min-width: 769px) {
+  #home-link {
+    display: none;
+  }
+}
+
+@media (max-width: 769px) {
+  #about-link {
+    display: none;
+  }
+}
+
+/* --------------------------- About Page Styling --------------------------- */
 .about-page {
   height: 100vh;
   max-height: 100vh;
@@ -12034,6 +12048,18 @@ img {
   }
 }
 
+@media (min-width: 769px) {
+  #home-link {
+    display: none;
+  }
+}
+
+@media (max-width: 769px) {
+  #scs-scheme-link {
+    display: none;
+  }
+}
+
 /* ----------------------- Portfolio Container Styling ---------------------- */
 #scs {
   height: 100%;
@@ -12074,10 +12100,23 @@ img {
   border-right: 10px inset #d96a18;
   border-left: 10px inset #d96a18;
 }
+@media (max-width: 577px) {
+  .scs-inner {
+    border-right: none;
+    border-left: none;
+    padding-left: 10px;
+  }
+}
 
-/* ------------------------------ Scion Scheme ------------------------------ */
+/* ------------------------------ scs-box ------------------------------ */
 .scs-box {
   justify-content: start;
+}
+@media (max-width: 577px) {
+  .scs-box {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 .scs-heading {
@@ -12102,6 +12141,11 @@ img {
   width: fit-content;
   margin: 0 auto;
   margin-bottom: 5%;
+}
+@media (max-width: 577px) {
+  .treehouse {
+    justify-content: center;
+  }
 }
 .treehouse .scs-heading {
   margin-left: 1%;

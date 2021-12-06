@@ -2,14 +2,22 @@
 @use '../utilities/mixins' as *;
 @use '../utilities/gradients' as *;
 
+//Show home icon for mobile view
+#home-link {   
+    @include respond-to-up(md) {
+        display: none;
+    }
+}
+
+#scs-scheme-link {
+    // color: $solid-4;   
+    @include respond-to-down(md) {
+        display: none;
+    }
+}
+
 
 /* ----------------------- Portfolio Container Styling ---------------------- */
-// #scs {
-//     // @include sectionBottom;
-//     margin: auto 0;
-//     height: 100vh;
-//     border: 5px solid red;
-// }
 
 #scs {
     height: 100%;
@@ -42,12 +50,23 @@
     // For some reason borderYStyling mixin doesn't work
     border-right: 10px inset $solid-3;
     border-left: 10px inset $solid-3;
+    
+    @include respond-to-down(sm) {
+        border-right: none;
+        border-left: none;
+        padding-left: 10px;
+    }
     // border: 5px solid red;
 }
 
-/* ------------------------------ Scion Scheme ------------------------------ */
+/* ------------------------------ scs-box ------------------------------ */
 .scs-box {
     justify-content: start;
+    
+    @include respond-to-down(sm) {
+        justify-content: center;
+        text-align: center;
+    }
     // margin: 0 auto;
 }
 // Heading Styling
@@ -65,12 +84,16 @@
 
 
 /* -------------------------------- Treehouse ------------------------------- */
-// For some reason Treehouse has different padding/margin to other box
+// For some reason Treehouse has different padding/margin to other boxes
 .treehouse {
     // padding: 0;
     justify-content: start;
     width: fit-content;
     align-items: center;
+    
+    @include respond-to-down(sm) {
+        justify-content: center;
+    }
     
     .scs-heading {
         margin-left: 1%;
