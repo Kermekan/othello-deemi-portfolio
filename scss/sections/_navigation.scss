@@ -69,14 +69,35 @@
          flex-direction: row;
          justify-content: center;
          align-items: center;
+         
          padding: 0.313rem 0.438rem; // h(5px) w(7px)
-         display: hidden !important;       
+         @include transitionSpeed;
+         
+         //hides text on mobile
+         display: hidden !important;     
+           
          .menu-item:hover {
             border-radius: 1.063rem 1.063rem 0 0; //top left/ top right/ bottom right/ bottom left
             border-top: 5px solid $solid-4;
          }
+         
+         // Change Menu for landscape orientation 
+         // Orientation Styling doesn't work on phones with height higher than 768px 
+         @media (orientation: landscape) {
+            flex-direction: column;
+            
+            .menu-item:hover {
+               border-radius: 0 1.063rem 1.063rem 0; //top left/ top right/ bottom right/ bottom left
+               border-right: 5px solid $solid-4;
+            }
+         }
       }
-      
+      // Change Menu for landscape orientation
+      @media (orientation: landscape) {
+         width: 5.625rem; //90px
+         height: 100vh;
+         flex-direction: column;
+      }
    }
 }
 
@@ -108,11 +129,12 @@
       margin: 1.563rem 0;  //h w
       justify-self: start;
       
+      
       // background-color: red;
       
       // link Hover
       &:hover {
-         transform: scale(1.1);
+         transform: scale(1.15);
          background-color: $bg-secondary;
 
          .icon {
@@ -135,6 +157,12 @@
       
       @include respond-to-down(md) { //smaller than md
          width: 110%;
+         
+         // Landscape Orientation
+         @media (orientation: landscape) {
+            margin: 0;
+            width: 110%;
+         }
       }
    }
    
@@ -150,10 +178,16 @@
       display: flex;
       justify-content: start;
       align-items: center;
+      // Controls size of icon boxes
       height: 5.625rem; //90px
       
       @include respond-to-down(md) {
          justify-content: center;
+         
+         // Orientation Landscape
+         @media (orientation: landscape) {
+            height: 70px;
+         }
       }
       
       .icon {
@@ -167,6 +201,7 @@
          }
       }
    }
-   
-   
 }
+
+
+

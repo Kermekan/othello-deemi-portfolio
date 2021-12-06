@@ -3,13 +3,13 @@
 @use '../utilities/gradients' as *;
 
 //Show home icon for mobile view
-#home-link {   
+.scs-menu ul #home-link {   
     @include respond-to-up(md) {
         display: none;
     }
 }
 
-#scs-scheme-link {
+.scs-menu ul #scs-scheme-link {
     // color: $solid-4;   
     @include respond-to-down(md) {
         display: none;

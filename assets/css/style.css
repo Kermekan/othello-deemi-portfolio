@@ -11232,6 +11232,12 @@ img {
     margin-right: 0px;
   }
 }
+@media (max-width: 769px) and (orientation: landscape) {
+  .main-sections {
+    margin-left: 5.625rem;
+    height: 100%;
+  }
+}
 @media (min-width: 769px) {
   .main-sections {
     margin-left: 5.625rem;
@@ -11455,11 +11461,28 @@ img {
     justify-content: center;
     align-items: center;
     padding: 0.313rem 0.438rem;
+    transition: all 200ms ease;
     display: hidden !important;
   }
   .menubar .menubar-nav .menu-item:hover {
     border-radius: 1.063rem 1.063rem 0 0;
     border-top: 5px solid #0bd0df;
+  }
+}
+@media (max-width: 769px) and (orientation: landscape) {
+  .menubar .menubar-nav {
+    flex-direction: column;
+  }
+  .menubar .menubar-nav .menu-item:hover {
+    border-radius: 0 1.063rem 1.063rem 0;
+    border-right: 5px solid #0bd0df;
+  }
+}
+@media (max-width: 769px) and (orientation: landscape) {
+  .menubar {
+    width: 5.625rem;
+    height: 100vh;
+    flex-direction: column;
   }
 }
 
@@ -11514,6 +11537,12 @@ img {
     width: 110%;
   }
 }
+@media (max-width: 769px) and (orientation: landscape) {
+  .menubar-nav .menu-item {
+    margin: 0;
+    width: 110%;
+  }
+}
 .menubar-nav .link-text {
   display: none;
 }
@@ -11526,6 +11555,11 @@ img {
 @media (max-width: 769px) {
   .menubar-nav .menu-link {
     justify-content: center;
+  }
+}
+@media (max-width: 769px) and (orientation: landscape) {
+  .menubar-nav .menu-link {
+    height: 70px;
   }
 }
 .menubar-nav .menu-link .icon {
@@ -11745,12 +11779,12 @@ img {
     font-weight: 200;
   }
 }
-.card-container .portfolio-card:hover img {
+.card-container .portfolio-card:hover img, .card-container .portfolio-card:active img, .card-container .portfolio-card:focus img {
   transform: scale(1.5);
   transition-duration: 1000ms;
   transition-property: all;
 }
-.card-container .portfolio-card:hover .portfolio-info {
+.card-container .portfolio-card:hover .portfolio-info, .card-container .portfolio-card:active .portfolio-info, .card-container .portfolio-card:focus .portfolio-info {
   opacity: 1;
   visibility: visible;
   transition-duration: 1000ms;
@@ -11941,13 +11975,13 @@ img {
 }
 
 @media (min-width: 769px) {
-  #home-link {
+  .about-menu ul #home-link {
     display: none;
   }
 }
 
 @media (max-width: 769px) {
-  #about-link {
+  .about-menu ul #about-link {
     display: none;
   }
 }
@@ -12049,13 +12083,13 @@ img {
 }
 
 @media (min-width: 769px) {
-  #home-link {
+  .scs-menu ul #home-link {
     display: none;
   }
 }
 
 @media (max-width: 769px) {
-  #scs-scheme-link {
+  .scs-menu ul #scs-scheme-link {
     display: none;
   }
 }
@@ -12162,6 +12196,18 @@ img {
 }
 .treehouse .score--profile a:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 769px) {
+  .coding-menu ul #home-link {
+    display: none;
+  }
+}
+
+@media (max-width: 769px) {
+  .coding-menu ul #coding-link {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

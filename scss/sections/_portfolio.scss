@@ -32,7 +32,6 @@
 .portfolio-box {
     @include Card($solid-1);
     justify-content: center;
-    // padding-bottom: 2.5rem; 
     padding: 2.5rem auto; //40px auto
     margin: 0 auto;
 }
@@ -55,8 +54,7 @@
         z-index: 3;
         
         // Card border
-        border-top: 0.5rem solid $solid-3;
-        
+        border-top: 0.5rem solid $solid-1;
         
         .portfolio-info {
             @include fullSize;
@@ -98,6 +96,7 @@
                     font-size: 1.125rem; //18x
                 }
                 
+                /* ------------------------------- Breakpoints ------------------------------ */
                 // Breakpoints Below 769px
                 @include respond-to-down(md) {
                     h4 {
@@ -144,8 +143,8 @@
             }
         }
         
-        &:hover {
-    
+        //Shows overlay on mobile devices when tapped
+        &:hover, &:active, &:focus  { 
             img {
                 transform: scale(1.5);
                 @include transitionProperty;
