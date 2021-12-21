@@ -11716,6 +11716,11 @@ img {
 }
 @media (orientation: landscape) {
   .card-container .portfolio-card img {
+    height: 45.4vh;
+  }
+}
+@media (orientation: landscape) and (max-width: 992px) {
+  .card-container .portfolio-card img {
     height: 45.4vw;
   }
 }
