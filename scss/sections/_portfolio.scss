@@ -43,7 +43,9 @@
     gap: 20px;
     padding: 10px 15px;
     margin: 0 auto;
-    // padding: 0.625rem; //10px
+    padding: 0.625rem; //10px
+    // border: 3px solid red;
+    
     
     // Cards Styling
     .portfolio-card {
@@ -53,9 +55,17 @@
         margin: auto;
         overflow: hidden;
         z-index: 3;
-        
+        // border: 3px solid lime;
         // Card border
         border-top: 0.5rem solid $solid-1;
+        
+        // Image height styling
+        img {
+            position: relative;
+            object-fit: cover;
+            width: 100%;
+            height: 45.40vh; // keeps cards height the same
+        }
         
         .portfolio-info {
             @include fullSize;
@@ -64,8 +74,8 @@
             left: 0;
             
             // ============ hide for hover ============
-            // opacity: 1;
-            // visibility: hidden;
+            opacity: 1;
+            visibility: hidden;
             
             // Overlay
             &::before {
