@@ -11201,7 +11201,7 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-/* Make images easier to work with */
+/* Make images responsive to container size */
 img {
   max-width: 100%;
   display: block;

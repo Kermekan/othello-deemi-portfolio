@@ -1,0 +1,50 @@
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 Breakpoints                                */
+/* -------------------------------------------------------------------------- */
+// Breakpoints Map
+$breakpoints: (
+  'xs': 361px,
+  'sm': 577px,
+  'md': 769px,
+  'lg': 993px,
+  'xl': 1201px,
+  'xxl': 1401px,
+  ) !default;
+  
+// ======= Mixin to manage responsive breakpoints
+// name of mixin
+@mixin respond-to-up($breakpoint) {                    // Viewports higher than target will apply media query
+    // if key exists
+    @if map-has-key($breakpoints, $breakpoint) {
+        // query printed based on value
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }        
+    }
+    
+}
+
+@mixin respond-to-down($breakpoint) {                    // Viewports lower than target will apply media query
+    // if key exists
+    @if map-has-key($breakpoints, $breakpoint) {
+        // query printed based on value
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }        
+    }
+    
+}
+
+// Targets anything within a range
+
+/* don't know how to declare variable multiple times to create mixin with it */
+
+// @media only screen and (min-width: 360px) and (max-width: 768px) {
+// 	// do something in this width range.
+// }
+

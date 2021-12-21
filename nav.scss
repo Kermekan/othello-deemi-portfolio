@@ -1,11 +1,9 @@
 @use '../custom' as *;
 @use '../utilities/mixins' as *;
-@use '../utilities/breakpoints' as *;
 @use '../utilities/gradients' as *;
 
 /* --------------------------- Menu Bar container --------------------------- */
 .menubar {
-   width: 5.625rem; //90px
    height: 100vh;
    position: fixed;
    z-index: 9999;
@@ -21,7 +19,7 @@
       height: 100vh;
       
       // Hover on side-bar
-      &:hover{
+      &:hover {
          width: 15.625rem; //250px
          
          .hamburger-container {
@@ -204,8 +202,3 @@
       }
    }
 }
-
-
-
-
-
