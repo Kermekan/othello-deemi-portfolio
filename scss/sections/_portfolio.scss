@@ -65,6 +65,11 @@
             object-fit: cover;
             width: 100%;
             height: 45.40vh; // keeps cards height the same
+            
+            // height for landscape
+            @media (orientation: landscape) {
+            height: 45.40vw; // keeps cards height the same
+            }
         }
         
         .portfolio-info {
