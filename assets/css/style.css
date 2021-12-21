@@ -11867,15 +11867,11 @@ img {
 .contacts-container {
   position: relative;
   align-items: stretch;
+  margin: 0 auto;
   width: 100%;
   height: 100%;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
   /* ---------------------------- Left Card Styling --------------------------- */
-}
-@media (max-width: 769px) {
-  .contacts-container {
-    margin: 0 auto;
-  }
 }
 .contacts-container .left-card {
   position: relative;
