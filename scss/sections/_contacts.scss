@@ -4,6 +4,10 @@
 @use '../utilities/gradients' as *;
 
 #contacts {
+    // border: 3px solid gray;
+}
+
+.contacts-inner {
     @include sectionBorder($solid-2);
 }
 
