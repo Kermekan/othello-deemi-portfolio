@@ -64,8 +64,8 @@
             left: 0;
             
             // ============ hide for hover ============
-            opacity: 1;
-            visibility: hidden;
+            // opacity: 1;
+            // visibility: hidden;
             
             // Overlay
             &::before {
@@ -88,46 +88,56 @@
                     display: block;
                     text-transform: uppercase;
                     font-size: 25px; //30px
-                    margin-top: 10%; //controls spacing of text
+                    margin-top: 5%; //controls spacing of text
                 }
                 
                 p {
-                    // margin-top: auto;
-                    margin: 4% 2%;
-                    font-size: 1.125rem; //18x
+                    margin: auto 0;
+                    // font-size: 1.125rem; //18x
+                    font-size: 1.30vw; //25px
+                    // font-size: clamp(1.125rem, 2vw - 0.3rem, 1rem);
                 }
                 
                 /* ------------------------------- Breakpoints ------------------------------ */
-                // Breakpoints Below 769px
+                // Font Size below 992px
+                @include respond-to-down(lg) {
+                    h4 {
+                        margin-top: 3%;
+                        font-size: 40px; //35px
+                        font-weight: 700;
+                    }
+                    
+                    p {
+                        font-size: 30px; //30px
+                    }
+                }
+                
+                // Font Size below 769px
                 @include respond-to-down(md) {
+                    h4 {
+                        margin-top: 3%;
+                        font-size: 2.188rem; //35px
+                    }
+                    
+                    p {
+                        font-size: 1.875rem; //30px
+                    }
+                }
+                
+                // Font Size below 577px
+                @include respond-to-down(sm) {
                     h4 {
                         margin-top: 3%;
                         font-size: 1.875rem; // 30px
                     }
                     
                     p {
-                        margin-bottom: 12%; 
-                        font-size: 20px; //25px
-                        font-weight: 200; 
-                    }         
-                }
-                    
-                    // Below 577px
-                @include respond-to-down(sm) {
-                    h4 {
-                        margin-top: 3%;
-                        font-size: 28px; // 20px
-                    }
-                    
-                    p {
-                        // margin-bottom: 3%; 
-                        margin: 10% 0; 
-                        font-size: 1.125rem; //18px
-                        font-weight: 200; 
+                        font-weight: 200;
+                        font-size: 5.19vw; //30px @ breakpoint width
                     }
                 }
                 
-                // below 360px
+                // Font Size below 360px
                 @include respond-to-down(xs) {
                     h4 {
                         margin-top: 3%;
@@ -183,11 +193,24 @@
         transform: scale(1.1);
     }
     
-    // Breakpoint
+    /* ------------------------------- Breakpoints ------------------------------ */
+    // Below 992px
+    @include respond-to-down(lg) {
+        padding: 0.438rem 1.875rem; // 7px 30px
+        font-size: 1.875rem;
+    }
+    
+    // Below 768px
+    @include respond-to-down(md) {
+        padding: 0.438rem 1.25rem; // 7px 20px
+        font-size: 1.563rem; // 25px
+    }
+    
+    // Below 577px
     @include respond-to-down(sm) {
         // display: none;
-        padding: 5px 12px; //h(5px)s w(10px)
-        font-size: 1rem;
+        padding: 0.313rem 1.25rem; //h(5px)s w(10px)
+        font-size: 4.33vw; // 25px @ breakpoint width
     }
 }
 
