@@ -1,14 +1,19 @@
 @use '../custom' as *;
 
-
-/* If I want to create a mixin that uses any gradient color I have to include my color variables in this file
-** but I don't want to do that since I have a lot of gradient colors and don't want to fill this file with
-** just colors so all color related mixins go in gradients partial */
-
 // Full Size
 @mixin fullSize {
     width: 100%;
     height: 100%;
+}
+
+// Forces single line Single line
+@mixin singleLine {
+    white-space: nowrap;
+}
+
+// Background Color
+@mixin bgColor {
+    background-color: rgba($color: $bg-primary, $alpha: 0.9);
 }
 
 // Center an Element
@@ -28,6 +33,7 @@
 // Scroll Hover
 @mixin btnHover {
     transform: scale(1.2);
+    transition: all 200ms;
 }
 
 // Transition Speed
@@ -35,25 +41,19 @@
     transition: all 200ms ease ;
 }
 
-// Section Border
-@mixin sectionBottomMargin {
-    margin-bottom: 3.125rem; // 50px
+// Sharp Box shadow
+@mixin shadowSharp {
+    box-shadow: 
+        0 2px 2px rgba(0,0,0.12),
+        0 4px 4px rgba(0,0,0.12),
+        0 6px 6px rgba(0,0,0.12),
+    ; // x y blur spread
 }
 
-@mixin sectionBorder($color) {
-    background-color: $bg-primary-light;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 5.625rem; // 90px
-    padding-top: 1.25rem; // 20px
-    
-    // Top border darker than bottom border
-    border-top: 10px inset $color;
-    border-bottom: 10px inset $color;
-    width: 100%;
-    height: fit-content;
-} 
+// Section Border
+@mixin sectionSpacing {
+    margin: 3.125rem auto; // 50px
+}
 
 // y-axis borders
 @mixin borderYStyling($color) {
@@ -66,7 +66,6 @@
     border-left: 10px inset $color;
     border-right: 10px inset $color;
 }
-
 
 // Headings ===============
 @mixin headingStyling {
@@ -138,6 +137,61 @@
     border-radius: 30px;
     background-color: $color;
     @content;
-     
  }
+
+// Burger Lines
+@mixin burgerLines {
+    background-color: $white;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    // opacity: 0.9;
+    
+    @media (min-width: 576px) {
+        height: 4px;
+    }
+}
+
+@mixin burgerLandscape {
+    width: 38px; // 45px
+    // border: 2px solid red;
+    
+    .bar {
+        &::before {
+           transform: translateY(-8px);
+        } 
+        
+        &::after {
+           transform: translateY(8px);
+        }
+    }
+}
+
+// Hover, active, focus states
+@mixin hoverFocusActive {
+    &:hover, &:focus, &:active {
+        @content;
+    }
+}
+
+// Button Colour
+@mixin btnColor($color, $color-border) {
+    background-color: $color;
+    border: 1px solid $color-border;
+    
+    // &:hover {
+    //     background-color: $color-hover;
+    // } 
+}
+
+
+
+
+
+
+
+
+
+
+
 

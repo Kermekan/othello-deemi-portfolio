@@ -41,7 +41,7 @@
 }
 
 .about-me-inner {
-    @include sectionBorder($solid-4);
+    @include borderYStyling($solid-4);
     width: 80%;
     
     @include respond-to-up(md) {

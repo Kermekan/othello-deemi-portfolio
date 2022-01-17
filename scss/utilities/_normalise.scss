@@ -5,7 +5,9 @@
 
 
 /* Box sizing rules */
-* {
+*, 
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -41,17 +43,20 @@ ol {
 html {
   font-size: 16px;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
   
   /* Set core body defaults */
 body {
     font-family: 'Poppins', sans-serif;
     position: relative;
-    // overflow-x: hidden;
+    overflow-x: hidden;
     color: white;
     background-color: $bg-primary-light;
     width: 100vw;
     height: 100vh;
+    
+    // border: 3px solid blue;
     
 }
 
@@ -59,6 +64,7 @@ body {
 a {
   text-decoration: none;
   color: $white;
+  padding: 0;
   
   &:hover, &:active, &:focus {
     color: inherit;

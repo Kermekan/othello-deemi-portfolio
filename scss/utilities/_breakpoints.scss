@@ -1,19 +1,19 @@
 @use '../custom' as *;
 @use '../utilities/mixins' as *;
 
-
-
 /* -------------------------------------------------------------------------- */
 /*                                 Breakpoints                                */
 /* -------------------------------------------------------------------------- */
 // Breakpoints Map
+
 $breakpoints: (
-  'xs': 361px,
-  'sm': 577px,
-  'md': 769px,
-  'lg': 992px,
-  'xl': 1201px,
-  'xxl': 1401px,
+  'xxs': 360px,
+  'xs': 576px,
+  'sm': 769px,
+  'md': 992px,
+  'lg': 1200px,
+  'xl': 1400px,
+  'xxl': 1600px,
   ) !default;
   
 // ======= Mixin to manage responsive breakpoints
@@ -26,7 +26,6 @@ $breakpoints: (
             @content;
         }        
     }
-    
 }
 
 @mixin respond-to-down($breakpoint) {                    // Viewports lower than target will apply media query
@@ -37,14 +36,52 @@ $breakpoints: (
             @content;
         }        
     }
-    
 }
 
-// Targets anything within a range
+/* -------------------------- Landscape Breakpoints ------------------------- */
 
-/* don't know how to declare variable multiple times to create mixin with it */
+@mixin landscape-view-down($breakpoint) {                    // Viewports lower than target will apply media query
+    // if key exists
+    @if map-has-key($breakpoints, $breakpoint) {
+        // query printed based on value
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @media (orientation: landscape) {
+                @content;
+            }
+        }        
+    }
+}
 
-// @media only screen and (min-width: 360px) and (max-width: 768px) {
-// 	// do something in this width range.
-// }
+@mixin landscape-view-up($breakpoint) {                    // Viewports lower than target will apply media query
+    // if key exists
+    @if map-has-key($breakpoints, $breakpoint) {
+        // query printed based on value
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @media (orientation: landscape) {
+                @content;
+            }
+        }        
+    }
+}
 
+/* --------------------------- height breakpoints --------------------------- */
+@mixin height-823 {
+    @media (max-height: 823px) {
+        @media (orientation: landscape) {
+           @content;
+        }
+     }
+}
+
+
+ @mixin height-640 {
+    @media (max-height: 640px) {
+        @media (orientation: landscape) {
+            @content;
+        }
+    }
+ }
+ 
+ 
+ 
+ 

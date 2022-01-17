@@ -1,0 +1,259 @@
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/breakpoints' as *;
+@use '../utilities/gradients' as *;
+
+#contacts {
+    // border: 3px solid gray;
+}
+
+.contacts-inner {
+    @include borderYStyling($solid-2);
+}
+
+.contacts-heading {
+    @include headingStyling;
+    
+    .heading-line {
+        @include headingLine($solid-2);
+    }
+}
+ 
+// Holds both cards
+.contacts-container {
+    position: relative;
+    align-items: stretch;
+    margin: 0 auto; //10px
+    @include fullSize;
+    @include boxShadow;
+    
+    // border: 3px solid purple;
+    
+    /* ---------------------------- Left Card Styling --------------------------- */
+    .left-card {
+        position: relative;
+        height: auto;
+        padding: 1.875rem 2.5rem; //30px //40px
+        align-items: start;
+        
+        // background-color 
+        @include gradient(to right, $gradientR_O);
+        
+        // Border Styling
+        @include borderYStyling($solid-2);
+        
+        // Breakpoints
+        @include respond-to-down(md) {
+            flex-direction: column;
+            padding: 10px 20px; //30px //40px
+            height: 100%;
+        }
+        
+        // border: 3px solid peachpuff;
+    }
+}
+
+// Phone number styling
+.phone-number span {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: $solid-4;
+}
+
+// Social Media boxes
+.contact-box {
+    position: relative;
+    width: fit-content;
+    // justify-content: center;
+    padding: 0;
+    
+    &__icon {
+        position: relative;
+        width: fit-content;
+        font-size: 2.5rem; //40px
+        padding: 10px 0;
+        
+        // background-color: rgb(214, 214, 214);
+        
+        a {
+            display: block;
+            text-align: center;
+            padding-right: 1.25rem;
+            
+            span {
+                // Social media Hover
+                &:hover {
+                    color: $solid-4;
+                    transform: scale(1.3);
+                    transition: all 150ms ease-in-out;
+                }
+            }
+        }
+        
+    }
+}
+
+/* --------------------------- Right Card Styling --------------------------- */
+.right-card {
+    position: relative;
+    height: auto;
+    padding: 1.875rem 2.5rem 0.625rem 2.5rem; //30px 40px 10px 40px
+    align-items: center;
+    
+    
+    background-color: $gray-200;
+    
+    // Border Styling
+    @include borderYStyling($bg-primary);
+    
+    // Breakpoints
+    @include respond-to-down(md) {
+        flex-direction: column;
+        padding: 10px 20px; //30px //40px
+        height: 100%;
+    }
+    
+    // border: 3px solid peachpuff;
+}
+
+// Form Styling
+.form {
+    h4 {
+        
+        // Title Coloring
+        @include gradient(to left, $gradientR_O);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.contact-btn {
+    @include button($solid-2);
+    
+    // Button Hover
+    &:hover {
+        @include gradient(to right, $gradientR_O);
+        color: white;
+        transform: scale(1.030);
+        
+        @include respond-to-down(md) {
+            transform: scale(1.01);
+        }
+    }
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 Second Try                                 */
+/* -------------------------------------------------------------------------- */
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/breakpoints' as *;
+@use '../utilities/gradients' as *;
+
+#contacts {
+    // border: 3px solid gray;
+}
+
+.contacts-inner {
+    @include borderYStyling($solid-2);
+    
+    .content .heading-line {
+        @include headingLine($solid-2);
+    }
+}
+
+// Cards Container
+.contacts-container {
+    position: relative;
+    height: fit-content;
+    justify-content: start;
+    align-items: stretch;
+    overflow: hidden;
+    border: 2px solid purple;
+    
+    @include respond-to-down(md) {
+        flex-direction: column;
+    }
+    
+    // Both Cards Styling
+    .left-card, .right-card {
+        padding: 0.616rem 1.25rem;
+        flex-direction: column;
+        align-items: stretch;
+        height: 100%;
+        
+        @include respond-to-up(md) {
+            width: 50%;
+            border: 2px solid grey
+        }
+    }
+}
+
+// Left Card Styling
+.left-card {
+    @include gradient(to right, $gradientR_O);
+    
+    // Phone number styling
+    .phone-number span {
+        font-weight: 600;
+        font-size: 1.25rem;
+        color: $solid-4;
+    }
+    
+    // Social Media
+    .contact-box {
+        position: relative;
+        width: fit-content;
+        // border: 2px solid purple;
+        gap: 1.25rem;
+        
+        &__icon {
+            position: relative;
+            justify-content: center;
+            // width: fit-content;
+            font-size: 2.5rem; //40px
+            // padding: 10px 0;
+            
+            // border: 2px solid red;
+            
+            a {
+                // padding: 0;
+                text-align: center;
+                // padding: 0 1.25rem;
+                
+                span {
+                    display: block;
+                    // border: 2px solid grey;
+                    
+                    // Social media Hover
+                    &:hover {
+                        color: $solid-4;
+                        transform: scale(1.3);
+                        transition: all 150ms ease-in-out;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+.right-card {
+    height: 100%;
+    overflow: hidden;
+    align-items: stretch;
+    color: black;
+    background-color: $white;
+    filter: blur(20px);
+    border: 2px solid green;
+}
+
+
+
+
+
+
+

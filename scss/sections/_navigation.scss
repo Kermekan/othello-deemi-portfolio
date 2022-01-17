@@ -3,207 +3,389 @@
 @use '../utilities/breakpoints' as *;
 @use '../utilities/gradients' as *;
 
-/* --------------------------- Menu Bar container --------------------------- */
-.menubar {
-   width: 5.625rem; //90px
-   height: 100vh;
+#navbar {
+   position: absolute;
+   z-index: 1;
+   width: 100%;
+   // border: 2px solid gold;
+}
+
+.sidebar {
    position: fixed;
-   z-index: 9999;
-   @include transitionSpeed;
+   z-index: 998;
+   height: 100vh;
+   padding-top: 0.938rem;
+   transition: all 150ms ease-in-out;
+   // border: 2px solid red;
+}
+
+/* ------------------------------ Large Screens ----------------------------- */
+.sidebar-lg {
+   width: 15.625rem;
    flex-direction: column;
+   justify-content: start;
+   padding: 0.925rem;
+   @include bgColor;
+}
+
+// Logo
+.logo-content {
+   width: 100%;
+   padding: 0.625rem 0;
+   // border: 2px solid $white;
    
-   background-color: $bg-primary !important;
-   
-   // Breakpoints
-   //large screens
-   @include respond-to-up(md) { 
-      width: 5.625rem; //90px
-      height: 100vh;
+   .logo {
+      display: block;
+      aspect-ratio: 1 / 1;
+      width: 50%;
+      border-radius: 50%;
+      transition: all 200ms ease-in-out;
+      // border: 2px solid red;
       
-      // Hover on side-bar
-      &:hover{
-         width: 15.625rem; //250px
-         
-         .hamburger-container {
-            width: 100%;
-            // padding: 50px;
-            margin-bottom: 5px;
-            transition: all 250ms ease ;
-            
-            .hamburger-image {
-               width: 33%;
-               margin: 0 auto;
-            }
-         }
-         
-         .menubar-nav {
-            display: hidden;
-            margin-left: 0.625rem; //10px
-            transition: all 250ms ease ;
-            
-            // links hover
-            .menu-item {
-               color: $solid-4;
-            }
-         }
-         .link-text {
-            display: inline;
-            @include transitionSpeed;            
-         }
-         
-      }
-      
-   }
-   
-   // small screens
-   @include respond-to-down(md) {
-      bottom: 0;
-      width: 100vw;
-      height: 5.625rem; //90px
-      
-      .hamburger-container {
-         display: none;
-      }
-      
-      .menubar-nav {
-         //Controls position of menu-items on the navbar
-         flex-direction: row;
-         justify-content: center;
-         align-items: center;
-         
-         padding: 0.313rem 0.438rem; // h(5px) w(7px)
-         @include transitionSpeed;
-         
-         //hides text on mobile
-         display: hidden !important;     
-           
-         .menu-item:hover {
-            border-radius: 1.063rem 1.063rem 0 0; //top left/ top right/ bottom right/ bottom left
-            border-top: 5px solid $solid-4;
-         }
-         
-         // Change Menu for landscape orientation 
-         // Orientation Styling doesn't work on phones with height higher than 768px 
-         @media (orientation: landscape) {
-            flex-direction: column;
-            
-            .menu-item:hover {
-               border-radius: 0 1.063rem 1.063rem 0; //top left/ top right/ bottom right/ bottom left
-               border-right: 5px solid $solid-4;
-            }
-         }
-      }
-      // Change Menu for landscape orientation
-      @media (orientation: landscape) {
-         width: 5.625rem; //90px
-         height: 100vh;
-         flex-direction: column;
+      @include hoverFocusActive {
+         background-color: $bg-primary-light;
+         transform: scale(1.08);
+         @include shadowSharp;
       }
    }
 }
 
-/* -------------------------------- Hamburger ------------------------------- */
-.hamburger-container {
-   position: relative;
-   z-index: 2;
-   margin-top: 2.813rem; //45px
-   margin-bottom: -1.25rem;
-   height: 6.25rem; //100px
-   background-color: $bg-secondary;
+/* ------------------------------- Item Links ------------------------------- */
+.item-list {
+   flex-direction: column;
+   width: 100%;
+   height: 50%;
+   border-top: solid rgba($color: $gray-300, $alpha: 0.3);
+   border-bottom: solid rgba($color: $gray-300, $alpha: 0.3);
+   // border: 2px solid purple;
+   
+   ul {
+      position: relative;
+      @include fullSize;
+      flex-direction: column;
+      justify-content: space-around;
+      margin: 0.313rem 0;
+   }
+   
+   ul, li, a {
+      display: flex;
+      align-items: center;
+      position: relative;
+   }
 }
 
-/* ------------------------------- Menu Items ------------------------------- */
-.menubar-nav {
-   @include fullSize;
-   position: relative;
-   z-index: 2;
+// Individual items
+.item-list ul li {
+    width: 100%;
+    justify-content: center;
+    height: 3.75rem; // 60px
+    padding: 0 3px;
+    cursor: pointer;
+    border-radius: 0.438rem;
+    transition: all 500ms ease-in-out;
+    // border: 2px solid orange;
+    
+    * {
+       transition: all 500ms ease-in-out;
+    }
+    
+    a {
+       display: flex;
+       border-radius: inherit;
+       justify-content: center;
+       @include fullSize;
+       // border: 2px solid red;
+    }
+    
+    // icon
+    .icon {
+       display: none;
+    }
+    
+    // link-text
+    .link--name {
+       font-weight: 700;
+       white-space: nowrap;
+    }
+    
+    // description
+    .link--description {
+       display: none;
+       position: absolute;
+       color: $white;
+       padding: 0px 0.938rem;
+       line-height: 3.75rem;
+       left: 0;
+       white-space: nowrap;
+    }
+    
+    // Hover ==============================
+    &:hover, &:focus, &:active {
+       background-color: $bg-primary-light;
+       transition: all 500ms ease-in-out;
+       
+       .icon {
+          color: $solid-4;
+       }
+       
+       .link--name {
+          color: $solid-4;
+       }
+       
+       // description hover
+       .link--description {
+          display: block;
+          background-color: $solid-5;
+          padding: 0 0.938rem;
+          height: 3.75rem; // 60px
+          border-radius: 0.438rem;
+          position: absolute;
+          left: 15rem;
+          
+          animation: hover 500ms ease-in;
+       }
+   }
+}
+
+// Contact Box
+.sidebar-lg .contact-box {
+   padding: 0.625rem 1.25rem;
+   margin-top: 1.25rem;
+   margin-bottom: auto;
+   width: 100%;
+   border-radius: 0.938rem;
    
-   flex-direction: column;
    justify-content: center;
-   align-items: start;
-   margin: 0;
-   padding: 0 5px;
+   gap: 0.625rem;
    
-   .menu-item {
-      width: 100%;
-      // change distance between icons
-      margin: 1.563rem 0;  //h w
-      justify-self: start;
+   @include gradient(to right, $gradientR_O);
+   @include shadowSharp;
+   
+   // icons
+   &__icon {
+      padding: 0;
+      margin: 0px auto;
+      // border: 2px solid white;
       
-      
-      // background-color: red;
-      
-      // link Hover
-      &:hover {
-         transform: scale(1.15);
-         background-color: $bg-secondary;
-
-         .icon {
-            color: $solid-4;
-         }
+      a {
+         padding: 0;
+         // border: 2px solid black;
          
-         // Button border for large Screens
-         @include respond-to-up(md) {
-            border-radius: 0 1.063rem 1.063rem 0; //top left/ top right/ bottom right/ bottom left
-            border-right: 5px solid $solid-4;
-         }
-
-         // Button border for small screens
-         @include respond-to-down(md) {
-            border-radius: 1.063rem 1.063rem 0 0; //top left/ top right/ bottom right/ bottom left
-            border-top: 5px solid $solid-4;
-         }
-      }
-      
-      
-      @include respond-to-down(md) { //smaller than md
-         width: 110%;
-         
-         // Landscape Orientation
-         @media (orientation: landscape) {
-            flex-direction: column;
-            margin: 0;
-            width: 110%;
+         span {
+            display: block;
+            font-size: 3.125rem;
+            // border: 2px solid blue;
+            
+            &:hover, &:active, &:focus {
+               color: $solid-4;
+               transform: scale(1.2);
+               transition: all 150ms ease-in-out;
+            }
          }
       }
    }
    
-   
-   // Text
-   .link-text {
+   @include respond-to-down(xxl) {
+   margin-bottom: 10%;
+   }
+}
+
+/* ------------------------------- Breakpoints ------------------------------ */
+// below 768px
+@include respond-to-down(sm) {
+   .sidebar-lg {
       display: none;
    }
+}
+
+// below 992px
+@include respond-to-down(md) {
+   .sidebar-lg {
+      width: 11.875rem;
+   }
+}
+
+/* ---------------------------- Hamburger Styling --------------------------- */
+.hamburger {
+   position: fixed;
+   z-index: 999;
+   top: 0.938rem;
+   left: 0.625rem;
    
-   // link boxes targets link elements
-   .menu-link {
-      // Controls position of text & icon in container
-      display: flex;
-      justify-content: start;
-      align-items: center;
-      // Controls size of icon boxes
-      height: 5.625rem; //90px
+   flex-direction: column;
+   cursor: pointer;
+   overflow: hidden;
+   
+   aspect-ratio: 1/ 1;
+   width: 60px;
+   
+   padding: 0 0.313rem;
+   background-color: rgba($color: $solid-5, $alpha: 0.7);
+   border-radius: 0.313rem;
+   // border: 2px solid white;
+   
+   .bar {
+      position: absolute;
+      // display: block;
       
-      @include respond-to-down(md) {
-         justify-content: center;
-         
-         // Orientation Landscape
-         @media (orientation: landscape) {
-            height: 70px;
-         }
+      @include burgerLines;
+      width: 75%;
+      border-radius: 0.313rem;
+      
+      transition: all 250ms;
+      
+      &::before, 
+      &::after {
+         content: "";
+         position: absolute;
+         transition: all 250ms;
+         @include burgerLines;
       }
       
-      .icon {
-         // Icon-size
-         font-size: 1rem;
-         margin: 0 1.5rem; //24px
-         
-         // larger screens
-         @include respond-to-up(md) {
-            font-size: 1.875rem;
-         }
+      // top line
+      &::before {
+         transform: translateY(-12px);
+      }
+      
+      // bottom-line
+      &::after {
+         transform: translateY(12px);
+      }
+   }
+   
+   // Breakpoints for >576px
+   @include respond-to-down(xs) {
+      @include burgerLandscape;
+      // border: 2px solid peru;
+      
+   }
+   
+   @include landscape-view-down(sm) {
+      @include burgerLandscape;
+      
+      .bar, .bar::before, .bar::after {
+         height: 2px;
+      }
+   }
+   // Landscape view
+   
+}
+
+/* Animation */
+#menu-btn.open {
+   background: transparent;
+   transition: all 250ms;
+   
+   .bar {
+      transform: translateX(-120%);
+   }
+   // top bar
+   .bar::before{
+      transform: translateX(120%) rotate(-45deg);
+      background-color: $solid-4;
+   }
+   
+   // bottom bar
+   .bar::after {
+      transform: translateX(120%) rotate(45deg);
+      background-color: $solid-1;
+   } 
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Sidebar-sm Styling                             */
+/* -------------------------------------------------------------------------- */
+.sidebar-sm {
+   position: fixed;
+   right: 100%;
+   width: 100vw;
+   z-index: 998;
+   
+   justify-content: space-around;
+   flex-direction: column;
+   gap: 2.5rem;
+   
+   background-color: rgba($color: $bg-primary, $alpha: 0.97);
+   transition: all 250ms;
+   // border: 2px solid red;
+   
+   // logo
+   .logo-content {
+      width: 50%;
+      margin-top: auto;
+      // border: 2px solid white;
+      
+      .logo {
+         width: 50%;
+         // border: 2px solid white;
       }
    }
 }
+
+// Items
+.sidebar-sm .item-list {
+   justify-content: center;
+   
+   margin-bottom: auto;
+   height: fit-content;
+   max-height: 70%;
+   
+   border: 0;
+   // border: 2px solid palegreen;
+   
+   // list container
+   ul {
+      width: fit-content;
+      height: fit-content;
+      justify-content: space-around;
+      gap: 0.938rem;
+      padding: 0.625rem 0;
+      border-top: solid rgba($color: $solid-4, $alpha: 1);
+      border-bottom: solid rgba($color: $solid-1, $alpha: 1);
+   }
+   
+   li {
+      width: 100%;
+      min-width: 13.125rem;
+      height: 3.438rem;
+      
+      font-size: 1.125rem;
+      // border: 2px solid olivedrab;
+   }
+   
+   // Above 576px
+   @include respond-to-up(xs) {
+      // border: 2px solid gray;
+      
+      ul {
+         gap: 1.25rem;
+      }
+      
+      li {
+         min-width: 18.75rem;
+         min-height: 3.625rem; //58px
+         font-size: 1.375rem; // 22px
+      }
+   }
+}   
+
+// Active sidebar
+.sidebar-sm.open {
+   right: 0;
+}
+
+// Breakpoint
+@include respond-to-up(sm) {
+   .sidebar-sm {
+      display: none;
+   }
+}
+
+
+
+
+
+
 
 
 

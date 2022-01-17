@@ -44,7 +44,7 @@
 }
 
 .scs-inner {
-    @include sectionBorder($solid-3);
+    @include borderYStyling($solid-3);
     height: fit-content;
     width: fit-content;
     

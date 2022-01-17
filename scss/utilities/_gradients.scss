@@ -8,45 +8,8 @@
 
 // Ended up not using gradients because they would lag in chrome, but other browsers were fine
 
-/* ------------------------------- Glass Blur ------------------------------- */
-@mixin glassBlur {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: -20px;
-  
-  box-shadow: inset 0 0 2000px $bg-secondary;
-  -webkit-box-shadow: inset 0 0 2000px $bg-secondary;
-  
-  background: inherit;
-  -webkit-background: inherit;
-  
-  filter: blur(1000px);
-  -webkit-filter: blur(300px); //Filter not working in chrome
-  -ms-filter: blur(300px);
-}
 
 
-
-/* ---------------------------- Slantbox Gradient --------------------------- */
-@mixin gradientSlantBox($direction, $color) {
-  content: '';
-  height: 30px;
-  position: absolute;
-  z-index: -1;
-  top: -5%;
-  right: 0;
-  left: 0;
-  @include gradient($direction, $color);
-  transform: skewY(-3deg);
-  /* different browsers */
-  -webkit-transform: skewY(-3deg);/* Chromium browsers */
-  -moz-transform: skewY(-3deg);/* Firefox */
-  -ms-transform: skewY(-3deg);/* IE */
-}
 /* -------------------------------------------------------------------------- */
 /*                                  Gradients                                 */
 /* -------------------------------------------------------------------------- */
@@ -117,7 +80,6 @@ $gradientC_B: $solid-4, $solid-5;
   background: -moz-linear-gradient($direction, $gradient);
   background: -o-linear-gradient($direction, $gradient);
   @content;
-
 }
     
 /* --------------------------- Animated Gradients --------------------------- */

@@ -41,3 +41,25 @@
         top: 100%;
     }
 }
+
+// Hover
+@keyframes hover {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+// Typewriter Cursor
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+

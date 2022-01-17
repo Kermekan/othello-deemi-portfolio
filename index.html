@@ -21,241 +21,296 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="full-page bg-full img-fluid">
-        <!-- ----------------------------------------------------------------------- -->
-        <!--                             Navigation Bar                              -->
-        <!-- ----------------------------------------------------------------------- -->
-        <nav class="menubar flex">
-            <!-- hamburger -->
-            <div class="hamburger-container flex">
+    <div id="background" class="full-page bg-full img-fluid">
+        <!-- ------------------------------- Navbar -------------------------------- -->
+        <div id="navbar">
+            <div id="menu-btn" class="hamburger flex hidden-md hidden-lg hidden-xl hidden-xxl">
+                <span id="menu-burger" class="bar"></span>
+            </div>
+            <!-- Large Screens -->
+            <nav class="sidebar sidebar-lg flex">
                 <!-- logo -->
-                <div class="hamburger-image">
-                    <!-- <input type="checkbox" class="toggler"> --> <!-- Not Working -->
-                    <a href="#home">
-                        <img src="/assets/images/logo/logo-1.png" alt="">
-                    </a>
+                <a href="#home" class="logo-content flex">
+                    <div class="logo">
+                        <img src="assets/images/logo/logo-1.png" alt="">
+                    </div>
+                </a>
+                <!-- Nav-list -->
+                <div class="item-list flex">
+                    <ul class="">
+                        <!-- About -->
+                        <li>
+                            <a href="pages/about.html">
+                                <span class="icon fas fa-user" ></span>
+                                <span class="link--name">About</span>
+                            </a>
+                            <span class="link--description flex">About</span>
+                        </li>
+                        <!-- Portfolio -->
+                        <li>
+                            <a href="#portfolio">
+                                <span class="icon fas fa-suitcase" ></span>
+                                <span class="link--name">Portfolio</span>
+                            </a>
+                            <span class="link--description flex">Portfolio</span>
+                        </li>
+                        <!-- Coding Examples -->
+                        <li>
+                            <a href="pages/coding.html">
+                                <span class="icon fas fa-code" ></span>
+                                <span class="link--name">Coding Examples</span>
+                            </a>
+                            <span class="link--description flex">Coding Examples</span>
+                        </li>
+                        <!-- SCS Scheme -->
+                        <li>
+                            <a href="pages/scs-scheme.html">
+                                <span class="icon fas fa-graduation-cap" ></span>
+                                <span class="link--name">SCS Scheme</span>
+                            </a>
+                            <span class="link--description flex">SCS Scheme</span>
+                        </li>
+                        <!-- Contacts -->
+                        <li>
+                            <a href="#contacts">
+                                <span class="icon fas fa-phone-alt" ></span>
+                                <span class="link--name">Contacts</span>
+                            </a>
+                            <span class="link--description flex">Contacts</span>
+                        </li>
+                    </ul>
                 </div>
-            </div> 
-            <!-- Menu Items -->
-            <ul class="menubar-nav flex">
-                <!-- About -->
-                <li id="about=link" class="menu-item">
-                    <a href="about.html" class="menu-link" >
-                        <span class="icon fas fa-user" ></span>
-                        <span class="link-text fw-bold">About</span>
-                    </a>
-                </li>
-                <!-- Portfolio -->
-                <li id="portfolio-link" class="menu-item">
-                    <a href="#portfolio" class="menu-link" >
-                        <span class="icon fas fa-suitcase" ></span>
-                        <span class="link-text fw-bold">Portfolio</span>
-                    </a>
-                </li>
-                <!-- Coding Examples -->
-                <li id="coding-link" class="menu-item">
-                    <a href="coding.html" class="menu-link" >
-                        <span class="icon fas fa-code" ></span>
-                        <span class="link-text fw-bold">Coding Examples</span>
-                    </a>
-                </li>
-                <!-- SCS SCheme -->
-                <li id="scs-scheme-link" class="menu-item">
-                    <a href="scs-scheme.html" class="menu-link" >
-                        <span class="icon fas fa-graduation-cap" ></span>
-                        <span class="link-text fw-bold">SCS Scheme</span>
-                    </a>
-                </li>
-                <!-- Contacts -->
-                <li id="contacts-link" class="menu-item">
-                    <a href="#contacts" class="menu-link" >
-                        <span class="icon fas fa-phone-alt" ></span>
-                        <span class="link-text fw-bold">Contacts</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>  
-        <div class="main-sections">
-            <!-- ----------------------------------------------------------------------- -->
-            <!--                              Hero Section                               -->
-            <!-- ----------------------------------------------------------------------- -->
+                <div></div>
+                <!-- Sicial media icons -->
+                <div class="contact-box flex">
+                    <div class="contact-box__icon">
+                        <a href="https://github.com/Kermekan" target="_blank" class="text-center">
+                            <span class="fab fa-github"></span>
+                        </a>
+                    </div>
+                    <div class="contact-box__icon">
+                        <a href="https://www.linkedin.com/in/othello-monti-deemi/" target="_blank" class="text-center">
+                            <span class="fab fa-linkedin"></span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <!-- Small screens -->
+            <nav class="sidebar sidebar-sm flex">
+                <!-- Logo -->
+                <a href="index.html" class="logo-content flex">
+                    <div class="logo">
+                        <img src="assets/images/logo/logo-1.png" alt="">
+                    </div>
+                </a>
+                <!-- Nav-list -->
+                <div class="item-list flex">
+                    <ul class="">
+                        <!-- About -->
+                        <li>
+                            <a href="pages/about.html">
+                                <span class="icon fas fa-user" ></span>
+                                <span class="link--name">About</span>
+                            </a>
+                        </li>
+                        <!-- Portfolio -->
+                        <li>
+                            <a href="#portfolio">
+                                <span class="icon fas fa-suitcase" ></span>
+                                <span class="link--name">Portfolio</span>
+                            </a>
+                        </li>
+                        <!-- Coding Examples -->
+                        <li>
+                            <a href="pages/coding.html">
+                                <span class="icon fas fa-code" ></span>
+                                <span class="link--name">Coding Examples</span>
+                            </a>
+                        </li>
+                        <!-- SCS Scheme -->
+                        <li>
+                            <a href="pages/scs-scheme.html">
+                                <span class="icon fas fa-graduation-cap" ></span>
+                                <span class="link--name">SCS Scheme</span>
+                            </a>
+                        </li>
+                        <!-- Contacts -->
+                        <li>
+                            <a href="#contacts">
+                                <span class="icon fas fa-phone-alt" ></span>
+                                <span class="link--name">Contacts</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <!-- hamburger -->
+            
+        </div> 
+        <!-- ---------------------------- Main Sextions ---------------------------- -->
+        <main class="main-sections flex">
+            <!-- -------------------------------- Hero --------------------------------- -->
             <header id="home" class="hero">
-                <div class="hero-inner text-center flex">
-                    <h1 class="display-2 heading">
+                <div class="inner hero-inner flex">
+                    <!-- Title -->
+                    <h1 class="display-2 heading text-center">
                         <span class="display-2--description">My Name is</span>
                         <span class="display-2--title fw-bold">Othello Deemi</span>
-                        <span class="display-2--subtitle">and I'm a Web Developer</span>
+                        <span id="typewriter" class="display-2--subtitle"></span>
                     </h1>
-                    <!-- Scroll down-->
-                    <div class="scroll-down">
-                        <a href="#portfolio" class="btn btn-scroll text-white">
-                            <span class="fas fa-chevron-down scroll"></span>
-                        </a>
-                    </div> 
-                    
-                    <!-- Back to top Button -->
-                    <a href="#home" class="shadow btn rounded-circle back-to-top">
-                        <span class="fas fa-chevron-up"></span>
-                    </a>
                 </div>
             </header>
-            <!-- ----------------------------------------------------------------------- -->
-            <!--                                Portfolio                                -->
-            <!-- ----------------------------------------------------------------------- -->
-            <section id="portfolio" class="portfolio-container flex">
+            <!-- ------------------------------ Portfolio ------------------------------- -->
+            <section id="portfolio" class="portfolio">
                 <div class="inner portfolio-inner">
-                    <div class="container">
+                    <div class="content">
                         <!-- Heading -->
-                        <div class="row portfolio-heading text-center mt-5">
-                            <h1 class="display-3 fw-bold text-capitalize">Portfolio</h1>
+                        <div class="heading">
+                            <h1 class="display-3 fw-bold text-capitalize text-center">Portfolio</h1>
                             <div class="heading-line pt-1"></div>
-                             <p class="lead pt-3">A Showing of my work</p>
+                            <p class="lead pt-3">A Showing of my work</p>
                         </div>
-                        <!-- --------------------------- Portfolio Items --------------------------- -->
-                        <div class="portfolio-box row flex py-3">
-                            <!-- Project 1 -->
-                            <div class="card-container col-lg-4 col-md-12">
-                                <div class="portfolio-card">
-                                    <img src="./assets/images/portfolio/netmatters-home.png" class="img-fluid" alt="Project 1">
-                                    <!-- Caption -->
-                                    <div class="portfolio-info">
-                                        <div class="caption flex">
-                                            <h4 class="pb-1">Netmatters Homepage</h4>
-                                            <div class="heading-line pt-"></div>
-                                            <p>I rebuilt the Netmatters homepage using the skills I learnt in this training course</p>
-                                            <!-- Button -->
-                                            <a href="https://kermekan.github.io/html-css-reflection/" target="_blank" class="btn portfolio-btn text-center">
-                                                <span>View Project</span>
+                        <!-- Portfolio -->
+                        <div class="portfolio-box grid">
+                            <!-- Card 1 -->
+                            <div class="cards portflio-card flex">
+                                <!-- Image -->
+                                <div class="img-container img-fluid">
+                                    <img src="/assets/images/portfolio/netmatters-home.png" alt="Netmatters Home Page">
+                                </div>
+                                <!-- Details -->
+                                <div class="details">
+                                    <div class="details-inner flex">
+                                        <h3 class="title">Netmatters Homepage</h3>
+                                        <p class="">
+                                            I rebuilt the Netmatters homepage using the skills I learnt in this training course
+                                        </p>
+                                        <!-- Button -->
+                                        <div class="btn portfolio-btn">
+                                            <a href="https://kermekan.github.io/html-css-reflection/" target="_blank" class="text-center flex text-uppercase">
+                                                Read More
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- .card-container -->
-                            
-                            <!-- Project 2 -->
-                            <div class="card-container col-lg-4 col-md-12">
-                                <div class="portfolio-card">
-                                    <img src="/assets/images/portfolio/portfolio-img.jpg" alt="Project 2">
-                                    <!-- Caption -->
-                                    <div class="portfolio-info">
-                                        <div class="caption flex">
-                                            <h4 class="pb-1">Project 2</h4>
-                                            <div class="heading-line pt-"></div>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, illum?</p>
-                                            <!-- Button -->
-                                            <a href="#" target="_blank" class="btn portfolio-btn text-center">
-                                            <span>View Project</span>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="cards portflio-card flex">
+                                <!-- Image -->
+                                <div class="img-container img-fluid">
+                                    <img src="/assets/images/portfolio/portfolio-img.jpg" alt="Netmatters Home Page">
+                                </div>
+                                <!-- Details -->
+                                <div class="details">
+                                    <div class="details-inner flex">
+                                        <h3 class="title">Lorem ipsum dolor sit amet </h3>
+                                        <p class="">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo quaerat asperiores itaque temporibus corrupti corporis, voluptatibus
+                                        </p>
+                                        <!-- Button -->
+                                        <div class="btn portfolio-btn">
+                                            <a href="#" class="text-center flex text-uppercase">
+                                                Read More
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- .card-container -->
-
-                            <!-- Project 3 -->
-                            <div class="card-container col-lg-4 col-md-12">
-                                <div class="portfolio-card">
-                                    <img src="/assets/images/portfolio/portfolio-img.jpg" alt="Project 3">
-                                    <!-- Caption -->
-                                    <div class="portfolio-info">
-                                        <div class="caption flex">
-                                            <h4 class="pb-1">Project 3</h4>
-                                            <div class="heading-line pt-"></div>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, illum?</p>
-                                            <!-- Button -->
-                                            <a href="#" target="_blank" class="btn portfolio-btn text-center">
-                                                <span>View Project</span>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="cards portflio-card flex">
+                                <!-- Image -->
+                                <div class="img-container img-fluid">
+                                    <img src="/assets/images/portfolio/portfolio-img.jpg" alt="Netmatters Home Page">
+                                </div>
+                                <!-- Details -->
+                                <div class="details">
+                                    <div class="details-inner flex">
+                                        <h3 class="title">Portfolio 2</h3>
+                                        <p class="">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, illum?
+                                        </p>
+                                        <!-- Button -->
+                                        <div class="btn portfolio-btn">
+                                            <a href="#" class="text-center flex text-uppercase">
+                                                Read More
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- .card-container -->
-                        </div><!-- .portfolio-box -->  
-                    </div><!-- .container -->       
+                            </div>
+                        </div><!-- .portfolio-box -->
+                    </div><!-- .content -->
                 </div><!-- .portfolio-inner -->
             </section>
-            <!-- ----------------------------------------------------------------------- -->
-            <!--                                Contacts                                 -->
-            <!-- ----------------------------------------------------------------------- -->
+            <!-- ------------------------------ Contacts ------------------------------- -->
             <section id="contacts" class="contacts">
                 <div class="inner contacts-inner">
-                    <div class="container">
+                    <div class="content">
                         <!-- Heading -->
-                        <div class="row contacts-heading text-center mt-5">
-                            <h1 class="display-3 fw-bold text-capitalize">Contact Me</h1>
+                        <div class="heading">
+                            <h1 class="display-3 fw-bold text-capitalize text-center">Contact Me</h1>
                             <div class="heading-line pt-1"></div>
                         </div>
-                        <!-- ---------------------------- Contact Info Card ----------------------------- -->
-                        <div class="row contacts-container flex">
-                            <!-- left card -->
-                            <div class="col-12 col-lg-6 left-card flex">
-                                <div class="contact-info w-100">
-                                    <h4 class="display-4 fw-bold">Get In Touch</h4>
-                                    <p class="lh-lg mt-3">
-                                        You can use the following contact form for any questions or opportunities. 
-                                        I'll respond to you within the next 2-3 days.
-                                    </p>
-                                    <p class="lh-lg mt-3 phone-number">
-                                        You can also call me on: &nbsp; <span><a>07954852929</a></span>
-                                    </p>
-                                    <p class="lh-lg mt-3">
-                                         You can also follow me on social media to see what I get up to every day
-                                    </p>
-                                    
-                                    <!-- Social Media -->
-                                    <p class="lead mt-4 text-capitalize">Hit me up on social media</p>
-                                    <div class="contact-box flex">
-                                        <!-- GitHub -->
-                                        <div class="contact-box__icon">
-                                            <a href="https://github.com/Kermekan" target="_blank">
-                                                <span class="fab fa-github"></span>
-                                            </a>
-                                        </div>
-                                        <!-- LinkedIn -->
-                                        <div class="contact-box__icon">
-                                            <a href="https://www.linkedin.com/in/othello-monti-deemi/" target="_blank">
-                                                <span class="fab fa-linkedin"></span>
-                                            </a>
-                                        </div>
-                                    </div>
+                        <!-- Content -->
+                        <div class="contacts-container flex">
+                            <div class="form grid">
+                                <!-- Left Card -->
+                                <div class="contact-info">
+                                    <div class="text">Wawa</div>
                                 </div>
-                            </div><!-- .left-card -->
-                            <!-- Right Card -->
-                            <div class="col-12 col-lg-6 right-card flex">
-                                <!-- Form -->
-                                <div class="form mb-2">
-                                    <h4 class="display-3--title mb-3">Contact Me</h4>
-                                    <form action="#" class="row">
-                                        <!-- F.Name -->
-                                        <div class="col-lg-6 col-md-6 mb-2">
-                                            <input type="text" placeholder="First Name" id="inputFirstName" class="form-control shadow form-control-lg" required>
+                                <!-- Right Card -->
+                                <div class="contact-form">
+                                    <!-- Circles -->
+                                    <div class="circle circle-1"></div>
+                                    <div class="circle circle-2"></div>
+                                    <div class="circle circle-3"></div>
+                                    <div class="circle circle-4"></div>
+                                    <!-- Form -->
+                                    <form action="index.html">
+                                        <h4 class="display-3--title my-2">Contact Me</h4>
+                                        <!-- ------------------------------- Inputs -------------------------------- -->
+                                        <!-- First Name -->
+                                        <div class="input-container">
+                                            <label for="firstname">First Name</label>
+                                            <input type="text" name="firstname" id="firstname" class="input" required>
+                                            <span>First Name</span>
                                         </div>
-                                        <!-- L.Name -->
-                                        <div class="col-lg-6 col-md-6 mb-2">
-                                            <input type="text" placeholder="Last Name" id="inputLastName" class="form-control shadow form-control-lg" required>
+                                        <!-- Last Name -->
+                                        <div class="input-container">
+                                            <label for="lastname">Last Name</label>
+                                            <input type="text" name="lastname" id="lastname" class="input" required>
+                                            <span>Last Name</span>
                                         </div>
                                         <!-- Email -->
-                                        <div class="col-lg-12 mb-2">
-                                            <input type="email" placeholder="Email Address" id="inputEmail" class="form-control shadow form-control-lg" required>
+                                        <div class="input-container">
+                                            <label for="email">Email</label>
+                                            <input type="text" name="email" id="email" class="input" required>
+                                            <span>Email</span>
                                         </div>
                                         <!-- Message -->
-                                        <div class="col-lg-12 mb-1">
-                                            <textarea name="message" placeholder="Message" id="message" rows="8" class="form-control shadow form-control-lg"></textarea>
+                                        <div class="input-container textarea">
+                                            <label for="message">Message</label>
+                                            <textarea name="message" id="message" class="input"></textarea>
+                                            <span>Message</span>
                                         </div>
                                         <!-- Button -->
-                                        <a href="#" class="btn contact-btn text-center mt-2">
-                                            <span>Contact Me</span>
-                                        </a>
+                                        <div class="btn form-btn">
+                                            <input type="submit" value="SEND">
+                                        </div>
                                     </form>
                                 </div>
-                            </div><!-- .right-card -->
+                            </div>
                         </div><!-- .contacts-container -->
                     </div>
-                </div><!-- .inner -->
-            </section> <!-- #contacts -->            
-        </div><!-- .main-sections -->
+                </div>
+            </section><!-- #contacts -->
+        </main>
     </div><!-- .full-page -->
-   
-    <!-- Bootstrap -->
-    <script src="/assets/js/bootstrap.bundle.js"></script>
+    
+    <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/vanilla-tilt/vanilla-tilt.js"></script>
+    <script src="assets/js/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>

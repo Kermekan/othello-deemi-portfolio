@@ -16,70 +16,136 @@
     <link rel="stylesheet" href="https://i.icomoon.io/public/21140f81e3/OthelloDeemi/style.css">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <div class="full-page bg-full img-fluid">
-        <!-- ----------------------------------------------------------------------- -->
-        <!--                             Navigation Bar                              -->
-        <!-- ----------------------------------------------------------------------- -->
-        <nav class="menubar scs-menu flex">
-            <!-- hamburger -->
-            <div class="hamburger-container flex">
+        <!-- ------------------------------- Navbar -------------------------------- -->
+        <div id="navbar">
+            <div id="menu-btn" class="hamburger flex hidden-md hidden-lg hidden-xl hidden-xxl">
+                <span id="menu-burger" class="bar"></span>
+            </div>
+            <!-- Large Screens -->
+            <nav class="sidebar sidebar-lg flex">
                 <!-- logo -->
-                <div class="hamburger-image">
-                    <!-- <input type="checkbox" class="toggler"> --> <!-- Not Working -->
-                    <a href="index.html">
-                        <img src="/assets/images/logo/logo-1.png" alt="">
-                    </a>
+                <a href="../index.html#home" class="logo-content flex">
+                    <div class="logo">
+                        <img src="../assets/images/logo/logo-1.png" alt="">
+                    </div>
+                </a>
+                <!-- Nav-list -->
+                <div class="item-list flex">
+                    <ul class="">
+                        <!-- About -->
+                        <li>
+                            <a href="about.html">
+                                <span class="icon fas fa-user" ></span>
+                                <span class="link--name">About</span>
+                            </a>
+                            <span class="link--description flex">About</span>
+                        </li>
+                        <!-- Portfolio -->
+                        <li>
+                            <a href="../index.html#portfolio">
+                                <span class="icon fas fa-suitcase" ></span>
+                                <span class="link--name">Portfolio</span>
+                            </a>
+                            <span class="link--description flex">Portfolio</span>
+                        </li>
+                        <!-- Coding Examples -->
+                        <li>
+                            <a href="coding.html">
+                                <span class="icon fas fa-code" ></span>
+                                <span class="link--name">Coding Examples</span>
+                            </a>
+                            <span class="link--description flex">Coding Examples</span>
+                        </li>
+                        <!-- SCS Scheme -->
+                        <li>
+                            <a href="scs-scheme.html">
+                                <span class="icon fas fa-graduation-cap" ></span>
+                                <span class="link--name">SCS Scheme</span>
+                            </a>
+                            <span class="link--description flex">SCS Scheme</span>
+                        </li>
+                        <!-- Contacts -->
+                        <li>
+                            <a href="../index.html#contacts">
+                                <span class="icon fas fa-phone-alt" ></span>
+                                <span class="link--name">Contacts</span>
+                            </a>
+                            <span class="link--description flex">Contacts</span>
+                        </li>
+                    </ul>
                 </div>
-            </div> 
-            <!-- Menu Items -->
-            <ul class="menubar-nav flex">
-                <!-- About -->
-                <li id="about-link" class="menu-item">
-                    <a href="about.html" class="menu-link" >
-                        <span class="icon fas fa-user" ></span>
-                        <span class="link-text fw-bold">About</span>
-                    </a>
-                </li>
-                <!-- Portfolio -->
-                <li id="#portfolio" class="menu-item">
-                    <a href="index.html#portfolio" class="menu-link" >
-                        <span class="icon fas fa-suitcase" ></span>
-                        <span class="link-text fw-bold">Portfolio</span>
-                    </a>
-                </li>
-                <!-- Coding Examples -->
-                <li id="coding-link" class="menu-item">
-                    <a href="coding.html" class="menu-link" >
-                        <span class="icon fas fa-code" ></span>
-                        <span class="link-text fw-bold">Coding Examples</span>
-                    </a>
-                </li>
-                <!-- SCS SCheme -->
-                <li id="scs-scheme-link" class="menu-item .scs-scheme-link">
-                    <a href="scs-scheme.html" class="menu-link" >
-                        <span class="icon fas fa-graduation-cap" ></span>
-                        <span class="link-text fw-bold">SCS Scheme</span>
-                    </a>
-                </li>
-                <!-- Home --> 
-                <li id="home-link" class="menu-item">
-                    <a href="index.html" class="menu-link" >
-                        <span class="icon icon-home" ></span>
-                        <span class="link-text fw-bold">Home</span>
-                    </a>
-                </li>
-                <!-- Contacts -->
-                <li id="inded.html/#contacts-link" class="menu-item">
-                    <a href="index.html#contacts" class="menu-link" >
-                        <span class="icon fas fa-phone-alt" ></span>
-                        <span class="link-text fw-bold">Contacts</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>  
+                <div></div>
+                <!-- Sicial media icons -->
+                <div class="contact-box flex">
+                    <div class="contact-box__icon">
+                        <a href="https://github.com/Kermekan" target="_blank" class="text-center">
+                            <span class="fab fa-github"></span>
+                        </a>
+                    </div>
+                    <div class="contact-box__icon">
+                        <a href="https://www.linkedin.com/in/othello-monti-deemi/" target="_blank" class="text-center">
+                            <span class="fab fa-linkedin"></span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <!-- Small screens -->
+            <nav class="sidebar sidebar-sm flex">
+                <!-- logo -->
+                <a href="../index.html#home" class="logo-content flex">
+                    <div class="logo">
+                        <img src="../assets/images/logo/logo-1.png" alt="">
+                    </div>
+                </a>
+                <!-- Nav-list -->
+                <div class="item-list flex">
+                    <ul class="">
+                        <!-- About -->
+                        <li>
+                            <a href="about.html">
+                                <span class="icon fas fa-user" ></span>
+                                <span class="link--name">About</span>
+                            </a>
+                        </li>
+                        <!-- Portfolio -->
+                        <li>
+                            <a href="../index.html#portfolio">
+                                <span class="icon fas fa-suitcase" ></span>
+                                <span class="link--name">Portfolio</span>
+                            </a>
+                        </li>
+                        <!-- Coding Examples -->
+                        <li>
+                            <a href="coding.html">
+                                <span class="icon fas fa-code" ></span>
+                                <span class="link--name">Coding Examples</span>
+                            </a>
+                        </li>
+                        <!-- SCS Scheme -->
+                        <li>
+                            <a href="scs-scheme.html">
+                                <span class="icon fas fa-graduation-cap" ></span>
+                                <span class="link--name">SCS Scheme</span>
+                            </a>
+                        </li>
+                        <!-- Contacts -->
+                        <li>
+                            <a href="../index.html#contacts">
+                                <span class="icon fas fa-phone-alt" ></span>
+                                <span class="link--name">Contacts</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <!-- hamburger -->
+            
+        </div> 
         
         <!-- <div class="main-sections">
             <header id="#scs-scheme" class="hero scs-container">
@@ -179,6 +245,9 @@
     </div><!-- .full-page -->
    
     <!-- Bootstrap -->
-    <script src="/assets/js/bootstrap.bundle.js"></script>
+    <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="../assets/js/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,154 @@
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/breakpoints' as *;
+@use '../utilities/gradients' as *;
+
+/* -------------------------------- Full Page ------------------------------- */
+.full-page {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    
+    overflow-x: hidden;
+    
+    // border: 2px solid purple;
+}
+
+.bg-full {
+    background: url("/assets/images/background-images/bg-1.jpg") no-repeat center center/cover;
+    background-position: center;
+    background-size: cover;
+    // keep inherited Background full size
+    background-attachment: fixed;
+}
+/* ---------------------------- Sections styling ---------------------------- */
+.main-sections {    
+    position: relative;
+    width: calc(100vw - (200px * 1.25));
+    height: fit-content;
+    margin-left: 15.625rem; // 15.625rem
+    padding-right: 17px;
+    flex-direction: column;
+    justify-content: start;
+      
+    overflow-x: hidden;
+    // border: 2px solid peru;
+}
+
+// Inner Styling
+.inner {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    max-width: 59.375rem; // 950px
+    padding: 0 1.25rem !important;
+    margin: 0 auto;
+    // overflow-x: hidden;
+    // border: 2px solid gold;
+}
+
+/* ------------------------------- Breakpoints ------------------------------ */
+
+// Content width <768px
+@include respond-to-down(sm) {
+    .main-sections {
+        margin-left: 0;
+        width: 100%;
+        // border: 2px solid purple;
+    }    
+}
+
+// Content width 768px to 992px
+@media (min-width: 769px) and (max-width: 992px) {
+    .main-sections {
+        margin-left: 11.875rem;
+        width: calc(100vw - (11.875rem));
+    }
+    
+    .inner {
+        max-width: 37.5rem; // 600px 
+        // border: 2px solid red;
+    }
+}
+
+// Content width 993px to 1259px
+@media (min-width: 993px) and (max-width: 1199px) {
+    .inner {
+        max-width: 46.25rem; // 740px
+        // border: 2px solid blue;
+    }
+}
+
+// Content width above 1200px
+@include respond-to-up(lg) {
+    .inner {
+        max-width: 59.375rem; // 950px
+        // border: 2px solid sandybrown;
+    }
+}
+
+// Content width above 1400pxpx
+@include respond-to-up(xl) {
+    .inner {
+        max-width: 84.375rem ; // 1350px
+        // border: 2px solid white;
+    }
+}
+
+
+/* ---------------------------- Content Sections ---------------------------- */
+section {
+    // background: url("/assets/images/background-images/bg-1.jpg") no-repeat center center/cover;
+    // background-attachment: fixed;
+    padding: 1.875rem 0.438rem;
+    height: fit-content !important;  
+}
+
+section, header {
+    width: 100%;
+    position: relative;
+}
+
+section .inner {
+    position: relative;
+    border-radius: 5px;
+    @include shadowSharp;
+    @include bgColor;
+    background-color: rgba($color: $bg-primary, $alpha: 0.85);
+}
+
+// Content
+.content {
+    @include sectionSpacing;
+}
+
+/* -------------------------- Adjust for scrollbar -------------------------- */
+.main-sections {
+    @include respond-to-down(sm) {
+        padding-right: 0;
+    }
+    
+    @media (min-width: 769px) and (max-width: 824px) {
+        padding-right: 0;
+    }
+    
+    @media (min-width: 993px) and (max-width:1025px) {
+        padding-right: 0;
+    }
+    
+    @media (min-width: 1200px) and (max-width:1235px) {
+        padding-right: 0;
+    }
+    
+    // @media (min-width: 1400px) and (max-width:1638px) {
+    //     padding-right: 0;
+    // }
+}
+
+
+
+
+
+
+
+

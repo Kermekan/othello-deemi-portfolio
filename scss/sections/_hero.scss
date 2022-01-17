@@ -3,80 +3,41 @@
 @use '../utilities/breakpoints' as *;
 @use '../utilities/gradients' as *;
 
-/* ------------------------------ Hero Section ------------------------------ */
-
-
 .hero {
-    position: static;
-    width: 100%;
-    height: 100vh !important;
-    overflow-y: hidden;
-    
-    //Commented borders &backgrounds for debugging
-    // border: 5px solid plum;
+    height: 100vh;
+    margin-bottom: auto;
+    // border: 2px solid plum;
     
     .hero-inner {
-        flex-direction: column;
-        padding: 0;
-        z-index: 99;
-        
-        // background-color: aqua;
-        // border: 5px solid white;
-    }
-}
-
-.heading {
-    margin: auto;
-}
-
-// Scroll Button
-.scroll-down {
-    width: 50px; //For some reason icon won't stay in div unless i specify div size
-    height:50px;
-    // Chevron position
-    margin-bottom: 4%;
-    
-    
-    // background-color: white;
-    
-    a {
         @include fullSize;
-
-        span {
-            display: inline-block;
-            width: 100%;
-        }
-        position: relative;
-        // padding: 1rem 3rem; 
-        
-        // HOVER EFFECT
-        span:hover {
-            animation: scroll 1s ease-in-out alternate infinite;
-        }
-    }
-    @include respond-to-down(md) {
-        display: none;
+        flex-direction: column;
+        // border: 2px solid red;
     }
 }
 
-// back to top button
-.back-to-top {
-    position: fixed;
-    width: 3rem;
-    height: 3rem;
-    right: 1.875em;
-    bottom: 2.5rem;
-    z-index: 1;
-    background-color: $solid-5;
+// Type writer
+#typewriter::after {
+    content: "";
+    border: 1px solid $solid-4;
+    margin-left: 2px;
+    animation: blink 300ms infinite alternate; 
+}
+
+
+// .back-to-top {
+//     position: fixed;
+//     width: 3rem;
+//     height: 3rem;
+//     right: 1.875em;
+//     bottom: 2.5rem;
+//     z-index: 1;
+//     background-color: $solid-5;
     
-    span {
-        color: $solid-4;
-        font-size: 1rem;
-        @include absoluteCenter;
-    }
-}
-
-
-
+//     span {
+//         color: $solid-4;
+//         font-size: 1rem;
+//         @include absoluteCenter;
+//     }
+// }
 
 

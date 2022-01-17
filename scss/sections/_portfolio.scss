@@ -3,235 +3,181 @@
 @use '../utilities/breakpoints' as *;
 @use '../utilities/gradients' as *;
 
-/* ----------------------- Portfolio Container Styling ---------------------- */
 #portfolio {
-    @include sectionBottomMargin;
-    height: fit-content;
-    // border: 5px solid red;
+    // border: 2px solid white;
 }
 
 .portfolio-inner {
-    @include sectionBorder($solid-1);
-    
-    // border: 5px solid red;
+    @include borderYStyling($solid-1);
+    // border: 2px solid green;
 }
 
-// Heading Styling
-.portfolio-heading {
-    @include headingStyling;
+/* ----------------------------- Content Styling ---------------------------- */
+.content .heading {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.625rem 30px;
     
     .heading-line {
         @include headingLine($solid-1);
     }
-    
-    // background-color: darkcyan;
-    // border: 5px solid purple;
 }
 
-/* ------------------------------ Cards Styling ----------------------------- */
+// Portfoli Styling
 .portfolio-box {
-    @include Card($solid-1);
-    justify-content: center;
-    padding: 2.5rem auto; //40px auto
-    margin: 0 auto;
-}
-
-.card-container {
     position: relative;
-    flex-grow: 1;
-    gap: 20px;
-    padding: 10px 15px;
     margin: 0 auto;
-    padding: 0.625rem; //10px
-    // border: 3px solid red;
+    width: fit-content;
+    padding: 5px;
     
+    place-items: center center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 1.25rem;
+    
+    align-items: stretch;
+    // border: 2px solid white;
     
     // Cards Styling
-    .portfolio-card {
+    .cards {
         position: relative;
         width: 100%;
-        padding: 0 auto;
-        margin: auto;
         overflow: hidden;
-        z-index: 3;
-        // border: 3px solid lime;
-        // Card border
-        border-top: 0.5rem solid $solid-1;
+        flex-direction: column;
+        justify-content: start;
+        background-color: $portfolio-cards;
         
-        // Image height styling
-        img {
-            position: relative;
-            object-fit: cover;
+        @include shadowSharp;
+        border-radius: 5px;
+        border: 2px solid rgba($color: black, $alpha: 0.5);
+        
+        // img styling
+        .img-container {
             width: 100%;
-            height: 45.40vh; // keeps cards height the same 314px @ max-screeb
+            max-height: 200px;
+            border-bottom: 2px solid $solid-1;
+            // border: 2px solid hotpink;
             
-            @media (orientation: landscape) {
-                height: 45.40vh; // keeps cards height the same
-                // height for landscape below 992px
-                @include respond-to-down(lg) {
-                    height: 45.40vw; // keeps cards height the same
-                }
-                
+            img {
+                @include fullSize;   
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
             }
         }
         
-        .portfolio-info {
+        // Details styling
+        .details {
+            z-index: 0;
+            position: relative;
+            overflow: hidden;
             @include fullSize;
-            position: absolute;
-            top: 0;
-            left: 0;
+            padding: 0.625rem 1.25rem !important;
+            // border: 2px solid gray;
             
-            // ============ hide for hover ============
-            opacity: 1;
-            visibility: hidden;
-            
-            // Overlay
-            &::before {
-                content: "";
-                @include fullSize;
-                position: absolute;
-                @include gradient(to right, $gradientR_O);
-                opacity: 0.75;
+            h3, p {
+                padding-bottom: 1.563rem;
             }
-            /* ------------------------------ Text Styling ------------------------------ */
-            .caption {
-                text-align: center;
-                color: $white;
-                flex-direction: column;
+            
+            // Title
+            h3 {
+                font-size: 1.188rem;
+                padding-top: 0.938rem;
+                min-height: 3.875rem;
+            }
+            
+            // Text
+            p {
+                font-size: 0.875rem;
+                min-height: 6.563rem;
+                padding-bottom: 1.563rem;
+                margin-bottom: auto;
+            }
+            
+            .details-inner {
                 position: relative;
-                z-index: 2;
-                padding: 0.313rem; //5px
+                z-index: 1;
+                @include fullSize;
+                flex-direction: column;
+                justify-content: start;
+                align-items: start;
+                // border: 2px solid purple;
+            }
+            
+            // Button
+            .portfolio-btn {
+                @include btnColor($portfolio-btn, $portfolio-btn-border);
+                // border: 2px solid red;
                 
-                h4 {
-                    display: block;
-                    text-transform: uppercase;
-                    font-size: 25px; //30px
-                    margin-top: 5%; //controls spacing of text
+                a {
+                    // border: 2px solid black;
+                }
+                
+                &:hover {
+                    @include gradient(to right, $gradientR_O);
+                }
+                
+                // Breakpoints
+                @include respond-to-down(xs) {
+                    
+                    a {
+                        padding: 0.313rem 15px;
+                        font-size: 0.813rem;
+                    }
+                }
+            }
+            
+            // Diagonal coloring
+            &::after {
+                content: "";
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: -150px;
+                bottom: -50px;
+                // width: 120%;
+                height: 100%;
+                
+                @include shadowSharp;
+                @include gradient(to left bottom, $gradientP_O);
+                opacity: 0.7;
+                
+                transform: skewY(-25deg);
+                /* different browsers */
+                -webkit-transform: skewY(-25deg);/* Chromium browsers */
+                -moz-transform: skewY(-25deg);/* Firefox */
+                -ms-transform: skewY(-25deg);/* IE */
+                
+                border-top: 2px solid $solid-1;
+                border-bottom: 2px solid $solid-1;
+            }
+        }
+    }
+    
+    // Breakpoints for >576px
+    @include respond-to-up(xs) {
+        padding: 1.25rem;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-auto-rows: 1fr;
+        
+        .cards {
+            
+            .details {
+                
+                h3 {
+                    font-size: 1.75rem;
+                    min-height: 5.5rem;
                 }
                 
                 p {
-                    margin: auto 0;
-                    // font-size: 1.125rem; //18x
-                    font-size: 1.30vw; //25px
-                    // font-size: clamp(1.125rem, 2vw - 0.3rem, 1rem);
+                    font-size: 1rem;
                 }
-                
-                /* ------------------------------- Breakpoints ------------------------------ */
-                // Font Size below 992px
-                @include respond-to-down(lg) {
-                    h4 {
-                        margin-top: 3%;
-                        font-size: 40px; //35px
-                        font-weight: 700;
-                    }
-                    
-                    p {
-                        font-size: 30px; //30px
-                    }
-                }
-                
-                // Font Size below 769px
-                @include respond-to-down(md) {
-                    h4 {
-                        margin-top: 3%;
-                        font-size: 2.188rem; //35px
-                    }
-                    
-                    p {
-                        font-size: 1.875rem; //30px
-                    }
-                }
-                
-                // Font Size below 577px
-                @include respond-to-down(sm) {
-                    h4 {
-                        margin-top: 3%;
-                        font-size: 1.875rem; // 30px
-                    }
-                    
-                    p {
-                        font-weight: 200;
-                        font-size: 5.19vw; //30px @ breakpoint width
-                    }
-                }
-                
-                // Font Size below 360px
-                @include respond-to-down(xs) {
-                    h4 {
-                        margin-top: 3%;
-                        font-size: 28px; // 20px
-                    }
-                    
-                    p {
-                        // margin-bottom: 3%; 
-                        margin: 10% 0; 
-                        font-size: 1.125rem; //18px
-                        font-weight: 200; 
-                    }
-                }
-            }
-        }
-        
-        //Shows overlay on mobile devices when tapped
-        &:hover, &:active, &:focus  { 
-            img {
-                transform: scale(1.5);
-                @include transitionProperty;
-                
-            }
-            .portfolio-info {
-                opacity: 1;
-                visibility: visible;
-                @include transitionProperty;
             }
         }
     }
 }
 
-// Portfolio Button
-.portfolio-btn {
-    @include button($solid-1) {
-        margin-bottom: 10%;
-        // Button
-        padding: 5px 1.25rem; //h5px w20px
-        
-    }
-    
-    //Icon container
-    span {
-        width: 100%;
-        height: 100%;
-        margin-left: auto;      
-        color: $white;
-    }
-    
-    // Hover effect
-    &:hover {
-        @include gradient(to left, $gradientP_R);
-        transform: scale(1.1);
-    }
-    
-    /* ------------------------------- Breakpoints ------------------------------ */
-    // Below 992px
-    @include respond-to-down(lg) {
-        padding: 0.438rem 1.875rem; // 7px 30px
-        font-size: 1.875rem;
-    }
-    
-    // Below 768px
-    @include respond-to-down(md) {
-        padding: 0.438rem 1.25rem; // 7px 20px
-        font-size: 1.563rem; // 25px
-    }
-    
-    // Below 577px
-    @include respond-to-down(sm) {
-        // display: none;
-        padding: 0.313rem 1.25rem; //h(5px)s w(10px)
-        font-size: 4.33vw; // 25px @ breakpoint width
-    }
-}
-
+  
 
 
 
