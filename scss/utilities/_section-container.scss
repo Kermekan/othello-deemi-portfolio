@@ -100,8 +100,10 @@
 section {
     // background: url("/assets/images/background-images/bg-1.jpg") no-repeat center center/cover;
     // background-attachment: fixed;
+    width: 100%;
     padding: 1.875rem 0.438rem;
-    height: fit-content !important;  
+    height: fit-content;  
+    border: 2px solid yellow;
 }
 
 section, header {

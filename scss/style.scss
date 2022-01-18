@@ -18,7 +18,10 @@
 
 @use 'sections/hero';
 @use 'sections/portfolio';
-@use 'sections/contacts';
+
+@use 'sections/contact-left-card';
+@use 'sections/contact-right-card';
+
 @use 'sections/about';
 @use 'sections/scs-scheme';
 @use 'sections/coding';

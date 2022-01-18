@@ -77,10 +77,51 @@ function loop () {
 }
 loop();
 
-// Vanilla Tilt =========
-VanillaTilt.init(document.querySelectorAll(".portflio-card"), {
-    max: 10,
-    speed: 200
+// Form inputs animation =========
+const inputs = document.querySelectorAll(".input");
+
+// Add focus class to .input-container
+function focusFunc() {
+    let parent = this.parentNode;
+    parent.classList.add("focus");
+}
+
+// Remove focus class from .input-container when empty
+function blurFunc() {
+    let parent = this.parentNode;
+    if (this.value =="") {
+        parent.classList.remove("focus");
+    }
+}
+
+inputs.forEach(input => {
+    input.addEventListener("focus", focusFunc)
+    input.addEventListener("blur", blurFunc)
+});
+
+// Form Validation =========
+const form = document.getElementById("contact-form");
+const validInput = document.querySelectorAll(".input");
+const errorHint = document.querySelector(".error-hint");
+
+// Input names
+const name = document.getElementById("name");
+const phone = document.getElementById("phone");
+const email = document.getElementById("email");
+const message = document.getElementById("message");
+
+const inputFields = [name, ]
+
+console.log(phone);
+
+
+
+
+// prevent page refresh on submit
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    alert("Submitted");
 });
 
 

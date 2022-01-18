@@ -57,8 +57,8 @@
 
 // y-axis borders
 @mixin borderYStyling($color) {
-    border-top: 10px inset $color !important;
-    border-bottom: 10px inset $color !important;
+    border-top: 10px inset $color ;
+    border-bottom: 10px inset $color;
 }
 
 // x-axis border

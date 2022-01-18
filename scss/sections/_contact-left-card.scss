@@ -1,0 +1,147 @@
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/breakpoints' as *;
+@use '../utilities/gradients' as *;
+
+#contacts {
+    // width: fit-content;
+    height: auto;
+}
+
+.contacts-inner {
+    position: relative;
+    @include borderYStyling($solid-2);
+    
+    .heading {
+        margin: 0 auto;
+        width: fit-content;
+        .heading-line {
+            @include headingLine($solid-2);
+        }
+    }
+    
+    @include respond-to-down(md) {
+        // padding: 0;
+        // width: 100vw;
+    }
+    @media(max-width: 430px) {
+        width: 100vw;
+    }
+}
+
+// Container
+.contacts-container {
+    position: relative; 
+    @include fullSize;
+    // padding: 2rem;
+    color: $white;
+    z-index: 0;
+    justify-content: start;
+    align-items: stretch;
+    overflow: hidden;
+    
+    border: 2px solid purple;
+    
+    @include respond-to-down(md) {
+        
+        flex-direction: column;
+        padding: 0;
+        width: fit-content;
+    }
+}
+
+// Form
+.form {
+    width: 100%;
+    height: fit-content;
+    background-color: $white;
+    // border-radius: 10px;
+    @include shadowSharp;
+    grid-template-columns: repeat(2, 1fr);
+    // overflow: hidden;
+    border: 2px solid grey;
+    
+    @include respond-to-down(md) {   
+        place-items: center center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr; 
+        width: fit-content;
+        height: auto;
+    }
+}
+
+.contact-info, .contact-form {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding: 2.3rem 2.2rem;
+    @include fullSize;
+    
+    @include respond-to-down(md) {   
+        width: fit-content;
+        height: auto;
+    }
+}
+
+/* -------------------------------- Left Side ------------------------------- */
+.contact-info {
+    @include borderYStyling($solid-2);
+    @include gradient(to left, $gradientR_O);
+    
+    .phone-number span {
+        font-weight: bold;
+        font-size: 1.25rem;
+        color: $solid-4;
+        
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+    
+    @include respond-to-down(md) {
+        border-bottom: none;
+    }
+    // border: 2px solid red;
+}
+
+// Social Media
+.contact-info .contact-box {
+    width: fit-content;
+    gap: 0.938rem;
+    // border: 2px solid black;
+    
+    &__icon {
+        padding: 0.625rem 0;
+        
+        a {
+            display: block;
+            padding: 0;
+            margin: 0;
+            // border: 2px solid purple;
+            
+            span {
+                display: block;
+                font-size: 3.125rem;
+                
+                &:hover, &:active, &:focus {
+                    color: $solid-4;
+                    transform: scale(1.3);
+                    transition: all 150ms ease-in-out;
+                 }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

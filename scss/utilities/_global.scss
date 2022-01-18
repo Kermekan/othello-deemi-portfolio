@@ -70,6 +70,10 @@
 
 /* -------------------- Hides Elements based on viewport -------------------- */
 
+.hidden {
+    display: none !important;
+}
+
 // Hide elements below 575px
 .hidden-xs {
     @media (max-width: 575px) {

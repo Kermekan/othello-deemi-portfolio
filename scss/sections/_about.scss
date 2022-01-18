@@ -45,7 +45,7 @@
     width: 80%;
     
     @include respond-to-up(md) {
-        @include borderXStyling($solid-4);
+        // @include borderXStyling($solid-4);
         
     }
     @include respond-to-down(md) {
@@ -67,6 +67,7 @@
     @include Card($solid-4);
     padding: 2.5rem auto; //40px auto
     margin: 0 auto;
+    margin-bottom: 1.25rem;
     
     @include respond-to-down(md) {
         

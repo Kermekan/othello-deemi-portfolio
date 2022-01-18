@@ -37,5 +37,9 @@ $portfolio-cards-hover: lighten($portfolio-cards, 20%);
 $portfolio-btn: #b92751;
 $portfolio-btn-border: darken(#b92751, 10%);
 
+// Form error
+$form-error: #E83151;
+$form-valid: #71d171;
+
 //Import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap.scss"

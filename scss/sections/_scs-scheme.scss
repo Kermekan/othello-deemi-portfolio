@@ -49,8 +49,8 @@
     width: fit-content;
     
     // For some reason borderYStyling mixin doesn't work
-    border-right: 10px inset $solid-3;
-    border-left: 10px inset $solid-3;
+    // border-right: 10px inset $solid-3;
+    // border-left: 10px inset $solid-3;
     
     @include respond-to-down(sm) {
         border-right: none;

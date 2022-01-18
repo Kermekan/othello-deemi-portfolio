@@ -257,8 +257,35 @@
                             <div class="form grid">
                                 <!-- Left Card -->
                                 <div class="contact-info">
-                                    <div class="text">Wawa</div>
-                                </div>
+                                    <h4 class="display-4 fw-bold my-2">Get In Touch</h4>
+                                    <p class="lh-lg mt-3">
+                                        You can use the following contact form for any questions or opportunities. 
+                                        I'll respond to you within the next 2-3 days.
+                                    </p>
+                                    <p class="lh-lg mt-3 phone-number">
+                                        You can email me at: &nbsp; <span><a>Othello.Deemi@netmatters-scs.com</a></span>
+                                    </p>
+                                    <p class="lh-lg mt-3">
+                                         You can also follow me on social media to see what I get up to
+                                    </p>
+                                    
+                                    <!-- Social Media -->
+                                    <p class="lead mt-4 text-capitalize">Hit me up on social media</p>
+                                    <div class="contact-box flex">
+                                        <!-- GitHub -->
+                                        <div class="contact-box__icon">
+                                            <a href="https://github.com/Kermekan" target="_blank">
+                                                <span class="fab fa-github"></span>
+                                            </a>
+                                        </div>
+                                        <!-- LinkedIn -->
+                                        <div class="contact-box__icon">
+                                            <a href="https://www.linkedin.com/in/othello-monti-deemi/" target="_blank">
+                                                <span class="fab fa-linkedin"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div> 
                                 <!-- Right Card -->
                                 <div class="contact-form">
                                     <!-- Circles -->
@@ -267,39 +294,39 @@
                                     <div class="circle circle-3"></div>
                                     <div class="circle circle-4"></div>
                                     <!-- Form -->
-                                    <form action="index.html">
+                                    <form id="contact-form" action="index.html">
                                         <h4 class="display-3--title my-2">Contact Me</h4>
                                         <!-- ------------------------------- Inputs -------------------------------- -->
                                         <!-- First Name -->
-                                        <div class="input-container">
-                                            <label for="firstname">First Name</label>
-                                            <input type="text" name="firstname" id="firstname" class="input" required>
-                                            <span>First Name</span>
+                                        <div id="name-container" class="input-container">
+                                            <input type="text" name="name" id="name" class="input" required>
+                                            <span class="error-hint hidden">Your Name is required</span>
+                                            <label for="name">Full Name</label>
                                         </div>
-                                        <!-- Last Name -->
-                                        <div class="input-container">
-                                            <label for="lastname">Last Name</label>
-                                            <input type="text" name="lastname" id="lastname" class="input" required>
-                                            <span>Last Name</span>
+                                        <!-- Phone -->
+                                        <div id="phone-container" class="input-container">
+                                            <input type="tel" name="phone" id="phone" class="input" required>
+                                            <span class="error-hint hidden">Please enter a phone number</span>
+                                            <label for="lastname" class="">Phone Number</label>
                                         </div>
                                         <!-- Email -->
-                                        <div class="input-container">
+                                        <div id="email-container" class="input-container email">
+                                            <input type="email" name="email" id="email" class="input">
+                                            <span class="error-hint hidden">Please enter a valid Email Address</span>
                                             <label for="email">Email</label>
-                                            <input type="text" name="email" id="email" class="input" required>
-                                            <span>Email</span>
                                         </div>
                                         <!-- Message -->
-                                        <div class="input-container textarea">
+                                        <div id="msg-container" class="input-container textarea">
+                                            <textarea name="message" id="message" class="input" required></textarea>
+                                            <span class="error-hint hidden">Please type a message</span>
                                             <label for="message">Message</label>
-                                            <textarea name="message" id="message" class="input"></textarea>
-                                            <span>Message</span>
                                         </div>
                                         <!-- Button -->
                                         <div class="btn form-btn">
-                                            <input type="submit" value="SEND">
+                                            <button type="submit" id="form-submit" class="text-uppercase">send</button>
                                         </div>
                                     </form>
-                                </div>
+                                </div> 
                             </div>
                         </div><!-- .contacts-container -->
                     </div>
@@ -310,6 +337,7 @@
     
     <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/vanilla-tilt/vanilla-tilt.js"></script>
+    <script src="assets/js/plugins.js"></script>
     <script src="assets/js/jQuery/jquery-3.6.0.min.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
