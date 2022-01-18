@@ -78,7 +78,6 @@
     @include fullSize;
     
     @include respond-to-down(md) {   
-        width: fit-content;
         height: auto;
     }
 }
@@ -87,6 +86,7 @@
 .contact-info {
     @include borderYStyling($solid-2);
     @include gradient(to left, $gradientR_O);
+    width: 100%;
     
     .phone-number span {
         font-weight: bold;

@@ -12235,7 +12235,6 @@ section .inner {
 }
 @media (max-width: 992px) {
   .contact-info, .contact-form {
-    width: fit-content;
     height: auto;
   }
 }
@@ -12248,6 +12247,7 @@ section .inner {
   background: -webkit-linear-gradient(to left, #ba2751, #d96a18);
   background: -moz-linear-gradient(to left, #ba2751, #d96a18);
   background: -o-linear-gradient(to left, #ba2751, #d96a18);
+  width: 100%;
 }
 .contact-info .phone-number span {
   font-weight: bold;
