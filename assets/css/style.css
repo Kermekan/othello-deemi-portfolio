@@ -11396,7 +11396,6 @@ section {
   width: 100%;
   padding: 1.875rem 0.438rem;
   height: fit-content;
-  border: 2px solid yellow;
 }
 
 section, header {
@@ -11420,6 +11419,7 @@ section .inner {
 @media (max-width: 769px) {
   .main-sections {
     padding-right: 0;
+    padding-left: 0;
   }
 }
 @media (min-width: 769px) and (max-width: 824px) {
@@ -12182,12 +12182,6 @@ section .inner {
   background-color: #ba2751;
   border-radius: 0 0 1rem 1rem;
 }
-@media (max-width: 430px) {
-  .contacts-inner {
-    width: 100vw;
-  }
-}
-
 .contacts-container {
   position: relative;
   width: 100%;
@@ -12197,7 +12191,6 @@ section .inner {
   justify-content: start;
   align-items: stretch;
   overflow: hidden;
-  border: 2px solid purple;
 }
 @media (max-width: 992px) {
   .contacts-container {
@@ -12210,10 +12203,10 @@ section .inner {
 .form {
   width: 100%;
   height: fit-content;
-  background-color: #fff;
+  background-color: #121212;
   box-shadow: 0 2px 2px black, 0 4px 4px black, 0 6px 6px black;
   grid-template-columns: repeat(2, 1fr);
-  border: 2px solid grey;
+  overflow: hidden;
 }
 @media (max-width: 992px) {
   .form {
@@ -12228,7 +12221,6 @@ section .inner {
 .contact-info, .contact-form {
   overflow: hidden;
   position: relative;
-  z-index: 1;
   padding: 2.3rem 2.2rem;
   width: 100%;
   height: 100%;
@@ -12241,6 +12233,7 @@ section .inner {
 
 /* -------------------------------- Left Side ------------------------------- */
 .contact-info {
+  z-index: 1;
   border-top: 10px inset #ba2751;
   border-bottom: 10px inset #ba2751;
   background: linear-gradient(to left, #ba2751, #d96a18);
@@ -12253,10 +12246,17 @@ section .inner {
   font-weight: bold;
   font-size: 1.25rem;
   color: #0bd0df;
+  width: 100%;
 }
 .contact-info .phone-number span:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+@media (max-width: 430px) {
+  .contact-info .phone-number span {
+    font-size: 1rem;
+    overflow-wrap: break-word;
+  }
 }
 @media (max-width: 992px) {
   .contact-info {
@@ -12295,21 +12295,12 @@ section .inner {
   background: -o-linear-gradient(to right, #0bd0df, #311c61);
   border-top: 10px inset #0bd0df;
   border-bottom: 10px inset #0bd0df;
+  background-attachment: fixed;
 }
 @media (max-width: 992px) {
   .contact-form {
     border-top: none;
   }
-}
-.contact-form::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -13px;
-  width: 26px;
-  height: 26px;
-  transform: rotate(45deg);
-  background-color: #0ccbdc;
 }
 @media (max-width: 992px) {
   .contact-form {
@@ -12329,16 +12320,21 @@ section .inner {
 form {
   position: relative;
   z-index: 10;
-  overflow: hidden;
-}
-form .input-container {
-  position: relative;
-  margin: 2rem 0;
-}
-form .input-container .input {
   width: 100%;
-  color: #fff;
+  height: 100%;
+}
+
+.custom-field {
+  position: relative;
+  width: 100%;
+  margin: 1rem 0;
+}
+.custom-field .input {
+  position: relative;
+  z-index: 10;
+  width: 100%;
   padding: 0.6rem 1.2rem;
+  color: #fff;
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -12346,73 +12342,39 @@ form .input-container .input {
   background: transparent;
   border-radius: 25px;
   border: 2px solid #fff;
-  transition: 300ms;
 }
-form .input-container textarea.input {
-  padding: 0.8rem 1.2rem;
+.custom-field .input:focus, .custom-field .input:valid {
+  background-color: inherit;
+}
+.custom-field textarea.input {
   min-height: 150px;
   border-radius: 22px;
   resize: none;
   overflow-y: auto;
-  transition: 300ms;
 }
-form .input-container textarea.input::-webkit-scrollbar-track {
+.custom-field textarea.input::-webkit-scrollbar-track {
   background-color: transparent;
 }
-form .input-container textarea::placeholder {
-  opacity: 1;
-  transition: 300ms;
-}
-form .input-container label {
+.custom-field .place-holder {
   position: absolute;
+  left: 23px;
   top: 50%;
-  left: 20px;
-  color: #fff;
   transform: translateY(-50%);
-  padding: 0 0.4rem;
-  font-size: 0.9rem;
-  font-weight: 400;
-  pointer-events: none;
   transition: 150ms;
 }
-form .input-container input:focus ~ label {
-  color: #fff;
-}
-form .input-container input:valid ~ label {
-  color: transparent;
-}
-form .input-container#email-container input:focus ~ label {
-  color: transparent;
-}
-form .input-container#email-container input:valid ~ label {
-  color: #fff;
-}
-form .input-container textarea:valid ~ label {
-  color: transparent;
-}
-form .input-container.focus label {
+.custom-field.focus .place-holder {
   top: -10px;
   transform: translateY(-50%);
   left: 25px;
   font-size: 0.8rem;
-  color: #fff !important;
 }
-form .input-container.textarea label {
-  top: 1rem;
+
+.textarea .place-holder {
+  top: 0.6rem;
   transform: translateY(0);
 }
-form .textarea.focus label {
-  top: -10px;
-  left: 25px;
-  transform: translateY(-50%);
-  font-size: 0.8rem;
-  color: #fff;
-}
-form .form-btn {
-  cursor: pointer;
-  padding: 0;
-}
-form .form-btn button {
+
+.form-btn {
   color: #0bd0df;
   line-height: 2.188rem;
   padding: 0.313rem 1.25rem;
@@ -12420,62 +12382,35 @@ form .form-btn button {
   background-color: #fff;
   border: 3px solid #fff;
   border-radius: 1.563rem;
-  width: 100%;
-  height: 100%;
+  outline: none;
 }
-form .form-btn:hover button {
+.form-btn:hover, .form-btn:active, .form-btn:focus {
   color: #fff;
   background-color: transparent;
 }
 
-/* ------------------------- Form Validation Classes ------------------------ */
-.input-container .error-hint {
-  position: absolute;
-  top: -20px;
-  right: 20px;
+/* ----------------------------- Form Validation ---------------------------- */
+.error-messages {
   color: #E83151;
-  font-size: 0.9rem;
   font-weight: 600;
 }
-@media (min-width: 993px) and (max-width: 1199px) {
-  .input-container .error-hint {
-    top: 100%;
-    right: 80px;
-    font-size: 0.8rem;
-  }
-}
-@media (max-width: 430px) {
-  .input-container .error-hint {
-    top: 100%;
-  }
+.error-messages ul li:last-child {
+  padding-bottom: 20px;
 }
 
-.input-container.invalid {
-  color: #E83151;
-}
-.input-container.invalid .input {
+.custom-field .error {
   color: #E83151;
   border: 2px solid #E83151;
 }
-.input-container.invalid label {
+.custom-field .error ~ .place-holder {
   color: #E83151;
 }
-.input-container.invalid.focus label {
-  color: #E83151 !important;
+.custom-field .valid {
+  color: #71d171;
+  border: 2px solid #71d171;
 }
-
-.input-container.valid {
-  color: #71d171 !important;
-}
-.input-container.valid .input {
-  color: #71d171 !important;
-  border: 2px solid #71d171 !important;
-}
-.input-container.valid label {
-  color: #71d171 !important;
-}
-.input-container.valid.focus label {
-  color: #71d171 !important;
+.custom-field .valid ~ .place-holder {
+  color: #71d171;
 }
 
 /* --------------------------------- Circles -------------------------------- */
