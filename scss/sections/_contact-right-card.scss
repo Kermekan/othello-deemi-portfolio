@@ -8,6 +8,7 @@
     color: $white;
     @include gradient(to right, $gradientC_B);
     @include borderYStyling($solid-4);
+    background-attachment: fixed;
     // width: fit-content;
     // border: 2px solid green;
     
@@ -15,12 +16,7 @@
         border-top: none;
     }
     
-    // Diamond Shape
-    
     // Breakpoints
-    @include respond-to-up(md) {
-        // background-attachment: fixed; 
-    }
     
     @include respond-to-down(md) {
         @include gradient(to right bottom, $gradientC_B);
@@ -139,8 +135,7 @@ form {
 
 // Input error color
 .custom-field {
-    
-    input.error {
+    .error {
         color: $form-error;
         border: 2px solid $form-error;
         
@@ -148,7 +143,17 @@ form {
             color: $form-error;
         }
     }
+    
+    .valid {
+        color: $form-valid;
+        border: 2px solid $form-valid;
+        
+        & ~ .place-holder {
+            color: $form-valid;
+        }
+    }
 }
+
 /* --------------------------------- Circles -------------------------------- */
 .circle {
     border-radius: 50%;

@@ -3,257 +3,309 @@
 @use '../utilities/breakpoints' as *;
 @use '../utilities/gradients' as *;
 
-#contacts {
-    // border: 3px solid gray;
-}
-
-.contacts-inner {
-    @include borderYStyling($solid-2);
-}
-
-.contacts-heading {
-    @include headingStyling;
-    
-    .heading-line {
-        @include headingLine($solid-2);
-    }
-}
- 
-// Holds both cards
-.contacts-container {
+/* ------------------------------- Right Side ------------------------------- */
+.contact-form {
     position: relative;
-    align-items: stretch;
-    margin: 0 auto; //10px
-    @include fullSize;
-    @include boxShadow;
+    color: $white;
+    @include gradient(to right, $gradientC_B);
+    @include borderYStyling($solid-4);
+    border: 2px solid green;
     
-    // border: 3px solid purple;
-    
-    /* ---------------------------- Left Card Styling --------------------------- */
-    .left-card {
-        position: relative;
-        height: auto;
-        padding: 1.875rem 2.5rem; //30px //40px
-        align-items: start;
-        
-        // background-color 
-        @include gradient(to right, $gradientR_O);
-        
-        // Border Styling
-        @include borderYStyling($solid-2);
-        
-        // Breakpoints
-        @include respond-to-down(md) {
-            flex-direction: column;
-            padding: 10px 20px; //30px //40px
-            height: 100%;
-        }
-        
-        // border: 3px solid peachpuff;
+    @include respond-to-down(md) {
+        border-top: none;
     }
-}
-
-// Phone number styling
-.phone-number span {
-    font-weight: bold;
-    font-size: 1.25rem;
-    color: $solid-4;
-}
-
-// Social Media boxes
-.contact-box {
-    position: relative;
-    width: fit-content;
-    // justify-content: center;
-    padding: 0;
     
-    &__icon {
-        position: relative;
-        width: fit-content;
-        font-size: 2.5rem; //40px
-        padding: 10px 0;
-        
-        // background-color: rgb(214, 214, 214);
-        
-        a {
-            display: block;
-            text-align: center;
-            padding-right: 1.25rem;
-            
-            span {
-                // Social media Hover
-                &:hover {
-                    color: $solid-4;
-                    transform: scale(1.3);
-                    transition: all 150ms ease-in-out;
-                }
-            }
-        }
-        
+    // Diamond Shape
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 99;
+        top: 50%;
+        left: -13px;
+        width: 26px;
+        height: 26px;
+        transform: rotate(45deg);
+        background-color: #0ccbdc;
     }
-}
-
-/* --------------------------- Right Card Styling --------------------------- */
-.right-card {
-    position: relative;
-    height: auto;
-    padding: 1.875rem 2.5rem 0.625rem 2.5rem; //30px 40px 10px 40px
-    align-items: center;
-    
-    
-    background-color: $gray-200;
-    
-    // Border Styling
-    @include borderYStyling($bg-primary);
     
     // Breakpoints
+    @include respond-to-up(md) {
+        // background-attachment: fixed; 
+    }
+    
     @include respond-to-down(md) {
-        flex-direction: column;
-        padding: 10px 20px; //30px //40px
-        height: 100%;
-    }
-    
-    // border: 3px solid peachpuff;
-}
-
-// Form Styling
-.form {
-    h4 {
-        
-        // Title Coloring
-        @include gradient(to left, $gradientR_O);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}
-
-.contact-btn {
-    @include button($solid-2);
-    
-    // Button Hover
-    &:hover {
-        @include gradient(to right, $gradientR_O);
-        color: white;
-        transform: scale(1.030);
-        
-        @include respond-to-down(md) {
-            transform: scale(1.01);
+        @include gradient(to right bottom, $gradientC_B);
+        // background-attachment: fixed;
+        &::before {
+            top: -13px;
+            left: 50%;
+            background-color: #169ebc;
         }
     }
 }
 
-
-
-/* -------------------------------------------------------------------------- */
-/*                                 Second Try                                 */
-/* -------------------------------------------------------------------------- */
-@use '../custom' as *;
-@use '../utilities/mixins' as *;
-@use '../utilities/breakpoints' as *;
-@use '../utilities/gradients' as *;
-
-#contacts {
-    // border: 3px solid gray;
-}
-
-.contacts-inner {
-    @include borderYStyling($solid-2);
-    
-    .content .heading-line {
-        @include headingLine($solid-2);
-    }
-}
-
-// Cards Container
-.contacts-container {
+/* ------------------------------ Form Styling ------------------------------ */
+form {
     position: relative;
-    height: fit-content;
-    justify-content: start;
-    align-items: stretch;
+    z-index: 10;
     overflow: hidden;
-    border: 2px solid purple;
+    // border: 2px solid slateblue;
     
-    @include respond-to-down(md) {
-        flex-direction: column;
-    }
-    
-    // Both Cards Styling
-    .left-card, .right-card {
-        padding: 0.616rem 1.25rem;
-        flex-direction: column;
-        align-items: stretch;
-        height: 100%;
-        
-        @include respond-to-up(md) {
-            width: 50%;
-            border: 2px solid grey
-        }
-    }
-}
-
-// Left Card Styling
-.left-card {
-    @include gradient(to right, $gradientR_O);
-    
-    // Phone number styling
-    .phone-number span {
-        font-weight: 600;
-        font-size: 1.25rem;
-        color: $solid-4;
-    }
-    
-    // Social Media
-    .contact-box {
+    // Input Styling
+    .input-container {
         position: relative;
-        width: fit-content;
-        // border: 2px solid purple;
-        gap: 1.25rem;
+        margin: 2rem 0;
         
-        &__icon {
-            position: relative;
-            justify-content: center;
-            // width: fit-content;
-            font-size: 2.5rem; //40px
-            // padding: 10px 0;
+        .input {
+            width: 100%;
+            color: $white;
+            padding: 0.6rem 1.2rem;
             
-            // border: 2px solid red;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 1px;
             
-            a {
-                // padding: 0;
-                text-align: center;
-                // padding: 0 1.25rem;
-                
-                span {
-                    display: block;
-                    // border: 2px solid grey;
-                    
-                    // Social media Hover
-                    &:hover {
-                        color: $solid-4;
-                        transform: scale(1.3);
-                        transition: all 150ms ease-in-out;
-                    }
-                }
+            outline: none;
+            background: transparent;
+            border-radius: 25px;
+            border: 2px solid $white;
+            transition: 300ms;
+        }
+        
+        // Textarea
+        textarea.input {
+            padding: 0.8rem 1.2rem;
+            min-height: 150px;
+            border-radius: 22px;
+            resize: none;
+            overflow-y: auto;
+            transition: 300ms;
+            
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
             }
+        }
+        
+        textarea::placeholder {
+            opacity: 1;
+            transition: 300ms;
+        }
+        
+        // Label
+        label {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            color: $white ;
+            transform: translateY(-50%);
             
+            padding: 0 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 400;
+            pointer-events: none;
+            transition: 150ms;
+        }
+        
+        // Label Animation
+        input:focus ~ label {
+            color: $white;
+        }
+        
+        input:valid ~ label {
+            color: transparent;
+        }
+        
+        &#email-container input:focus ~ label {
+            color: transparent;
+        }
+        
+        &#email-container input:valid ~ label {
+            color: $white;
+        }
+        
+        // textarea:focus ~ label
+        textarea:valid ~ label {
+            color: transparent;
+        }
+        
+        // Focus Animation
+        &.focus label {
+            top: -10px;
+            transform: translateY(-50%);
+            left: 25px;
+            font-size: 0.8rem;
+            color: $white !important;
+        }
+    }
+    
+    // Textarea Label
+    .input-container.textarea label {
+        top: 1rem;
+        transform: translateY(0);
+    }
+    
+    // Focus animation for textarea
+    .textarea.focus label {
+        top: -10px;
+        left: 25px;
+        transform: translateY(-50%);
+        font-size: 0.8rem;
+        color: $white; 
+    }
+    
+    // Button
+    .form-btn {
+        cursor: pointer;
+        padding: 0;
+        
+        button {
+            color: $solid-4;
+            line-height: 2.188rem;
+            padding: 0.313rem 1.25rem;
+            font-weight: 600;
+            
+            background-color: $white;
+            border: 3px solid $white;
+            border-radius: 1.563rem;
+            @include fullSize;
+        }
+        
+        &:hover {
+            button {
+                color: $white;
+                background-color: transparent;
+            }
         }
     }
 }
 
-.right-card {
-    height: 100%;
-    overflow: hidden;
-    align-items: stretch;
-    color: black;
-    background-color: $white;
-    filter: blur(20px);
-    border: 2px solid green;
+/* ------------------------- Form Validation Classes ------------------------ */
+// Errors
+.input-container .error-hint {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    color: #E83151;
+    font-size: 0.9rem;
+    font-weight: 600;
+    // border: 2px solid purple;
+    
+    // Breakpoints
+    @media (min-width: 993px) and (max-width: 1199px) {
+        top: 100%;
+        right: 80px;
+        font-size: 0.8rem;
+    }
+    
+    @media(max-width: 430px) {
+        top: 100%;
+    }
+}
+
+// Invalid Colors
+.input-container.invalid {
+    color: $form-error ;
+    
+    .input {
+        color: $form-error ;
+        border: 2px solid $form-error ;
+    }
+    
+    label {
+        color: $form-error ;
+    }
+    
+    &.focus label {
+        color: $form-error !important;
+    }
+} 
+
+// Valid Colors
+.input-container.valid {
+    color: $form-valid !important;
+    
+    .input {
+        color: $form-valid !important;
+        border: 2px solid $form-valid !important;
+    }
+    
+    label {
+        color: $form-valid !important;
+    }
+    
+    &.focus label {
+        color: $form-valid !important;
+    }
 }
 
 
 
+/* --------------------------------- Circles -------------------------------- */
+.circle {
+    border-radius: 50%;
+    position: absolute;
+    background: linear-gradient(
+        135deg,
+        transparent 30%,
+        $solid-4,
+    );
+    z-index: 0;
+}
 
+.circle-1 {
+    width: 160px;
+    height: 160px;
+    top: -10%;
+    right: -10%;
+}
+.circle-2 {
+    width: 90px;
+    height: 90px;
+    top: 50%;
+    left: 33%;
+}
 
+.circle-3 {
+    width: 250px;
+    height: 250px;
+    top: 71%;
+    right: 5%;
+}
 
+.circle-4 {
+    width: 120px;
+    height: 120px;
+    top: 34%;
+    right: 5%;
+}
 
+// Breakpoints
+@include respond-to-down(md) {
+    .circle-1 {
+        width: 160px;
+        height: 160px;
+        top: 13%;
+        right: -10%;
+    }
+    
+    .circle-2 {
+        width: 90px;
+        height: 90px;
+        top: 60%;
+        left: 43%;
+    }
+    
+    .circle-3 {
+        width: 250px;
+        height: 250px;
+        top: 75%;
+        right: 15%;
+    }
+    
+    .circle-4 {
+        width: 120px;
+        height: 120px;
+        top: 44%;
+        right: 5%;
+    }
+}

@@ -125,6 +125,7 @@ contactForm.addEventListener( "submit", (e) => {
             formIsValid = false
         } else {
             firstName.classList.remove('error')
+            firstName.classList.add('valid')
             formIsValid = true
         }
         
@@ -136,6 +137,7 @@ contactForm.addEventListener( "submit", (e) => {
             formIsValid = false
         } else {
             lastName.classList.remove('error')
+            lastName.classList.add('valid')
             formIsValid = true
         }
         
@@ -147,6 +149,7 @@ contactForm.addEventListener( "submit", (e) => {
             formIsValid = false
         } else {
             email.classList.remove('error')
+            email.classList.add('valid')
             formIsValid = true
           }
         // Regex
@@ -168,6 +171,7 @@ contactForm.addEventListener( "submit", (e) => {
             formIsValid = false
         } else {
             subject.classList.remove('error')
+            subject.classList.add('valid')
             formIsValid = true
         }
         
@@ -179,6 +183,7 @@ contactForm.addEventListener( "submit", (e) => {
           formIsValid = false
         } else {
             messageInput.classList.remove('error')
+            messageInput.classList.add('valid')
             formIsValid = true
         }
         
