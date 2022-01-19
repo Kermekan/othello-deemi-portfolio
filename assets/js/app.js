@@ -100,33 +100,102 @@ inputs.forEach(input => {
 });
 
 // Form Validation =========
-const form = document.getElementById("contact-form");
-const validInput = document.querySelectorAll(".input");
-const errorHint = document.querySelector(".error-hint");
+const contactForm = document.querySelector("#contactForm"),
+    firstName = document.querySelector("#first-name"),
+    lastName = document.querySelector("#last-name"),
+    email = document.querySelector("#email"),
+    subject = document.querySelector("#subject"),
+    messageInput = document.querySelector("#message"),
+    emailRegEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+let formIsValid = false;
 
-// Input names
-const name = document.getElementById("name");
-const phone = document.getElementById("phone");
-const email = document.getElementById("email");
-const message = document.getElementById("message");
-
-const inputFields = [name, ]
-
-console.log(phone);
-
-
-
-
-// prevent page refresh on submit
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
+// validate contact form
+contactForm.addEventListener( "submit", (e) => {
+    // Error Messages
+    let messages = [];
+    let errors = document.querySelector(".error-messages")
+    let errorList = document.querySelector(".error-messages-list")
     
-    alert("Submitted");
+    errors.innerHTMl = ``
+        // First name
+        if (firstName.value.length === 0) {
+            e.preventDefault();
+            messages.push('First Name is required')
+            firstName.classList.add('error')
+            formIsValid = false
+        } else {
+            firstName.classList.remove('error')
+            formIsValid = true
+        }
+        
+        // Last Name
+        if (lastName.value.length === 0) {
+            e.preventDefault();
+            messages.push('Last Name is required')
+            lastName.classList.add('error')
+            formIsValid = false
+        } else {
+            lastName.classList.remove('error')
+            formIsValid = true
+        }
+        
+        // Email
+        if (email.value.length === 0) {
+            e.preventDefault();
+            messages.push('Email is required')
+            email.classList.add('error')
+            formIsValid = false
+        } else {
+            email.classList.remove('error')
+            formIsValid = true
+          }
+        // Regex
+        if (emailRegEX.test(email.value)){
+            email.classList.remove('error')
+            formIsValid = true
+        } else {
+            e.preventDefault();
+            messages.push('Invalid Email')
+            email.classList.add('error')
+            formIsValid = false
+        }
+        
+        // Subject
+        if (subject.value.length === 0) {
+            e.preventDefault();
+            messages.push('Subject is required')
+            subject.classList.add('error')
+            formIsValid = false
+        } else {
+            subject.classList.remove('error')
+            formIsValid = true
+        }
+        
+        // Messages
+        if (messageInput.value.length === 0) {
+          e.preventDefault();
+          messages.push('Message is required')
+          message.classList.add('error')
+          formIsValid = false
+        } else {
+            messageInput.classList.remove('error')
+            formIsValid = true
+        }
+        
+    // Create list item with text
+    messages.forEach(message => {
+        // create list element
+        let el = document.createElement('li')
+        
+        el.innerHTML = message
+        errorList.append(el)
+        errors.style.display = 'block'
+        })
 });
 
 
 
-
+// console.log(errors);
 
 
 

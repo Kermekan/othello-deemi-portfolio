@@ -8,6 +8,7 @@
     color: $white;
     @include gradient(to right, $gradientC_B);
     @include borderYStyling($solid-4);
+    // width: fit-content;
     // border: 2px solid green;
     
     @include respond-to-down(md) {
@@ -15,16 +16,6 @@
     }
     
     // Diamond Shape
-    &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: -13px;
-        width: 26px;
-        height: 26px;
-        transform: rotate(45deg);
-        background-color: #0ccbdc;
-    }
     
     // Breakpoints
     @include respond-to-up(md) {
@@ -46,198 +37,118 @@
 form {
     position: relative;
     z-index: 10;
-    overflow: hidden;
-    // border: 2px solid slateblue;
+    @include fullSize;
+    // border: 2px solid red;
+}
+
+.custom-field {
+    position: relative;
+    width: 100%;
+    margin: 1rem 0;
+    // border: 2px solid yellow;
     
-    // Input Styling
-    .input-container {
+    // Input styling
+    .input {
         position: relative;
-        margin: 2rem 0;
+        z-index: 10;
+        width: 100%;
+        padding: 0.6rem 1.2rem;
         
-        .input {
-            width: 100%;
-            color: $white;
-            padding: 0.6rem 1.2rem;
-            
-            font-size: 0.95rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            
-            outline: none;
-            background: transparent;
-            border-radius: 25px;
-            border: 2px solid $white;
-            transition: 300ms;
+        color: $white;
+        font-size: 0.95rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        
+        outline: none;
+        background: transparent;
+        border-radius: 25px;
+        border: 2px solid $white;
+        
+        &:focus,
+        &:valid {
+            background-color: inherit;
         }
-        
-        // Textarea
-        textarea.input {
-            padding: 0.8rem 1.2rem;
-            min-height: 150px;
-            border-radius: 22px;
-            resize: none;
-            overflow-y: auto;
-            transition: 300ms;
-            
-            &::-webkit-scrollbar-track {
-                background-color: transparent;
-            }
         }
+    
+    // Textarea styling
+    textarea.input {
+        min-height: 150px;
+        border-radius: 22px;
+        resize: none;
+        overflow-y: auto; 
         
-        textarea::placeholder {
-            opacity: 1;
-            transition: 300ms;
-        }
-        
-        // Label
-        label {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            color: $white ;
-            transform: translateY(-50%);
-            
-            padding: 0 0.4rem;
-            font-size: 0.9rem;
-            font-weight: 400;
-            pointer-events: none;
-            transition: 150ms;
-        }
-        
-        // Label Animation
-        input:focus ~ label {
-            color: $white;
-        }
-        
-        input:valid ~ label {
-            color: transparent;
-        }
-        
-        &#email-container input:focus ~ label {
-            color: transparent;
-        }
-        
-        &#email-container input:valid ~ label {
-            color: $white;
-        }
-        
-        // textarea:focus ~ label
-        textarea:valid ~ label {
-            color: transparent;
-        }
-        
-        // Focus Animation
-        &.focus label {
-            top: -10px;
-            transform: translateY(-50%);
-            left: 25px;
-            font-size: 0.8rem;
-            color: $white !important;
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
         }
     }
     
-    // Textarea Label
-    .input-container.textarea label {
-        top: 1rem;
-        transform: translateY(0);
-    }
-    
-    // Focus animation for textarea
-    .textarea.focus label {
-        top: -10px;
-        left: 25px;
+    // placeholder styling
+    .place-holder {
+        position: absolute;
+        left: 23px;
+        top: 50%;
         transform: translateY(-50%);
-        font-size: 0.8rem;
-        color: $white; 
+        transition: 150ms;
     }
     
-    // Button
-    .form-btn {
-        cursor: pointer;
-        padding: 0;
-        
-        button {
-            color: $solid-4;
-            line-height: 2.188rem;
-            padding: 0.313rem 1.25rem;
-            font-weight: 600;
-            
-            background-color: $white;
-            border: 3px solid $white;
-            border-radius: 1.563rem;
-            @include fullSize;
-        }
-        
-        &:hover {
-            button {
-                color: $white;
-                background-color: transparent;
-            }
-        }
+    &.focus .place-holder {
+        top: -10px;
+        transform: translateY(-50%);
+        left: 25px;
+        font-size: 0.8rem;
     }
 }
 
-/* ------------------------- Form Validation Classes ------------------------ */
-// Errors
-.input-container .error-hint {
-    position: absolute;
-    top: -20px;
-    right: 20px;
-    color: #E83151;
-    font-size: 0.9rem;
+// textarea placeholder
+.textarea .place-holder {
+    top: 0.6rem;
+    transform: translateY(0);
+}
+
+
+// Button Styling
+.form-btn {
+    color: $solid-4;
+    line-height: 2.188rem;
+    padding: 0.313rem 1.25rem;
     font-weight: 600;
-    // border: 2px solid purple;
     
-    // Breakpoints
-    @media (min-width: 993px) and (max-width: 1199px) {
-        top: 100%;
-        right: 80px;
-        font-size: 0.8rem;
-    }
+    background-color: $white;
+    border: 3px solid $white;
+    border-radius: 1.563rem;
+    outline: none;
     
-    @media(max-width: 430px) {
-        top: 100%;
-    }
-}
-
-// Invalid Colors
-.input-container.invalid {
-    color: $form-error ;
-    
-    .input {
-        color: $form-error ;
-        border: 2px solid $form-error ;
-    }
-    
-    label {
-        color: $form-error ;
-    }
-    
-    &.focus label {
-        color: $form-error !important;
-    }
-} 
-
-// Valid Colors
-.input-container.valid {
-    color: $form-valid !important;
-    
-    .input {
-        color: $form-valid !important;
-        border: 2px solid $form-valid !important;
-    }
-    
-    label {
-        color: $form-valid !important;
-    }
-    
-    &.focus label {
-        color: $form-valid !important;
+    &:hover, &:active, &:focus {
+        color: $white;
+        background-color: transparent;
     }
 }
 
 
 
+/* ----------------------------- Form Validation ---------------------------- */
+.error-messages {
+    color: $form-error;
+    font-weight: 600;
+    
+    ul li:last-child {
+        padding-bottom: 20px;
+        // border: 2px solid green; 
+    }
+}
+
+// Input error color
+.custom-field {
+    
+    input.error {
+        color: $form-error;
+        border: 2px solid $form-error;
+        
+        & ~ .place-holder {
+            color: $form-error;
+        }
+    }
+}
 /* --------------------------------- Circles -------------------------------- */
 .circle {
     border-radius: 50%;
@@ -307,3 +218,9 @@ form {
         right: 5%;
     }
 }
+
+
+
+
+
+
