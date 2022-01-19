@@ -30,10 +30,28 @@
     transition-property: all;
 }
 
-// Scroll Hover
+// btn Hover
 @mixin btnHover {
     transform: scale(1.2);
     transition: all 200ms;
+}
+
+// Scroll button styling
+@mixin scrollBtn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transition: 100ms;
+    
+    @include hoverFocusActive{
+        background-color: $solid-5;
+        border: 1px solid darken($solid-5, 10%);
+        
+        &::before {
+            border-left: 3px solid $solid-4;
+            border-bottom: 3px solid $solid-4;
+        }
+    }
 }
 
 // Transition Speed

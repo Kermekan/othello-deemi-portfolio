@@ -1,4 +1,4 @@
-// menu button =========
+// menu button Slider =========
 const menuBtn = document.querySelector("#menu-btn");
 const mobileSidebar = document.querySelector(".sidebar-sm");
 let menuOpen = false;
@@ -68,14 +68,26 @@ function loop () {
                 i = 0 
             }
         }
-        // change type speed
+        // Delete speed
         const spedUp = Math.random() * (80 - 50) + 50;
+        // type speed
         const typeSpeed = Math.random() * (250 - 300) + 200;
         const time = isEnd ? 2000 : isDeleting ? spedUp : typeSpeed;
         setTimeout(loop, time)
     }
 }
 loop();
+
+// back-to-top button scroll =========
+const $btn = $("#top-btn");
+
+$(window).scroll(function() {
+    if ($(window).scrollTop() > 1000) {
+        $btn.removeClass("hidden");
+    } else {
+        $btn.addClass("hidden")
+    }
+})
 
 // Form inputs animation =========
 const inputs = document.querySelectorAll(".input");
@@ -100,13 +112,13 @@ inputs.forEach(input => {
 });
 
 // Form Validation =========
-const contactForm = document.querySelector("#contactForm"),
-    firstName = document.querySelector("#first-name"),
-    lastName = document.querySelector("#last-name"),
-    email = document.querySelector("#email"),
-    subject = document.querySelector("#subject"),
-    messageInput = document.querySelector("#message"),
-    emailRegEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const contactForm = document.querySelector("#contactForm");
+const firstName = document.querySelector("#first-name");
+const lastName = document.querySelector("#last-name");
+const email = document.querySelector("#email");
+const subject = document.querySelector("#subject");
+const messageInput = document.querySelector("#message");
+const emailRegEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 let formIsValid = false;
 
 // validate contact form
@@ -118,26 +130,24 @@ contactForm.addEventListener( "submit", (e) => {
     
     errors.innerHTMl = ``
         // First name
-        if (firstName.value.length === 0) {
+        if (firstName.value.length < 3) {
             e.preventDefault();
             messages.push('First Name is required')
             firstName.classList.add('error')
             formIsValid = false
         } else {
             firstName.classList.remove('error')
-            firstName.classList.add('valid')
             formIsValid = true
         }
         
         // Last Name
-        if (lastName.value.length === 0) {
+        if (lastName.value.length < 3) {
             e.preventDefault();
             messages.push('Last Name is required')
             lastName.classList.add('error')
             formIsValid = false
         } else {
             lastName.classList.remove('error')
-            lastName.classList.add('valid')
             formIsValid = true
         }
         
@@ -149,7 +159,6 @@ contactForm.addEventListener( "submit", (e) => {
             formIsValid = false
         } else {
             email.classList.remove('error')
-            email.classList.add('valid')
             formIsValid = true
           }
         // Regex
@@ -164,26 +173,24 @@ contactForm.addEventListener( "submit", (e) => {
         }
         
         // Subject
-        if (subject.value.length === 0) {
+        if (subject.value.length < 5) {
             e.preventDefault();
             messages.push('Subject is required')
             subject.classList.add('error')
             formIsValid = false
         } else {
             subject.classList.remove('error')
-            subject.classList.add('valid')
             formIsValid = true
         }
         
         // Messages
-        if (messageInput.value.length === 0) {
+        if (messageInput.value.length < 10) {
           e.preventDefault();
           messages.push('Message is required')
           message.classList.add('error')
           formIsValid = false
         } else {
             messageInput.classList.remove('error')
-            messageInput.classList.add('valid')
             formIsValid = true
         }
         

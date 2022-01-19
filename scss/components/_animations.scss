@@ -32,13 +32,16 @@
 }
 
 // Scroll Gradient
-@keyframes scroll {
+@keyframes bounce {
     0% {
-        top: 50%;
+        transform: translateY(0px);
+        // border: 2px solid red;
     } 
-    
+    50% {
+        transform: translateY(5px);
+    }
     100% {
-        top: 100%;
+        transform: translateY(0px);
     }
 }
 

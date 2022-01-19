@@ -12,8 +12,47 @@
         @include fullSize;
         flex-direction: column;
         // border: 2px solid red;
+        
+        .heading {
+            margin: auto;
+        }
+        
+        // button
+        a {
+            position: relative;
+            margin-bottom: 3.75rem;
+
+            // Circle
+            span {
+                @include scrollBtn;
+                width: 66px;
+                height: 66px;
+                margin-left: -23px;
+                border: 2px solid #fff;
+                border-radius: 100%;
+                animation: bounce 1s ease-in-out infinite;
+                
+                // Arrow
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 18px;
+                    height: 18px;
+                    margin: -12px 0 0 -9px; // top right bottom left
+                    border-left: 3px solid $white;
+                    border-bottom: 3px solid $white;
+                    
+                    -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                    
+                }
+            }
+        }
     }
 }
+
 
 // Type writer
 #typewriter::after {
@@ -24,20 +63,5 @@
 }
 
 
-// .back-to-top {
-//     position: fixed;
-//     width: 3rem;
-//     height: 3rem;
-//     right: 1.875em;
-//     bottom: 2.5rem;
-//     z-index: 1;
-//     background-color: $solid-5;
-    
-//     span {
-//         color: $solid-4;
-//         font-size: 1rem;
-//         @include absoluteCenter;
-//     }
-// }
 
 
