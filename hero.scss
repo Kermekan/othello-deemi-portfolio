@@ -3,309 +3,116 @@
 @use '../utilities/breakpoints' as *;
 @use '../utilities/gradients' as *;
 
-/* ------------------------------- Right Side ------------------------------- */
-.contact-form {
-    position: relative;
-    color: $white;
-    @include gradient(to right, $gradientC_B);
-    @include borderYStyling($solid-4);
-    border: 2px solid green;
-    
+
+/* ----------------------- Portfolio Container Styling ---------------------- */
+
+#scs {
+    height: 100%;
     @include respond-to-down(md) {
-        border-top: none;
+        max-width: 100vw;
+        height: 100%;
+        margin-bottom: 5.625rem;
     }
     
-    // Diamond Shape
-    &::before {
-        content: "";
-        position: absolute;
-        z-index: 99;
-        top: 50%;
-        left: -13px;
-        width: 26px;
-        height: 26px;
-        transform: rotate(45deg);
-        background-color: #0ccbdc;
-    }
-    
-    // Breakpoints
     @include respond-to-up(md) {
-        // background-attachment: fixed; 
+        height: 100%;
+    }
+    
+    @include respond-to-down(sm) {
+        // mobile phones
+        //Moves in line with the navbar
+        max-width: 100vw;
+        margin-bottom: 5.625rem;
+        height: fit-content;
+    }
+    border: 3px solid blue;
+    
+}
+
+.scs-inner {
+    @include borderYStyling($solid-3);
+    height: fit-content;
+    width: fit-content;
+    
+    @include respond-to-down(sm) {
+        border-right: none;
+        border-left: none;
+        padding-left: 10px;
+    }
+    // border: 5px solid red;
+}
+
+/* ------------------------------ scs-box ------------------------------ */
+.scs-box {
+    justify-content: start;
+    
+    @include respond-to-down(sm) {
+        justify-content: center;
+        text-align: center;
+    }
+    // margin: 0 auto;
+}
+// Heading Styling
+.scs-heading {
+    display: inline-block;
+    width: fit-content;
+    padding: 0;
+    margin-bottom: 1.25rem;
+    border-bottom: 5px solid $solid-3;
+    
+    @include respond-to-down(md) {
+        text-align: center;
+    }
+}
+
+
+/* -------------------------------- Treehouse ------------------------------- */
+// For some reason Treehouse has different padding/margin to other boxes
+.treehouse {
+    // padding: 0;
+    justify-content: start;
+    width: fit-content;
+    align-items: center;
+    
+    @include respond-to-down(sm) {
+        justify-content: center;
+    }
+    
+    .scs-heading {
+        margin-left: 1%;
+    }
+    
+    @include headingStyling;
+    .lead {
+        color: $treehouse;
     }
     
     @include respond-to-down(md) {
-        @include gradient(to right bottom, $gradientC_B);
-        // background-attachment: fixed;
-        &::before {
-            top: -13px;
-            left: 50%;
-            background-color: #169ebc;
-        }
-    }
-}
-
-/* ------------------------------ Form Styling ------------------------------ */
-form {
-    position: relative;
-    z-index: 10;
-    overflow: hidden;
-    // border: 2px solid slateblue;
-    
-    // Input Styling
-    .input-container {
-        position: relative;
-        margin: 2rem 0;
-        
-        .input {
-            width: 100%;
-            color: $white;
-            padding: 0.6rem 1.2rem;
-            
-            font-size: 0.95rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            
-            outline: none;
-            background: transparent;
-            border-radius: 25px;
-            border: 2px solid $white;
-            transition: 300ms;
-        }
-        
-        // Textarea
-        textarea.input {
-            padding: 0.8rem 1.2rem;
-            min-height: 150px;
-            border-radius: 22px;
-            resize: none;
-            overflow-y: auto;
-            transition: 300ms;
-            
-            &::-webkit-scrollbar-track {
-                background-color: transparent;
-            }
-        }
-        
-        textarea::placeholder {
-            opacity: 1;
-            transition: 300ms;
-        }
-        
-        // Label
-        label {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            color: $white ;
-            transform: translateY(-50%);
-            
-            padding: 0 0.4rem;
-            font-size: 0.9rem;
-            font-weight: 400;
-            pointer-events: none;
-            transition: 150ms;
-        }
-        
-        // Label Animation
-        input:focus ~ label {
-            color: $white;
-        }
-        
-        input:valid ~ label {
-            color: transparent;
-        }
-        
-        &#email-container input:focus ~ label {
-            color: transparent;
-        }
-        
-        &#email-container input:valid ~ label {
-            color: $white;
-        }
-        
-        // textarea:focus ~ label
-        textarea:valid ~ label {
-            color: transparent;
-        }
-        
-        // Focus Animation
-        &.focus label {
-            top: -10px;
-            transform: translateY(-50%);
-            left: 25px;
-            font-size: 0.8rem;
-            color: $white !important;
-        }
+        // text-align: center;
     }
     
-    // Textarea Label
-    .input-container.textarea label {
-        top: 1rem;
-        transform: translateY(0);
-    }
-    
-    // Focus animation for textarea
-    .textarea.focus label {
-        top: -10px;
-        left: 25px;
-        transform: translateY(-50%);
-        font-size: 0.8rem;
-        color: $white; 
-    }
-    
-    // Button
-    .form-btn {
-        cursor: pointer;
-        padding: 0;
+    // Total Score
+    .score {
+        color: $treehouse;
+        font-size: 1.125rem; //18px
         
-        button {
-            color: $solid-4;
-            line-height: 2.188rem;
-            padding: 0.313rem 1.25rem;
-            font-weight: 600;
+        &--profile {
             
-            background-color: $white;
-            border: 3px solid $white;
-            border-radius: 1.563rem;
-            @include fullSize;
-        }
-        
-        &:hover {
-            button {
-                color: $white;
-                background-color: transparent;
+            a {
+                color: $treehouse;
+                
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
 }
 
-/* ------------------------- Form Validation Classes ------------------------ */
-// Errors
-.input-container .error-hint {
-    position: absolute;
-    top: -20px;
-    right: 20px;
-    color: #E83151;
-    font-size: 0.9rem;
-    font-weight: 600;
-    // border: 2px solid purple;
-    
-    // Breakpoints
-    @media (min-width: 993px) and (max-width: 1199px) {
-        top: 100%;
-        right: 80px;
-        font-size: 0.8rem;
-    }
-    
-    @media(max-width: 430px) {
-        top: 100%;
-    }
-}
-
-// Invalid Colors
-.input-container.invalid {
-    color: $form-error ;
-    
-    .input {
-        color: $form-error ;
-        border: 2px solid $form-error ;
-    }
-    
-    label {
-        color: $form-error ;
-    }
-    
-    &.focus label {
-        color: $form-error !important;
-    }
-} 
-
-// Valid Colors
-.input-container.valid {
-    color: $form-valid !important;
-    
-    .input {
-        color: $form-valid !important;
-        border: 2px solid $form-valid !important;
-    }
-    
-    label {
-        color: $form-valid !important;
-    }
-    
-    &.focus label {
-        color: $form-valid !important;
-    }
-}
 
 
 
-/* --------------------------------- Circles -------------------------------- */
-.circle {
-    border-radius: 50%;
-    position: absolute;
-    background: linear-gradient(
-        135deg,
-        transparent 30%,
-        $solid-4,
-    );
-    z-index: 0;
-}
 
-.circle-1 {
-    width: 160px;
-    height: 160px;
-    top: -10%;
-    right: -10%;
-}
-.circle-2 {
-    width: 90px;
-    height: 90px;
-    top: 50%;
-    left: 33%;
-}
 
-.circle-3 {
-    width: 250px;
-    height: 250px;
-    top: 71%;
-    right: 5%;
-}
 
-.circle-4 {
-    width: 120px;
-    height: 120px;
-    top: 34%;
-    right: 5%;
-}
 
-// Breakpoints
-@include respond-to-down(md) {
-    .circle-1 {
-        width: 160px;
-        height: 160px;
-        top: 13%;
-        right: -10%;
-    }
-    
-    .circle-2 {
-        width: 90px;
-        height: 90px;
-        top: 60%;
-        left: 43%;
-    }
-    
-    .circle-3 {
-        width: 250px;
-        height: 250px;
-        top: 75%;
-        right: 15%;
-    }
-    
-    .circle-4 {
-        width: 120px;
-        height: 120px;
-        top: 44%;
-        right: 5%;
-    }
-}

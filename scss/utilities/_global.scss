@@ -83,7 +83,7 @@
 
 // Hide elements between 576px & 767px
 .hidden-sm {
-    @media (min-width: 576px) and (max-width: 767px) {
+    @media (min-width: 576px) and (max-width: 769px) {
         display: none !important;
     }
 }
