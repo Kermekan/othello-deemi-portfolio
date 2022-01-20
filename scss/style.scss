@@ -16,9 +16,10 @@
 //Sections
 @use 'sections/navigation';
 @use 'components/navigation-breakpoints';
-
 @use 'sections/hero';
+
 @use 'sections/portfolio';
+@use 'components/portfolio-slider';
 
 @use 'sections/contact-left-card';
 @use 'sections/contact-right-card';

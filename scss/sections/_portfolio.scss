@@ -29,7 +29,7 @@
     margin: 0 auto;
     width: fit-content;
     padding: 5px;
-    
+    z-index: 0;
     place-items: center center;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -154,6 +154,7 @@
         }
     }
     
+    
     // Breakpoints for >576px
     @include respond-to-up(xs) {
         padding: 1.25rem;
@@ -177,7 +178,7 @@
     }
 }
 
-  
+
 
 
 
