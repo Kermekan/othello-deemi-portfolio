@@ -115,7 +115,7 @@ section .inner {
     border-radius: 5px;
     @include shadowSharp;
     @include bgColor;
-    background-color: rgba($color: $bg-primary, $alpha: 0.85);
+    // background-color: rgba($color: $bg-primary, $alpha: 0.85);
 }
 
 // Content

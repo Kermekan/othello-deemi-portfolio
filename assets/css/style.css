@@ -11409,7 +11409,6 @@ section .inner {
   border-radius: 5px;
   box-shadow: 0 2px 2px black, 0 4px 4px black, 0 6px 6px black;
   background-color: rgba(18, 18, 18, 0.9);
-  background-color: rgba(18, 18, 18, 0.85);
 }
 
 .content {
@@ -12731,6 +12730,97 @@ form {
     font-size: 15px;
     line-height: 1.5;
     letter-spacing: 1px;
+  }
+}
+
+.scs-inner {
+  border-top: 10px inset #d96a18;
+  border-bottom: 10px inset #d96a18;
+}
+
+.scs-box {
+  margin: 0 auto;
+}
+
+.scs-heading {
+  width: fit-content;
+  margin-bottom: 1.25rem;
+  padding: 0 !important;
+  border-bottom: 5px solid #d96a18;
+}
+
+.treehouse .score {
+  color: #5fcf80;
+  font-size: 1.125rem;
+}
+.treehouse .score--profile a {
+  color: #5fcf80;
+}
+.treehouse .score--profile a:hover {
+  text-decoration: underline;
+}
+
+.coding-inner {
+  border-top: 10px inset #f955ad;
+  border-bottom: 10px inset #f955ad;
+}
+
+.content .heading {
+  margin: 0 auto;
+}
+.content .heading .heading-line::before {
+  content: "";
+  width: 10rem;
+  height: 0.125rem;
+  display: block;
+  margin: 0 auto;
+  background-color: #f955ad;
+}
+.content .heading .heading-line::after {
+  content: "";
+  width: 2.5rem;
+  height: 0.2rem;
+  padding-top: 0.5rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  background-color: #f955ad;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.coding-container {
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.coding-container .description {
+  padding: 10px 15px;
+  margin: auto 2.5rem;
+  border-radius: 7px;
+  border: 2px solid red;
+  border: 2px solid rgba(11, 208, 223, 0.5);
+  background-color: rgba(51, 61, 72, 0.5);
+}
+@media (max-width: 992px) {
+  .coding-container .description {
+    margin: auto 0;
+  }
+}
+
+.coding-container .code {
+  padding: 18px 22px;
+  border-radius: 7px;
+  border: 2px solid rgba(11, 208, 223, 0.5);
+  background-color: rgba(51, 61, 72, 0.5);
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 0.938rem;
+}
+@media (max-width: 769px) {
+  .coding-container .code {
+    padding: 5px 3px;
   }
 }
 
