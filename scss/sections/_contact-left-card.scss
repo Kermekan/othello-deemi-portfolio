@@ -88,11 +88,11 @@
     @include gradient(to left, $gradientR_O);
     width: 100%;
     
-    .phone-number span {
-        // display: block;
+    .link span {
+        display: block;
         font-weight: bold;
         font-size: 1.25rem;
-        color: $solid-4;
+        color: $solid-4 !important;
         width: 100%;
         // padding-right: 15px;
         // border: 2px solid white;
