@@ -65,7 +65,7 @@ $breakpoints: (
 }
 
 /* --------------------------- height breakpoints --------------------------- */
-@mixin height-823 {
+@mixin height-824 {
     @media (max-height: 823px) {
         @media (orientation: landscape) {
            @content;
@@ -80,7 +80,7 @@ $breakpoints: (
             @content;
         }
     }
- }
+}
  
  
  

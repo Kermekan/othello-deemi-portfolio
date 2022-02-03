@@ -1,22 +1,3 @@
-// menu button Slider =========
-const menuBtn = document.querySelector("#menu-btn");
-const mobileSidebar = document.querySelector(".sidebar-sm");
-let menuOpen = false;
-
-// menuBtn click
-menuBtn.addEventListener("click", () => {
-   if(!menuOpen) {
-       // add open class
-       menuBtn.classList.add("open");
-       mobileSidebar.classList.add("open")
-       menuOpen = true;
-   } else {
-        //remove open class
-        menuBtn.classList.remove("open");
-        mobileSidebar.classList.remove("open");
-        menuOpen = false;
-   }
-});
 
 // Typewriter =========
 

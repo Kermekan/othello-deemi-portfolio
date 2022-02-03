@@ -114,3 +114,11 @@ contactForm.addEventListener( "submit", (e) => {
         errors.style.display = 'block'
         })
 });
+
+
+
+
+
+
+
+
