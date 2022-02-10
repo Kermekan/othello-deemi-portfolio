@@ -11299,7 +11299,7 @@ img {
   }
 }
 
-@media (min-width: 993px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .hidden-lg {
     display: none !important;
   }
@@ -11311,7 +11311,7 @@ img {
   }
 }
 
-@media (min-width: 1201px) and (max-width: 1399px) {
+@media (min-width: 1200px) and (max-width: 1399px) {
   .hidden-xl {
     display: none !important;
   }

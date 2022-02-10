@@ -97,7 +97,7 @@
 
 // Hide elements between 991px & 1199px
 .hidden-lg {
-    @media (min-width: 993px) and (max-width: 1199px) {
+    @media (min-width: 992px) and (max-width: 1199px) {
         display: none !important;
     }
 }
@@ -111,7 +111,7 @@
 
 // Hide elements between 1200px & 1399px
 .hidden-xl {
-    @media (min-width: 1201px) and (max-width: 1399px) {
+    @media (min-width: 1200px) and (max-width: 1399px) {
         display: none !important;
     }
 }
