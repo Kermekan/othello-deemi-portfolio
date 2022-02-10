@@ -196,10 +196,6 @@
 @mixin btnColor($color, $color-border) {
     background-color: $color;
     border: 1px solid $color-border;
-    
-    // &:hover {
-    //     background-color: $color-hover;
-    // } 
 }
 
 
