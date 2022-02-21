@@ -11173,6 +11173,7 @@ html {
   font-size: 16px;
   line-height: 1.6;
   scroll-behavior: smooth;
+  width: fit-content;
 }
 
 /* Set core body defaults */
@@ -11189,7 +11190,7 @@ body {
 /* Removes styling from links */
 a {
   text-decoration: none;
-  color: #fff;
+  color: white;
   padding: 0;
 }
 a:hover, a:active, a:focus {
@@ -11352,12 +11353,18 @@ img {
 
 .inner {
   position: relative;
-  width: 100%;
   height: fit-content;
+  width: 100%;
   max-width: 59.375rem;
   padding: 0 1.25rem !important;
   margin: 0 auto;
   overflow-x: hidden;
+  z-index: 0;
+}
+@media (max-width: 576px) {
+  .inner {
+    padding: 0 0.625rem !important;
+  }
 }
 
 /* ------------------------------- Breakpoints ------------------------------ */
@@ -11407,7 +11414,7 @@ section, header {
 section .inner {
   position: relative;
   border-radius: 5px;
-  box-shadow: 0 2px 2px black, 0 4px 4px black, 0 6px 6px black;
+  box-shadow: 0 4px 2px black, 0 4px 4px black, 0 8px 6px black;
   background-color: rgba(18, 18, 18, 0.9);
 }
 
@@ -11605,7 +11612,7 @@ section .inner {
 .logo-content .logo:hover, .logo-content .logo:focus, .logo-content .logo:active {
   background-color: #2c2c2c;
   transform: scale(1.08);
-  box-shadow: 0 2px 2px black, 0 4px 4px black, 0 6px 6px black;
+  box-shadow: 0 4px 2px black, 0 4px 4px black, 0 8px 6px black;
 }
 
 /* ------------------------------- Item Links ------------------------------- */
@@ -11656,15 +11663,6 @@ section .inner {
   font-weight: 700;
   white-space: nowrap;
 }
-.item-list ul li .link--description {
-  display: none;
-  position: absolute;
-  color: #fff;
-  padding: 0px 0.938rem;
-  line-height: 3.75rem;
-  left: 0;
-  white-space: nowrap;
-}
 .item-list ul li:hover, .item-list ul li:focus, .item-list ul li:active {
   background-color: #2c2c2c;
   transition: all 500ms ease-in-out;
@@ -11674,16 +11672,6 @@ section .inner {
 }
 .item-list ul li:hover .link--name, .item-list ul li:focus .link--name, .item-list ul li:active .link--name {
   color: #0bd0df;
-}
-.item-list ul li:hover .link--description, .item-list ul li:focus .link--description, .item-list ul li:active .link--description {
-  display: block;
-  background-color: #311c61;
-  padding: 0 0.938rem;
-  height: 3.75rem;
-  border-radius: 0.438rem;
-  position: absolute;
-  left: 15rem;
-  animation: hover 500ms ease-in;
 }
 
 .sidebar-lg .contact-box {
@@ -11698,7 +11686,7 @@ section .inner {
   background: -webkit-linear-gradient(to right, #ba2751, #d96a18);
   background: -moz-linear-gradient(to right, #ba2751, #d96a18);
   background: -o-linear-gradient(to right, #ba2751, #d96a18);
-  box-shadow: 0 2px 2px black, 0 4px 4px black, 0 6px 6px black;
+  box-shadow: 0 4px 2px black, 0 4px 4px black, 0 8px 6px black;
 }
 .sidebar-lg .contact-box__icon {
   padding: 0;
@@ -11783,27 +11771,7 @@ section .inner {
 .hamburger .bar::after {
   transform: translateY(12px);
 }
-@media (max-width: 576px) {
-  .hamburger {
-    width: 38px;
-  }
-  .hamburger .bar::before {
-    transform: translateY(-8px);
-  }
-  .hamburger .bar::after {
-    transform: translateY(8px);
-  }
-}
 @media (max-width: 769px) and (orientation: landscape) {
-  .hamburger {
-    width: 38px;
-  }
-  .hamburger .bar::before {
-    transform: translateY(-8px);
-  }
-  .hamburger .bar::after {
-    transform: translateY(8px);
-  }
   .hamburger .bar, .hamburger .bar::before, .hamburger .bar::after {
     height: 2px;
   }
@@ -12123,7 +12091,7 @@ section .inner {
   flex-direction: column;
   justify-content: start;
   background-color: #1c1b29;
-  box-shadow: 0 2px 2px black, 0 4px 4px black, 0 6px 6px black;
+  box-shadow: 0 4px 2px black, 0 4px 4px black, 0 8px 6px black;
   border-radius: 5px;
   border: 2px solid rgba(0, 0, 0, 0.5);
 }
@@ -12194,7 +12162,7 @@ section .inner {
   right: -150px;
   bottom: -50px;
   height: 100%;
-  box-shadow: 0 2px 2px black, 0 4px 4px black, 0 6px 6px black;
+  box-shadow: 0 4px 2px black, 0 4px 4px black, 0 8px 6px black;
   background: linear-gradient(to left bottom, #f955ad, #d96a18);
   background: -webkit-linear-gradient(to left bottom, #f955ad, #d96a18);
   background: -moz-linear-gradient(to left bottom, #f955ad, #d96a18);
@@ -12359,12 +12327,17 @@ section .inner {
     width: fit-content;
   }
 }
+@media (min-width: 1200px) {
+  .contacts-container {
+    padding: 0 20px;
+  }
+}
 
 .form {
   width: 100%;
   height: fit-content;
   background-color: #121212;
-  box-shadow: 0 2px 2px black, 0 4px 4px black, 0 6px 6px black;
+  box-shadow: 0 4px 2px black, 0 4px 4px black, 0 8px 6px black;
   grid-template-columns: repeat(2, 1fr);
   overflow: hidden;
 }
@@ -12406,18 +12379,20 @@ section .inner {
   display: block;
   font-weight: bold;
   font-size: 1.25rem;
-  color: #0bd0df !important;
   width: 100%;
-}
-.contact-info .link span:hover {
-  text-decoration: underline;
-  cursor: pointer;
 }
 @media (max-width: 430px) {
   .contact-info .link span {
     font-size: 1rem;
     overflow-wrap: break-word;
   }
+}
+.contact-info .link span a {
+  color: #0bd0df;
+}
+.contact-info .link span a:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 @media (max-width: 992px) {
   .contact-info {
@@ -12766,10 +12741,10 @@ form {
   border-bottom: 10px inset #f955ad;
 }
 
-.content .heading {
+.coding-inner .heading {
   margin: 0 auto;
 }
-.content .heading .heading-line::before {
+.coding-inner .heading .heading-line::before {
   content: "";
   width: 10rem;
   height: 0.125rem;
@@ -12777,7 +12752,7 @@ form {
   margin: 0 auto;
   background-color: #f955ad;
 }
-.content .heading .heading-line::after {
+.coding-inner .heading .heading-line::after {
   content: "";
   width: 2.5rem;
   height: 0.2rem;
@@ -12789,39 +12764,63 @@ form {
   border-radius: 0 0 1rem 1rem;
 }
 
-.coding-container {
-  justify-content: start;
-  align-items: center;
+/* -------------------------------- Examples -------------------------------- */
+.example-container {
+  padding: 1.25rem;
   flex-direction: column;
-  margin: 0 auto;
 }
-.coding-container .description {
-  padding: 10px 15px;
-  margin: auto 2.5rem;
-  border-radius: 7px;
-  border: 2px solid red;
-  border: 2px solid rgba(11, 208, 223, 0.5);
-  background-color: rgba(51, 61, 72, 0.5);
-}
-@media (max-width: 992px) {
-  .coding-container .description {
-    margin: auto 0;
+@media (max-width: 576px) {
+  .example-container {
+    padding: 0.625rem;
   }
 }
 
-.coding-container .code {
-  padding: 18px 22px;
-  border-radius: 7px;
-  border: 2px solid rgba(11, 208, 223, 0.5);
-  background-color: rgba(51, 61, 72, 0.5);
+.example {
+  width: 100%;
+  max-width: 950px;
+  height: fit-content;
+  justify-content: space-between;
   align-items: start;
-  justify-content: start;
-  flex-direction: column;
-  gap: 0.938rem;
+  gap: 15px;
+  box-shadow: 0 4px 2px black, 0 4px 4px black, 0 8px 6px black;
+  background-color: #ba2751;
+  border-radius: 15px;
 }
-@media (max-width: 769px) {
-  .coding-container .code {
-    padding: 5px 3px;
+.example .text, .example .img {
+  width: 50%;
+  height: 100%;
+}
+.example .text {
+  padding: 0.938rem;
+  height: 100%;
+}
+.example .text h3 {
+  font-size: 25px;
+  padding-top: 0;
+  padding-bottom: 5px;
+  border-bottom: 4px solid #f955ad;
+}
+.example .img a {
+  width: 100%;
+  display: block;
+}
+.example .img a img {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .example .img a img {
+    border-radius: 0 15px 15px 0;
+  }
+}
+@media (max-width: 992px) {
+  .example {
+    flex-direction: column-reverse;
+    height: 1000px;
+    overflow-y: hidden;
+  }
+  .example .text, .example .img {
+    width: 100%;
+    height: fit-content;
   }
 }
 

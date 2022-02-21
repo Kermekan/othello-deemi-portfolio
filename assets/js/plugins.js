@@ -1,5 +1,10 @@
-// // Vanilla Tilt =========
-// VanillaTilt.init(document.querySelectorAll(".portflio-card"), {
-//     max: 10,
-//     speed: 200
-// });
+lightbox.option({
+    'resizeDuration': 50,
+    'fadeDuration': 50,
+    'wrapAround': false,
+    'disableScrolling': true,
+})
+
+
+
+
