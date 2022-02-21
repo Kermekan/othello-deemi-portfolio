@@ -38,13 +38,19 @@
 // Inner Styling
 .inner {
     position: relative;
-    width: 100%;
     height: fit-content;
+    width: 100%;
     max-width: 59.375rem; // 950px
     padding: 0 1.25rem !important;
     margin: 0 auto;
     overflow-x: hidden;
+    z-index: 0;
     // border: 2px solid gold;
+    
+    @include respond-to-down(xs) {
+        padding: 0 0.625rem !important;
+        // border: 2px solid white;
+    }
 }
 
 /* ------------------------------- Breakpoints ------------------------------ */
