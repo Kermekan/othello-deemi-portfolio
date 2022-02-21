@@ -1,7 +1,7 @@
 lightbox.option({
-    'resizeDuration': 50,
-    'fadeDuration': 50,
-    'wrapAround': false,
+    'resizeDuration': 200,
+    'fadeDuration': 300,
+    'showImageNumberLabel': false,
     'disableScrolling': true,
 })
 

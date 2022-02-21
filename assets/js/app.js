@@ -1,4 +1,4 @@
-// menu button Slider =========
+/* --------------------------- Menu Button Toggle --------------------------- */
 const menuBtn = document.querySelector("#menu-btn");
 const mobileSidebar = document.querySelector(".sidebar-sm");
 let menuOpen = false;
@@ -18,7 +18,7 @@ menuBtn.addEventListener("click", () => {
    }
 });
 
-// back-to-top button scroll =========
+/* --------------------------- Back To Top Button --------------------------- */
 const $btn = $("#top-btn");
 
 $(window).scroll(function() {
@@ -29,7 +29,7 @@ $(window).scroll(function() {
     }
 })
 
-// Carousel =========
+/* -------------------------------- Carousel -------------------------------- */
 const slider = document.querySelector(".portfolio-carousel")
 const nextBtn = document.querySelector(".next-btn");
 const prevBtn = document.querySelector(".prev-btn");
@@ -117,11 +117,8 @@ slider.addEventListener("mouseover", () => (
 slider.addEventListener("mouseout", () => (
     repeater()
 ));
-    
 
 
-
-// console.log(numberOfSlides);
 
 
 

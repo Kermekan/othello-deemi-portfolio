@@ -1,4 +1,3 @@
-
 // Typewriter =========
 
 // Variable to display messages in the DOM
@@ -64,3 +63,8 @@ function loop () {
     }
 }
 loop();
+
+
+
+
+

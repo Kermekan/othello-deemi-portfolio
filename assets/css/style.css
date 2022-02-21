@@ -12798,6 +12798,7 @@ form {
   font-size: 25px;
   padding-top: 0;
   padding-bottom: 5px;
+  width: fit-content;
   border-bottom: 3px solid #fff;
 }
 .example .text .description p:not(:last-child) {
