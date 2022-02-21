@@ -6,7 +6,6 @@
 #contacts {
     // width: fit-content;
     height: auto;
-    // padding-right: 20px;
 }
 
 .contacts-inner {
@@ -32,7 +31,6 @@
 .contacts-container {
     position: relative; 
     @include fullSize;
-    // padding: 2rem;
     color: $white;
     z-index: 0;
     justify-content: start;
@@ -42,10 +40,13 @@
     // border: 2px solid purple;
     
     @include respond-to-down(md) {
-        
         flex-direction: column;
         padding: 0;
         width: fit-content;
+    }
+    
+    @include respond-to-up(lg) {
+        padding: 0 20px;
     }
 }
 
@@ -88,25 +89,29 @@
     @include gradient(to left, $gradientR_O);
     width: 100%;
     
+    // Email
     .link span {
         display: block;
         font-weight: bold;
         font-size: 1.25rem;
-        color: $solid-4 !important;
         width: 100%;
         // padding-right: 15px;
         // border: 2px solid white;
         
-        &:hover {
-            text-decoration: underline;
-            cursor: pointer;
-        }
-        
         @media(max-width: 430px) {
                 font-size: 1rem;
                 overflow-wrap: break-word;
+        }
+        
+        a {
+            color: $solid-4;
+            
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
             }
         }
+    }
     
     @include respond-to-down(md) {
         border-bottom: none;

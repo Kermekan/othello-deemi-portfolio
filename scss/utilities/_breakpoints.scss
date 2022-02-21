@@ -81,6 +81,20 @@ $breakpoints: (
         }
     }
 }
+
+/* ----------------------------- Custom Viewport ---------------------------- */
+@mixin breakpoint-up($bp: 0) {
+    @media (min-width: $bp) {
+      @content;
+    }
+  }
+  
+  @mixin breakpoint-down($bp: 0) {
+      @media (max-width: $bp) {
+        @content;
+      }
+  }
+  
  
  
  
