@@ -144,12 +144,6 @@
         }
         
     }
-    
-    @include respond-to-down(xs) {
-        &.example-2 {
-            
-        }
-    }
 }
 
 
