@@ -1,0 +1,21 @@
+{
+  "name": "othello-deemi-portfolio",
+  "version": "1.0.0",
+  "description": "Netmatter Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "othello-deemi-portfolio"
+  },
+  "author": "Othello Deemi",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "autoprefixer": "^10.4.0",
+    "bootstrap": "^5.1.3",
+    "lightbox2": "^2.11.3"
+  }
+}
