@@ -7,7 +7,7 @@
     @include borderYStyling($solid-1);
 }
 
-.content .heading {
+.coding-inner .heading {
     margin: 0 auto;
     
     .heading-line {
@@ -15,48 +15,158 @@
     }
 }
 
-// Example Container
-.coding-container {
-    justify-content: start;
-    align-items: center;
+/* -------------------------------- Examples -------------------------------- */
+.example-container {
+    padding: 1.25rem;
+    gap: 30px;
     flex-direction: column;
+    // border: 2px solid red;
     
-    margin: 0 auto;
+    // breakpoints
+    @include respond-to-down(xs) {
+        padding: 0.625rem;
+    }
+}
+
+.example {
+    width: 100%;
+    max-width: 950px;
+    height: fit-content;
     
-    .title {
-    } 
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 15px;
     
-    .description {
-        padding: 10px 15px;
-        margin: auto 2.5rem;
+    @include shadowSharp;
+    background-color: $solid-2;
+    // border: 2px solid white;
+    
+    .text, .img {
+        width: 50%;
+    }
+    
+    // Text
+    .text {
+        padding: 0.938rem;
+        height: fit-content;
+        // background-color: $solid-2;
         
-        border-radius: 7px;
-        border: 2px solid red;
-        border: 2px solid rgba($color: $solid-4, $alpha: 0.5);
-        background-color: rgba($color: $bg-secondary, $alpha: 0.5);
+        h3 {
+            font-size: 25px;
+            padding-top: 0;
+            padding-bottom: 5px;
+            
+            width: fit-content;
+            border-bottom: 3px solid #fff;
+        }
         
-        @include respond-to-down(md) {
-            margin: auto 0;
+        // Description text
+        .description {
+            
+            p:not(:last-child) {
+                margin-bottom: 12px;
+            }
+        }
+    }
+    
+    // Image
+    .img {
+        // border: 2px solid green;
+        
+        a {
+            @include fullSize;
+            display: block;
+            // border: 2px solid blue;
+            
+            &:hover {
+                opacity: 0.8;
+                transition: 500ms;
+            }
+            
+            img {
+                width: 100%;
+                height: 100%;
+                // border: 2px solid yellow;
+                
+            }
+        }
+    }
+    
+    // Second Example
+    &.example-2 {
+        height: 100%;
+        
+        .img {
+            flex-direction: column;
+            justify-content: start;
+        }
+        
+        // Table
+        .table-container {
+            width: 100%;
+            
+            table {
+                width: fit-content;
+            }
+            
+            table, th, td {
+                border: 1px solid white;
+            }
+            
+            th, td {
+                padding: 3px 10px;
+            } 
+            
+            @include respond-to-down(xs) {
+                table {
+                    font-size: 12px;
+                }
+            }
+            
+            @include respond-to-down(xxs) {
+                table {
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+    
+    // Breakpoints
+    @include breakpoint-down(1199px) {
+        flex-direction: column-reverse;
+        max-width: 600px;
+        height: 1000px;
+        overflow-y: hidden;
+        
+        .text, .img {
+            width: 100%;
+            height: fit-content;
+        }
+        
+    }
+    
+    @include respond-to-down(xs) {
+        &.example-2 {
+            
         }
     }
 }
 
-.coding-container .code {
-    padding: 18px 22px;
-    border-radius: 7px;
-    border: 2px solid rgba($color: $solid-4, $alpha: 0.5);
-    background-color: rgba($color: $bg-secondary, $alpha: 0.5);
-    
-    align-items: start;
-    justify-content: start;
-    flex-direction: column;
-    gap: 0.938rem;
-    
-    @include respond-to-down(sm) {
-        padding: 5px 3px;
-    }
-    
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
