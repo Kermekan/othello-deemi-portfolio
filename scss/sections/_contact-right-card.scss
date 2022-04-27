@@ -32,12 +32,60 @@
 /* ------------------------------ Form Styling ------------------------------ */
 form {
     position: relative;
+    padding: 2.2rem 2.3rem;
     z-index: 10;
     @include fullSize;
+    
+    // padding viewport
+    @include respond-to-down(xl) {
+        padding: 2.2rem 0.8rem;
+    }
+    
+    @include respond-to-down(lg) {
+        padding: 2.2rem 0.8rem;
+        // border: 2px solid red;
+    }
+    
+    @include respond-to-down(md) {
+        padding: 2.2rem 0.2rem;
+    }
     // border: 2px solid red;
+    
+    .alert {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.938rem;
+        border-radius: 1.563rem;
+        
+        color: white;
+        width: 100%;
+        // text-align: center;
+        padding: 0.938rem;
+        
+        &.error, &.success {
+            color: white;
+        }
+        
+        // x Icon
+        .bi-x {
+            font-size: 25px;
+            
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .error {
+        background-color: $error;
+    }
+    
+    .success {
+        background-color: $success;
+    }
 }
 
-.custom-field {
+.input-wrapper {
     position: relative;
     width: 100%;
     margin: 1rem 0;
@@ -60,11 +108,17 @@ form {
         border-radius: 25px;
         border: 2px solid $white;
         
-        &:focus,
+        &::placeholder {
+            color: white;
+            font-style: italic;
+            opacity: 0.7;
+        }
+        
+        /* &:focus,
         &:valid {
             background-color: inherit;
-        }
-        }
+        } */
+    }
     
     // Textarea styling
     textarea.input {
@@ -78,36 +132,60 @@ form {
         }
     }
     
-    // placeholder styling
     .place-holder {
         position: absolute;
         left: 23px;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: 150ms;
+        top: -20px;
+        font-size: 14px;
+        
+    }
+    // Error highlight
+    &.input-error input, &.input-error textarea {
+        border:2px solid $error;
+        color: $error;
+        transition: 250ms;
+        
+        &::placeholder {
+            color: $error;
+        }
     }
     
-    &.focus .place-holder {
-        top: -10px;
-        transform: translateY(-50%);
-        left: 25px;
-        font-size: 0.8rem;
+    &.input-error .place-holder {
+        color: $error;
     }
+    
+    
+    // placeholder styling
+    // .place-holder {
+    //     position: absolute;
+    //     left: 23px;
+    //     top: 50%;
+    //     transform: translateY(-50%);
+    //     transition: 150ms;
+    // }
+    
+    // &.focus .place-holder {
+    //     top: -10px;
+    //     transform: translateY(-50%);
+    //     left: 25px;
+    //     font-size: 0.8rem;
+    // }
 }
 
 // textarea placeholder
-.textarea .place-holder {
-    top: 0.6rem;
-    transform: translateY(0);
-}
+// .textarea .place-holder {
+//     top: 0.6rem;
+//     transform: translateY(0);
+// }
 
 
 // Button Styling
 .form-btn {
-    color: $solid-4;
+    color: #245a8d;
+    font-weight: 700;
     line-height: 2.188rem;
+    letter-spacing: 0.8px;
     padding: 0.313rem 1.25rem;
-    font-weight: 600;
     
     background-color: $white;
     border: 3px solid $white;
@@ -117,40 +195,6 @@ form {
     &:hover, &:active, &:focus {
         color: $white;
         background-color: transparent;
-    }
-}
-
-
-
-/* ----------------------------- Form Validation ---------------------------- */
-.error-messages {
-    color: $form-error;
-    font-weight: 600;
-    
-    ul li:last-child {
-        padding-bottom: 20px;
-        // border: 2px solid green; 
-    }
-}
-
-// Input error color
-.custom-field {
-    .error {
-        color: $form-error;
-        border: 2px solid $form-error;
-        
-        & ~ .place-holder {
-            color: $form-error;
-        }
-    }
-    
-    .valid {
-        color: $form-valid;
-        border: 2px solid $form-valid;
-        
-        & ~ .place-holder {
-            color: $form-valid;
-        }
     }
 }
 
