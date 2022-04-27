@@ -1,8 +1,16 @@
-<?php 
-$dbhost = "localhost";
+<?php
+
+// Local
+/* $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "portfolio";
+$dbname = "portfolio"; */
+
+// cPanel
+$dbhost = "localhost";
+$dbuser = "othellod_othellodeemi";
+$dbpass = "270301Lonestar1!";
+$dbname = "othellod_portfolio";
 
 $conn =  mysqli_connect($dbhost, $dbuser, $dbpass, $dbname,);
 
