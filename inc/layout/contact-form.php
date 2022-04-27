@@ -1,4 +1,4 @@
-<?php include __DIR__ . '../../resources/connection.php';?>
+<?php include ('inc/resources/connection.php');?>
 
 <div class="contact-form">
     <!-- Circles -->
@@ -9,7 +9,7 @@
     
     <!-- Form -->
     <form id="contact-form" action="#contact-form" method="POST">
-        <?php include __DIR__ . '../../resources/form-submit.php';?>
+        <?php include ('inc/resources/form-submit.php');?>
         <!-- first name -->
         <label for="first-name" class="input-wrapper first-name">
             <input type="text" id="first-name" name="firstName" value="<?= $firstName ?>" class="input">

@@ -1,8 +1,8 @@
 <?php
 $pageTitle = "Othello Deemi Portfolio | SCS Scheme"; 
 
-include __DIR__ . './inc/resources/head.php'; 
-include __DIR__ . './inc/layout/sidebar.php'; 
+include ('inc/resources/head.php');
+include ('inc/layout/sidebar.php');
 ?>
 
     
@@ -54,4 +54,4 @@ include __DIR__ . './inc/layout/sidebar.php';
     </div><!-- .full-page -->
    
 <!-- JS & end body -->
-<?php include __DIR__ . './inc/resources/end-body.php';?>
+<?php include ('inc/resources/end-body.php');?>

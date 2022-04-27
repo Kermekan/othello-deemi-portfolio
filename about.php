@@ -2,8 +2,8 @@
 $pageTitle = "Othello Deemi Portfolio | About";
 
 
-include __DIR__ . './inc/resources/head.php'; 
-include __DIR__ . './inc/layout/sidebar.php'; 
+include('inc/resources/head.php'); 
+include('inc/layout/sidebar.php'); 
 
 // Calculate Age
 $dateOfBirth = "27-03-2001";
@@ -49,4 +49,4 @@ $age = date_diff(date_create($dateOfBirth), date_create($today));
         </div><!-- .main-sections -->
    
 <!-- JS & end body -->
-<?php include __DIR__ . './inc/resources/end-body.php';?>
+<?php include('inc/resources/end-body.php');?>

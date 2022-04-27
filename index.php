@@ -2,8 +2,8 @@
 
 $pageTitle = "Othello Deemi Portfolio";
 
-include __DIR__ . './inc/resources/head.php'; 
-include __DIR__ . './inc/layout/sidebar.php'; 
+include ('inc/resources/head.php'); 
+include ('inc/layout/sidebar.php'); 
 ?>
     
     <!-- Main Sections -->
@@ -26,10 +26,10 @@ include __DIR__ . './inc/layout/sidebar.php';
             </a>
         </div>
     </header>
-    <?php include __DIR__ . './inc/layout/portfolio.php';?>
-    <?php include __DIR__ . './inc/layout/contacts.php';?>
+    <?php include ('inc/layout/portfolio.php');?>
+    <?php include ('inc/layout/contacts.php');?>
 </main>
 
 
 <!-- JS & end body -->
-<?php include __DIR__ . './inc/resources/end-body.php';?>
+<?php include ('inc/resources/end-body.php');?>

@@ -11,9 +11,9 @@
             <div class="contacts-container flex">
                 <div class="form grid">
                     <!-- Left Card -->
-                    <?php include __DIR__ . '/contact-info.php';?>
+                    <?php include ('contact-info.php');?>
                     <!-- Right Card -->
-                    <?php include __DIR__ . '/contact-form.php';?>
+                    <?php include ('contact-form.php');?>
                     
                 </div>
             </div><!-- .contacts-container -->
