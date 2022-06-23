@@ -57,12 +57,12 @@
         <div class="contact-box flex">
             <div class="contact-box__icon">
                 <a href="https://github.com/Kermekan" target="_blank" class="text-center">
-                    <span class="fab fa-github"></span>
+                    <span class="icon fab fa-github"></span>
                 </a>
             </div>
             <div class="contact-box__icon">
                 <a href="https://www.linkedin.com/in/othello-monti-deemi/" target="_blank" class="text-center">
-                    <span class="fab fa-linkedin"></span>
+                    <span class="icon fab fa-linkedin"></span>
                 </a>
             </div>
         </div>
