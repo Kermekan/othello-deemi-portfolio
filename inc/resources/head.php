@@ -23,6 +23,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
