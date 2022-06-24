@@ -1,0 +1,127 @@
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/breakpoints' as *;
+@use '../utilities/gradients' as *;
+
+.container {
+    margin: auto;
+    padding: auto;
+}
+
+// Scroll Down button               // Can't Hide so it doesn't show in the header
+.scroll {
+    font-size: 50px;
+    @include absoluteCenter;
+}
+
+// back to top button
+.back-to-top {
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    right: 1.875em;
+    bottom: 500px;
+    z-index: 1;
+    background-color: $solid-5;
+    
+    span {
+        color: $solid-4;
+        font-size: 1rem;
+        @include absoluteCenter;
+    }
+}
+
+.btn {
+    padding: 0;
+    white-space: nowrap; //makes icon and text on same line
+    align-items: center;
+    line-height: 2.188rem;
+    
+    border-radius: 1.563rem;
+    a {
+        color: $white;
+        padding: 0.313rem 1.25rem;
+        display: block;
+        @include fullSize;
+    }
+}
+
+/* ------------------------------- Layout ------------------------------- */
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    
+    @include respond-to-up(xs) {        
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* -------------------- Hides Elements based on viewport -------------------- */
+
+.hidden {
+    display: none !important;
+}
+
+// Hide elements below 575px
+.hidden-xs {
+    @media (max-width: 575px) {
+        display: none !important;
+    }
+}
+
+// Hide elements between 576px & 767px
+.hidden-sm {
+    @media (min-width: 576px) and (max-width: 769px) {
+        display: none !important;
+    }
+}
+
+// Hide elements between 768px & 991px
+.hidden-md {
+    @media (min-width: 769px) and (max-width: 991px) {
+        display: none !important;
+    }
+}
+
+// Hide elements between 991px & 1199px
+.hidden-lg {
+    @media (min-width: 992px) and (max-width: 1199px) {
+        display: none !important;
+    }
+}
+
+// Hide elements between 991px & 1260px
+.hidden-1260 {
+    @media (min-width: 993px) and (max-width: 1259px) {
+        display: none !important;
+    }
+}
+
+// Hide elements between 1200px & 1399px
+.hidden-xl {
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        display: none !important;
+    }
+}
+
+// Hide elements above 1400px
+.hidden-xxl {
+    @media (min-width: 1400px) {
+        display: none !important;
+    }
+}
+
+
+

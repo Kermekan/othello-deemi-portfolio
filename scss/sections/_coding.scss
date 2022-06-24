@@ -1,0 +1,168 @@
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/breakpoints' as *;
+@use '../utilities/gradients' as *;
+
+.coding-inner {
+    @include borderYStyling($solid-1);
+}
+
+.coding-inner .heading {
+    margin: 0 auto;
+    
+    .heading-line {
+        @include headingLine($solid-1);
+    }
+}
+
+/* -------------------------------- Examples -------------------------------- */
+.example-container {
+    padding: 1.25rem;
+    gap: 30px;
+    flex-direction: column;
+    // border: 2px solid red;
+    
+    // breakpoints
+    @include respond-to-down(xs) {
+        padding: 0.625rem;
+    }
+}
+
+.example {
+    width: 100%;
+    max-width: 950px;
+    height: fit-content;
+    
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 15px;
+    
+    @include shadowSharp;
+    background-color: $solid-2;
+    // border: 2px solid white;
+    
+    .text, .img {
+        width: 50%;
+    }
+    
+    // Text
+    .text {
+        padding: 0.938rem;
+        height: fit-content;
+        // background-color: $solid-2;
+        
+        h3 {
+            font-size: 25px;
+            padding-top: 0;
+            padding-bottom: 5px;
+            
+            width: fit-content;
+            border-bottom: 3px solid #fff;
+        }
+        
+        // Description text
+        .description {
+            
+            p:not(:last-child) {
+                margin-bottom: 12px;
+            }
+        }
+    }
+    
+    // Image
+    .img {
+        // border: 2px solid green;
+        
+        a {
+            @include fullSize;
+            display: block;
+            // border: 2px solid blue;
+            
+            &:hover {
+                opacity: 0.8;
+                transition: 500ms;
+            }
+            
+            img {
+                width: 100%;
+                height: 100%;
+                // border: 2px solid yellow;
+                
+            }
+        }
+    }
+    
+    // Second Example
+    &.example-2 {
+        height: 100%;
+        
+        .img {
+            flex-direction: column;
+            justify-content: start;
+        }
+        
+        // Table
+        .table-container {
+            width: 100%;
+            
+            table {
+                width: fit-content;
+            }
+            
+            table, th, td {
+                border: 1px solid white;
+            }
+            
+            th, td {
+                padding: 3px 10px;
+            } 
+            
+            @include respond-to-down(xs) {
+                table {
+                    font-size: 12px;
+                }
+            }
+            
+            @include respond-to-down(xxs) {
+                table {
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+    
+    // Breakpoints
+    @include breakpoint-down(1199px) {
+        flex-direction: column-reverse;
+        max-width: 600px;
+        height: 1000px;
+        overflow-y: hidden;
+        
+        .text, .img {
+            width: 100%;
+            height: fit-content;
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

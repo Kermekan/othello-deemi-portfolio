@@ -1,0 +1,47 @@
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/breakpoints' as *;
+@use '../utilities/gradients' as *;
+
+#scs {
+    // border: 2px solid white;
+}
+
+.scs-inner {
+    @include borderYStyling($solid-3);
+}
+
+// scs-box
+.scs-box {
+    // width: 100%;
+    margin: 0 auto;
+    // border: 2px solid red;
+}
+
+.scs-heading {
+    width: fit-content;
+    margin-bottom: 1.25rem;
+    padding: 0 !important;
+    
+    border-bottom: 5px solid $solid-3;
+}
+
+
+.treehouse {
+    .score {
+        color: $treehouse;
+        font-size: 1.125rem;
+        
+        &--profile {
+            a {
+                color: $treehouse;
+                
+                &:hover {
+                    text-decoration: underline;
+                }
+            } 
+                
+        }
+    }
+}
+

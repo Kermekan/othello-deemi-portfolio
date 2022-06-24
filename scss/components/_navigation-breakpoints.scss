@@ -1,0 +1,222 @@
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/breakpoints' as *;
+@use '../utilities/gradients' as *;
+
+/* ----------------------------- Landscape View ----------------------------- */
+
+//  landscape for <1200px
+@include landscape-view-down(lg) {
+    .sidebar-lg {
+       
+       .logo-content {
+          .logo {
+             width: 45%;
+          }
+       }
+       
+       // Nav Items
+       .item-list {
+          @include fullSize;
+         //  border: 2px solid white;
+          margin-bottom: auto;
+          
+          ul {
+             display: flex !important;
+             @include fullSize;
+             flex-direction: column;
+             justify-content: space-around;
+          }
+       }
+       
+       // Contact Box
+       .contact-box {
+          margin: 15% 0;
+       }
+    }
+ }
+ 
+ // landscape for >1024px
+ @media (max-width: 1025px) {
+    @media (orientation: landscape) {
+       .sidebar-lg {
+          
+          .logo-content {
+             .logo {
+                width: 40%;
+             }
+          }
+       }
+       
+    }
+ }
+ 
+ // landscape for <992px
+ @include landscape-view-down(md) {
+    .sidebar-lg {
+       padding-top: 0.625rem;
+       // border: 2px solid red;
+       
+       // logo
+       .logo-content {
+          margin-bottom: auto;
+          padding: 0;
+          
+          .logo {
+            width: 35%;
+            
+            &:hover, &:focus {
+               transform: scale(1.1);
+            }
+         }
+       }
+       
+       // nav-itmes
+       .item-list {
+        //   border: 2px solid olivedrab;
+          
+          li {
+             height: 3.125rem; // 50px
+             
+             .icon {
+                display: block;
+                font-size: 18px;
+             }
+             
+             .link--name {
+                display: none;
+             }
+             
+             &:hover, &:focus, &:active {
+                
+                .link--description {
+                   height: 3.125rem; // 50px
+                   line-height: 3.125rem; // 50px
+                   left: 180px;
+                }
+             }
+          }
+          
+       }
+       
+       .contact-box {
+          display: none;
+       }
+    }
+ }
+ 
+//  for width <993 and height >575
+ @media (max-width: 993px) {
+    // height greater than 576px
+    @media (min-height: 575px) {
+       .sidebar-lg {
+          //  border: 2px solid blue;
+          
+          .logo-content {
+             margin-bottom: 0;
+             .logo {
+                width: 60%;
+             }
+          }
+          
+          // Individual items
+          .item-list {
+             height: 50%;
+             margin-bottom: 0;
+          //  border: 2px solid gray;
+             
+          li {
+             height: 60px;
+             
+             a {
+                .icon {
+                   display: none;
+                }
+                
+                .link--name {
+                   display: block;
+                }
+             }
+                
+             .link--description {
+                line-height: 3.75rem;
+             }
+                
+             &:hover, &:focus, &:active {
+             
+                .link--description {
+                   background-color: $solid-5;
+                   height: 3.75rem;
+                   line-height: 3.75rem;
+                }
+             }
+          }
+          }
+          
+          //   Contact Box
+          .contact-box {
+             display: flex;
+             
+             &__icon {
+                a {
+                      span {
+                         font-size: 40px !important;
+                      }
+                      
+                }
+             }
+          }
+       }
+    }
+ }
+ 
+/* ----------------------------- Mobile Sidebar ----------------------------- */
+@include landscape-view-down(sm) {
+   .sidebar-sm {
+      justify-content: space-around;
+      gap: 0px;
+      
+      // Logo
+      .logo-content {
+         width: 45%;
+         margin: 0;
+         // border: 2px solid peru;
+         
+         .logo {
+            width: 24%;
+         }
+      }
+      
+      .item-list {
+         margin: 0;
+         height: fit-content;
+         width: 75%;
+         // border: 2px solid salmon;
+         
+         ul {
+            gap: 10px;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+         }
+         
+         li {
+            width: 150px;
+            min-width: 150px;
+            height: 30px;
+            
+            padding: 5px 7px;
+            font-size: 14px;
+         }
+      }
+      
+   }
+}
+
+
+
+
+
+
+
+

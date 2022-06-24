@@ -1,0 +1,89 @@
+@use '../custom' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/breakpoints' as *;
+@use '../utilities/gradients' as *;
+
+
+/* Box sizing rules */
+*, 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+body,
+section,
+main,
+img,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Remove list styles*/
+ul,
+ol {
+  list-style-type: none;
+}
+
+/* Set core root defaults */
+html {
+  font-size: 16px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  width: fit-content;
+}
+  
+  /* Set core body defaults */
+body {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    color: white;
+    background-color: $bg-primary-light;
+    width: 100vw;
+    height: 100vh;
+    
+    // border: 3px solid blue;
+    
+}
+
+/* Removes styling from links */
+a {
+  text-decoration: none;
+  color: white;
+  padding: 0;
+  
+  &:hover, &:active, &:focus {
+    color: inherit;
+    outline: none;
+    box-shadow: none !important;
+  }
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images responsive to container size */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+
+

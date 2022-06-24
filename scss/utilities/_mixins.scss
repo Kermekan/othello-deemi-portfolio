@@ -1,0 +1,223 @@
+@use '../custom' as *;
+
+// Full Size
+@mixin fullSize {
+    width: 100%;
+    height: 100%;
+}
+
+// Forces single line Single line
+@mixin singleLine {
+    white-space: nowrap;
+}
+
+// Background Color
+@mixin bgColor {
+    background-color: rgba($color: $bg-primary, $alpha: 0.9);
+}
+
+// Center an Element
+@mixin absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Transition
+@mixin transitionProperty {
+    transition-duration: 1000ms;
+    transition-property: all;
+}
+
+// btn Hover
+@mixin btnHover {
+    transform: scale(1.2);
+    transition: all 200ms;
+}
+
+// Scroll button styling
+@mixin scrollBtn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transition: 100ms;
+    
+    @include hoverFocusActive{
+        background-color: $solid-5;
+        border: 1px solid darken($solid-5, 10%);
+        
+        &::before {
+            border-left: 3px solid $solid-4;
+            border-bottom: 3px solid $solid-4;
+        }
+    }
+}
+
+// Transition Speed
+@mixin transitionSpeed {
+    transition: all 200ms ease ;
+}
+
+// Box shadow
+@mixin boxShadow {
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5); // h w spread color
+}
+
+@mixin shadowSharp {
+    box-shadow: 
+        0 4px 2px rgba(0,0,0.12),
+        0 4px 4px rgba(0,0,0.12),
+        0 8px 6px rgba(0,0,0.12),
+    ; // x y blur spread
+}
+
+@mixin shadowLarge {
+    box-shadow:
+        1.1px 1.9px 2.7px rgba(0, 0, 0, 0.104),
+        2.8px 4.8px 6.9px rgba(0, 0, 0, 0.133),
+        5.7px 9.7px 14.2px rgba(0, 0, 0, 0.151),
+        11.7px 20.1px 29.2px rgba(0, 0, 0, 0.166),
+        32px 55px 80px rgba(0, 0, 0, 0.2),
+    ;
+}
+
+// Section Border
+@mixin sectionSpacing {
+    margin: 3.125rem auto; // 50px
+}
+
+// y-axis borders
+@mixin borderYStyling($color) {
+    border-top: 10px inset $color ;
+    border-bottom: 10px inset $color;
+}
+
+// x-axis border
+@mixin borderXStyling($color) {
+    border-left: 10px inset $color;
+    border-right: 10px inset $color;
+}
+
+// Headings ===============
+@mixin headingStyling {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+
+// Heading Line
+@mixin headingLine($color) {
+    
+    &::before {
+        content: "";
+        width: 10rem; //160px
+        height: 0.125rem;
+        display: block;
+        margin: 0 auto;
+        background-color: $color;
+   }
+   
+   &::after {
+        content: "";
+        width: 2.5rem; //40px
+        height: 0.2rem;
+        padding-top: 0.5rem;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        background-color: $color;
+        border-radius: 0 0 1rem 1rem; // top-left/ top-right/ bottom-right/ bottom-left
+   }
+}
+
+// Card Container
+ @mixin Card($color) {
+    position: relative;
+    width: 100%;    
+    // padding: 0 auto;
+    // margin: 0 auto;
+    
+    // top border styling
+    border-radius: 1.875rem / 1.875rem; //top bottom 30px
+    border-top: 5px solid $color;
+    border-bottom: 5px solid $color;
+    
+    // glass effect
+    @include boxShadow;
+    background: inherit;
+    
+    overflow: hidden;
+    // background-color: red;
+ }
+
+ 
+ @mixin button($color) {
+    position: relative;
+    font-weight: 700;
+    font-size: 18px;
+    color: $white;
+    
+    // Button size
+    padding: 0.938rem 1.875rem; //h(15px) w(30px)
+    margin: 0;
+    
+    border: 0.1rem solid rgba($white, 0.6);
+    border-radius: 30px;
+    background-color: $color;
+    @content;
+ }
+
+// Burger Lines
+@mixin burgerLines {
+    background-color: $white;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    // opacity: 0.9;
+    
+    @media (min-width: 576px) {
+        height: 4px;
+    }
+}
+
+@mixin burgerLandscape {
+    width: 38px; // 45px
+    border: 2px solid red;
+    
+    .bar {
+        &::before {
+           transform: translateY(-8px);
+        } 
+        
+        &::after {
+           transform: translateY(8px);
+        }
+    }
+}
+
+// Hover, active, focus states
+@mixin hoverFocusActive {
+    &:hover, &:focus, &:active {
+        @content;
+    }
+}
+
+// Button Colour
+@mixin btnColor($color, $color-border) {
+    background-color: $color;
+    border: 1px solid $color-border;
+}
+
+
+
+
+
+
+
+
+
+
+
+
