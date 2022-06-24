@@ -12042,6 +12042,9 @@ section .inner {
   animation: blink 300ms infinite alternate;
 }
 
+/* #portfolio {
+    // border: 2px solid white;
+} */
 .portfolio-inner {
   border-top: 10px inset #f955ad;
   border-bottom: 10px inset #f955ad;
