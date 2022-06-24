@@ -6,111 +6,55 @@
 /* -------------------------------- Carousel -------------------------------- */
 .portfolio-carousel {
     // padding: 0;
-    padding: 1.125rem 0.938rem 5.625rem 0.938rem;
-    // height: fit-content !important;
+    padding: 1.125rem 0.938rem 1.125rem 0.938rem;
     border-radius: 0.938rem;
     border: 2px solid rgba($color: $solid-4, $alpha: 0.5);
     background-color: rgba($color: $bg-secondary, $alpha: 0.5);
     // transition: 500ms;
+}
+
+/* ----------------------------- Swiper Styling ----------------------------- */
+.swiper {
+    @include fullSize;
+    // border: 2px solid red;
+    // overflow: visible;
     
-    .portfolio-slide {
-        max-width: 28.125rem; // 450px
-        min-height: 31.25rem; // 500px
-        display: none;
-        opacity: 0;
-        // transition: 500ms;
+    .swiper-wrapper {
+        position: relative;
+        width: fit-content;
+        // height: fit-content;
+        max-width: 26.25em;
         
-        @include respond-to-down(sm) {
-            max-width: 350px;
-        }
-        
-        &.active {
-            display: flex;
-            opacity: 1;
-            
-            transition: 500ms;
-        }
+        padding-bottom: 5.625rem;
+
+        // border: 2px solid green;
     }
     
-    // Navigation styling
-    .navigation {
-        position: absolute;
-        bottom: 10px;
-        width: 95%;
-        height: fit-content;
-        padding: 1rem 0.625rem;
-        justify-content: space-between;
-        font-size: 2em;
-        // opacity: 0;
-        
-        // background-color: rgba($color: $solid-5, $alpha: 0.5);
-        border-radius: 50px;
-        
-        transition: opacity 0.5s ease;
-        
-        .prev-btn, .next-btn {
-            cursor: pointer;
-            position: relative;
-            top: 0px;
-            z-index: 10;
-            
-            @include hoverFocusActive {
-                color: $solid-2;
-            }
-        }
-        
-        @include respond-to-down(xs) {
-            font-size: 1.5rem;
-        }
-    }
-    
-    // Owl styling
-    .navigation-visibility {
-        position: absolute;
-        width: 80%;
-        bottom: 32px;
-        z-index: 11;
-        justify-content: center;
+    .swiper-slide {
+        position: relative;
         // border: 2px solid white;
         
-        // individual dots
-        .slide-icon {
-            cursor: pointer;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            
-            margin: 0 auto;
-            border: 2px solid white;
-            
-            @include hoverFocusActive  {
-                border: 2px solid $solid-2;
-            }
-            
-            // Change appearance of active element
-            &.active {
-                background-color: $solid-2;
-                border: $solid-2;
-            }
+        width: fit-content;
+        
+        .details {
+            padding-bottom: 5.625rem;
         }
         
-        // Breakpoints
-        @include respond-to-down(xs) {
-            bottom: 30px;
-            .slide-icon {
-                height: 12px;
-                width: 12px;
-            }
-        }
-        
-        // Breakpoints
-        @include respond-to-down(xs) {
-            width: 75%;
-        }
     }
     
-    // Breakpoints
-    @include hoverFocusActive {
+    // Nav Buttons
+    
+    .swiper-button-next, .swiper-button-prev {
+        z-index: 999;
+        top: 90%;
         
+        color: $solid-4;
     }
+    
+    .swiper-pagination-bullet.active {
+        background: $solid-1;
+    }
+    
 }
+
+
