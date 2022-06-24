@@ -12129,8 +12129,8 @@ section .inner {
 .portfolio-box .cards .details p {
   min-height: 6.563rem;
   font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 2.5;
+  font-size: 1rem;
+  line-height: 2.15;
   margin-bottom: auto;
   padding-bottom: 1.563rem;
 }
