@@ -3,9 +3,9 @@
 @use '../utilities/breakpoints' as *;
 @use '../utilities/gradients' as *;
 
-#portfolio {
+/* #portfolio {
     // border: 2px solid white;
-}
+} */
 
 .portfolio-inner {
     @include borderYStyling($solid-1);
@@ -87,10 +87,13 @@
             
             // Text
             p {
-                font-size: 0.875rem;
                 min-height: 6.563rem;
-                padding-bottom: 1.563rem;
+                font-weight: 500;
+                font-size: 0.875rem;
+                line-height: 2.5;
+                
                 margin-bottom: auto;
+                padding-bottom: 1.563rem;
             }
             
             .details-inner {
@@ -100,6 +103,7 @@
                 flex-direction: column;
                 justify-content: start;
                 align-items: start;
+                height: fit-content;
                 // border: 2px solid purple;
             }
             
@@ -108,9 +112,6 @@
                 @include btnColor($portfolio-btn, $portfolio-btn-border);
                 // border: 2px solid red;
                 
-                a {
-                    // border: 2px solid black;
-                }
                 
                 &:hover {
                     @include gradient(to right, $gradientR_O);
@@ -156,7 +157,7 @@
     
     
     // Breakpoints for >576px
-    @include respond-to-up(xs) {
+    @include respond-to-up(md) {
         padding: 1.25rem;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         grid-auto-rows: 1fr;
@@ -172,6 +173,7 @@
                 
                 p {
                     font-size: 1rem;
+                    line-height: 1.75;
                 }
             }
         }
